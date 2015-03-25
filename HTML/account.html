@@ -3,22 +3,80 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <link rel='stylesheet' type="text/css" href="../CSS/accountStyle.css">
+    <script src="../JavaScript/app.js"></script>
 </head>
 <body>
     <div class="header">
         <div class="logo">Inspiral</div>
-        <button class="addInspirationButton">Add Inspiration</button>
-        <div class="sortBy">Sort by</div>
-        <div class="triangleDown">tri</div>
-        <input class="searchBar" placeholder="Search">
-        <button class="signinButton">SignIn</button>
+        <button class="signinButton" onclick="location.href='login.html'">Sign Out</button>
     </div>
 
-    <div class="nav">
-        <button class="navButton" id="privateNavButton">Private</button>
-        <button class="navButton" id="groupNavButton">Group</button>
-        <button class="navButton" id="classNavButton">Class</button>
-        <button class="navButton" id="publicNavButton">Public</button>
+    <div class="box">
+        <div class="title">Personal Info</div>
+        <table style="width:100%;">
+            <tr>
+                <td>
+                    <table>
+                        <tr><td style="text-align:right;">Username:</td><td>bob.the.builder</td></tr>
+                        <tr><td style="text-align:right;">Email:</td><td><input type="text" value="bob@builder"></td></tr>
+                        <tr><td style="text-align:right;">Notifications:</td>
+                        <td><input type="radio" name="notifications" checked>On
+                        <input type="radio" name="notifications">Off</td></tr>
+                        <tr><td style="text-align:right;">Class code:</td><td>012345</td></tr>
+                    </table>
+                </td>
+                <td style="text-align:center;">
+                    <img src="ProfilePic.png" height="150px">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="saveChanges"></div>
+                </td>
+                <td style="text-align:center;">
+                    <!--input type="file" class="uploadPhoto" accept="image/*"-->
+                    <div class="uploadPhoto"></div>
+                </td>
+            </tr>
+        </table>
     </div>
+    
+    <div class="box">
+        <div class="title">Groups</div>
+        <table style="Width:100%">
+            <tr>
+                <td style="text-align:right;">Group:</td>
+                <td style="text-align:center;"><input id="currentGroup" type="text" value="Byters" readonly></td>
+                <td class="leave" onclick="leave()"></td>
+            </tr>
+            <tr>
+                <td style="text-align:right;">Create new group:</td>
+                <td style="text-align:center;"><input id="newGroup" type="text"></td>
+                <td class="create" onclick="newGroup()"></td>
+            </tr>
+            <tr>
+                <td style="text-align:right;">Join group:</td>
+                <td style="text-align:center;"><input id="joinGroup" type="text"></td>
+                <td class="join" onclick="joinGroup()"></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        function leave() {
+            document.getElementById("currentGroup").value = "";
+        }
+
+        function newGroup() {
+            document.getElementById("currentGroup").value = document.getElementById("newGroup").value;
+            document.getElementById("newGroup").value = "";
+        }
+
+        function joinGroup() {
+            document.getElementById("currentGroup").value = document.getElementById("joinGroup").value;
+            document.getElementById("joinGroup").value = "";
+        }
+    </script>
 </body>
 </html>
