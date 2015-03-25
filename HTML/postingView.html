@@ -22,6 +22,8 @@
 			output += string_in;
 			output += "</p>";
 			document.getElementById("commentshere").innerHTML = output;
+			thecomment.value = "";
+			privateCheckbox.checked = false;
 		}
 	}
 
@@ -42,20 +44,17 @@
 
         </div>
 
-        <form>
-		<input class="addComment" type="text" id="thecomment" autocomplete= "off" name="thecomment" placeholder="Add a comment...">
+    	<div class="submitContainer" style="margin-left: 77px;">
+			
+			<input class="addComment" type="text" id="thecomment" autocomplete= "off" name="thecomment" placeholder="Add a comment...">
     	
 
-		<div class="submitContainer" style="width: 4.75%;"></div>
-    	<div class="submitContainer">
-
-	   		<input class="submitbutton" type="image" src="../HTML/smallSubmitButton.png" height="60px" width="120px" style=" margin-top: -8px;" 
-	   		onclick= "insertComment(thecomment.value, privateCheckbox.checked); return false;">
+    		<div class="submitContainer" style="width: 100%">
+	   		<input class="submitbutton" type="button" value="Submit" style=" margin-top: -2px;" onclick= "insertComment(thecomment.value, privateCheckbox.checked); return false;">
 
 	    	<label class="privateCheckbox" for="privateCheckbox">Private comment</label>
-	    	<input class="privateCheckbox" type="checkbox" id="privateCheckbox" style=" margin-top: -1px" > 
-	    	</form>
-    	</div>
+	    	<input class="privateCheckbox" type="checkbox" id="privateCheckbox" style=" margin-top: -1px; margin-left: 0px;" > 
+    	</div></div>
     </div>
 
 </body>
