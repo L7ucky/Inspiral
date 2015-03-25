@@ -47,20 +47,36 @@
         <table style="Width:100%">
             <tr>
                 <td style="text-align:right;">Group:</td>
-                <td style="text-align:center;"><input type="text" value="Byters" readonly></td>
-                <td class="leave"></td>
+                <td style="text-align:center;"><input id="currentGroup" type="text" value="Byters" readonly></td>
+                <td class="leave" onclick="leave()"></td>
             </tr>
             <tr>
                 <td style="text-align:right;">Create new group:</td>
-                <td style="text-align:center;"><input type="text"></td>
-                <td class="create"></td>
+                <td style="text-align:center;"><input id="newGroup" type="text"></td>
+                <td class="create" onclick="newGroup()"></td>
             </tr>
             <tr>
                 <td style="text-align:right;">Join group:</td>
-                <td style="text-align:center;"><input type="text"></td>
-                <td class="join"></td>
+                <td style="text-align:center;"><input id="joinGroup" type="text"></td>
+                <td class="join" onclick="joinGroup()"></td>
             </tr>
         </table>
     </div>
+
+    <script>
+        function leave() {
+            document.getElementById("currentGroup").value = "";
+        }
+
+        function newGroup() {
+            document.getElementById("currentGroup").value = document.getElementById("newGroup").value;
+            document.getElementById("newGroup").value = "";
+        }
+
+        function joinGroup() {
+            document.getElementById("currentGroup").value = document.getElementById("joinGroup").value;
+            document.getElementById("joinGroup").value = "";
+        }
+    </script>
 </body>
 </html>
