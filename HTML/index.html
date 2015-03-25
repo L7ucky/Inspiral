@@ -7,7 +7,8 @@
     <script src="../JavaScript/app.js"></script>
 
 </head>
-<body>
+
+<body onload="initPicture()">
     <div class="header">
         <div class="logo">Inspiral</div>
         <div class="addInspirationButton">Add Inspiration</div>
@@ -23,11 +24,29 @@
         <div class="navButton" id="classNavButton">Class</div>
         <div class="navButton" id="publicNavButton">Public</div>
     </div>
-
     
+
+
+    <!-- DANTLEY"S STUFF -->
+    <div id="ImageLine">
+            <input id="scrollImageLeft" class="submitbutton" type="button" value="<<" style="height: 100px" onclick="leftArrow()">
+          <!--   onclick="leftArrow()" src="../Resources/leftArrow.jpeg"> -->
+            <img class="picture" id="first" src="../Resources/whiteBox.jpeg">
+            <img class="picture" id="second" src="../Resources/whiteBox.jpeg">
+            <img class="picture" id="third" src="../Resources/whiteBox.jpeg">
+            <img class="picture" id="fourth" src="../Resources/whiteBox.jpeg">
+            <img class="picture" id="fifth" src="../Resources/whiteBox.jpeg">
+            <img class="picture" id="sixth" src="../Resources/whiteBox.jpeg">
+            
+           <!--  <img onclick="rightArrow()" id="scrollImage" src="../Resources/rightArrow.jpeg"> -->
+            <input id="scrollImageRight" class="submitbutton" type="button" value=">>" style="height: 100px" onclick="rightArrow()" >
+        </div>
+    
+
+
     <!-- TYLER'S STUFF -->
-    <div class="content">
-        <div class="pictureView"><img src="samplepicture.jpg" height="100%" width="100%"></div>
+    <div class="content" style="margin-top: 20px">
+        <div class="pictureView"><img src="../Resources/samplepicture.jpg" height="100%" width="100%"></div>
 
         <div class="comments" id="commentshere">
         <p class="aComment">User 1: This is a sample comment.</p>
