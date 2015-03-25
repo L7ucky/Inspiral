@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<style type="text/css">
+	.picture/*this is for the class of the pictures*/
+	{
+		width: 14%;
+
+		height:130px;
+
+		padding: 2px
+	}
+	#ImageLine /*this is just for the div in which the picture reside*/
+	{
+		width: 100%;
+		background: gray;
+	}
+	#scrollImage /*scrollImage is for the arrow buttons sorry it is a bad name*/
+	{
+		position: top;
+		width: 5%;
+		height: 120px;
+		padding-bottom: 5px;
+		opacity: .7;
+
+	}
+	
+	#scrollImage:first-child
+	{
+		padding-left: 1%;
+
+	}
+	#scrollImage:hover 
+	{ 
+		opacity: 1.0;
+	}
+
+	#scrollImage:active 
+	{ 
+		opacity: .3;
+	}
+
+
+	
+</style>
+<script type="text/javascript">
+	var imagelist = ["cactus.jpeg", "dog.jpeg", "husky.jpeg", "nike.jpeg", "patriot.jpeg","rooney.jpeg","starwars.jpeg", "sword.jpeg","cow.jpeg","greenChurch.jpeg","dragon.jpeg","moutain.jpeg","roller.jpeg",];
+	var numberScrollRight = 6;
+	var numnberScrollLeft = imagelist.length-1;
+	var currentImageForLoad=0;
+	function initPicture()
+	{
+		document.getElementById("first").src = imagelist[0];
+		document.getElementById("second").src = imagelist[1];
+		document.getElementById("third").src = imagelist[2];
+		document.getElementById("fourth").src = imagelist[3];
+		document.getElementById("fifth").src = imagelist[4];
+		document.getElementById("sixth").src = imagelist[5];
+
+	}
+
+function getImages() 
+{
+
+	var imgs = document.getElementsByTagName("img");
+	//alert(imgs.length);
+	var imgSrcs = [];
+
+    for (var i = 0; i < imgs.length; i++) {
+        imgSrcs.push(imgs[i].src);
+    }
+    
+	return imgSrcs;
+   // alert("test");
+}
+
+function rightArrow () 
+{
+	document.getElementById("first").src=document.getElementById("second").src;
+	document.getElementById("second").src=document.getElementById("third").src;
+	document.getElementById("third").src=document.getElementById("fourth").src;
+	document.getElementById("fourth").src=document.getElementById("fifth").src;
+	document.getElementById("fifth").src=document.getElementById("sixth").src;
+	//alert(numberScrollRight);
+	document.getElementById("sixth").src=imagelist[numberScrollRight];
+	if(numberScrollRight==imagelist.length-1)
+	{
+		numberScrollRight=0;
+	}
+	else
+	{
+		numberScrollRight++;
+	}
+	if(numnberScrollLeft==imagelist.length-1)
+	{
+		numnberScrollLeft=0;
+	}
+	else
+	{
+		numnberScrollLeft++;
+	}
+
+}
+
+function leftArrow()
+{
+	document.getElementById("sixth").src=document.getElementById("fifth").src;
+	document.getElementById("fifth").src=document.getElementById("fourth").src;
+	document.getElementById("fourth").src=document.getElementById("third").src;
+	document.getElementById("third").src=document.getElementById("second").src;
+	document.getElementById("second").src=document.getElementById("first").src;
+	//alert(numnberScrollLeft);
+	document.getElementById("first").src=imagelist[numnberScrollLeft];
+	if (numnberScrollLeft ==0)
+	{
+		numnberScrollLeft = imagelist.length-1;
+	}
+	else
+	{
+		numnberScrollLeft--;
+	}
+	if (numberScrollRight ==0)
+	{
+		numberScrollRight = imagelist.length-1;
+	}
+	else
+	{
+		numberScrollRight--;
+	}
+
+
+}
+</script>
+<html>
+	<head>
+	</head>
+	<body onload="initPicture()">
+		<div id="ImageLine">
+		<!--we will need to link these to the page in which it shows individial comments. i thought it might be difficult just useing html but everytime we click we could just right it to a text file then as we load the next html read the text file and use that picture-->
+			<img id="scrollImage" onclick="leftArrow()" src="leftArrow.jpeg">
+			<img class="picture" id="first" src="whiteBox.jpeg">
+			<img class="picture" id="second" src="whiteBox.jpeg">
+			<img class="picture" id="third" src="whiteBox.jpeg">
+			<img class="picture" id="fourth" src="whiteBox.jpeg">
+			<img class="picture" id="fifth" src="whiteBox.jpeg">
+			<img class="picture" id="sixth" src="whiteBox.jpeg">
+			
+			<img onclick="rightArrow()" id="scrollImage" src="rightArrow.jpeg">
+		</div>
+	</body>
+</html>
