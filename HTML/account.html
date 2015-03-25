@@ -14,14 +14,52 @@
 
     <div class="box">
         <div class="title">Personal Info</div>
-        Username: bob.the.builder<br>
-        Email: <input type="text" placeholder="bob@builder"><br>
-        Email notifications:
-        <input type="radio" name="notifications">On
-        <input type="radio" name="notifications">Off<br>
-        Class code: 012345<br>
-        <img src="SaveChanges.png" height="50px">
-        <img src="UploadPhoto.png" height="50px">
+        <table style="width:100%;">
+            <tr>
+                <td>
+                    <table>
+                        <tr><td style="text-align:right;">Username:</td><td>bob.the.builder</td></tr>
+                        <tr><td style="text-align:right;">Email:</td><td><input type="text" value="bob@builder"></td></tr>
+                        <tr><td style="text-align:right;">Notifications:</td>
+                        <td><input type="radio" name="notifications">On
+                        <input type="radio" name="notifications">Off</td></tr>
+                        <tr><td style="text-align:right;">Class code:</td><td>012345</td></tr>
+                    </table>
+                </td>
+                <td style="text-align:center;">
+                    <img src="ProfilePic.png" height="150px">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="SaveChanges.png" height="50px">
+                </td>
+                <td style="text-align:center;">
+                    <img src="UploadPhoto.png" height="50px">
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="box">
+        <div class="title">Groups</div>
+        <table style="Width:100%">
+            <tr>
+                <td style="text-align:right;">Group:</td>
+                <td style="text-align:center;"><input type="text" value="Byters" readonly></td>
+                <td style="text-align:left;"><img src="Leave.png" height="30px"></td>
+            </tr>
+            <tr>
+                <td style="text-align:right;">Create new group:</td>
+                <td style="text-align:center;"><input type="text"></td>
+                <td><img src="Create.png" height="30px"></td>
+            </tr>
+            <tr>
+                <td style="text-align:right;">Join group:</td>
+                <td style="text-align:center;"><input type="text"></td>
+                <td><img src="Join.png" height="30px"></td>
+            </tr>
+        </table>
     </div>
 </body>
 </html>
