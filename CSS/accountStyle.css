@@ -62,6 +62,60 @@ body{
     background: url("UploadPhotoActive.png");
     background-size: 182px 50px;
 }
+.leave{
+    width: 59px;
+    height: 30px;
+    background: url("Leave.png");
+    background-size: 62px 33px;
+}
+.leave:hover{
+    width: 59px;
+    height: 30px;
+    background: url("LeaveHover.png");
+    background-size: 62px 33px;
+}
+.leave:active{
+    width: 59px;
+    height: 30px;
+    background: url("LeaveActive.png");
+    background-size: 62px 33px;
+}
+.create{
+    width: 59px;
+    height: 30px;
+    background: url("Create.png");
+    background-size: 62px 33px;
+}
+.create:hover{
+    width: 59px;
+    height: 30px;
+    background: url("CreateHover.png");
+    background-size: 62px 33px;
+}
+.create:active{
+    width: 59px;
+    height: 30px;
+    background: url("CreateActive.png");
+    background-size: 62px 33px;
+}
+.join{
+    width: 59px;
+    height: 30px;
+    background: url("Join.png");
+    background-size: 62px 33px;
+}
+.join:hover{
+    width: 59px;
+    height: 30px;
+    background: url("JoinHover.png");
+    background-size: 62px 33px;
+}
+.join:active{
+    width: 59px;
+    height: 30px;
+    background: url("JoinActive.png");
+    background-size: 62px 33px;
+}
 .logo{
     display: inline-block;
     width:100px;
