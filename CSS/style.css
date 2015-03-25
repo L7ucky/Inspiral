@@ -22,7 +22,6 @@ body{
 .addInspirationButton{
     display: inline-block;
     width:10%;
-    height:25px;
     color: #484848;
     background-color: #eeeeee;
     padding: 5px ;
@@ -31,7 +30,13 @@ body{
     margin-left: 10%;
     text-align:center;
     line-height: 25px;
+    height:25px;
 
+}
+.addInspirationButton:hover{
+    background-color: #ffffff;
+    cursor: pointer;
+    box-shadow: #484848 5px 5px;
 }
 .sortBy{
     display: inline-block;
@@ -45,14 +50,12 @@ body{
 }
 .triangleDown{
     display: inline-block;
-    width:30px;
     color:#484848;
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: .5%;
     vertical-align: middle;
     position: relative;
-    font-size: 1em;
 }
 .searchBar{
     display: inline-block;
@@ -70,12 +73,20 @@ body{
     width:150px;
     height:20px;
     color:#484848;
-    margin-top: 10px;
+    background-color: #eeeeee;
+    padding: 5px ;
+    margin-top: 7px;
     margin-bottom: 10px;
     float:right;
     margin-right:20px;
-    vertical-align: middle;
-    position: relative;
+    text-align:center;
+    line-height: 25px;
+    height:25px;
+}
+.signinButton:hover{
+    background-color: #ffffff;
+    cursor: pointer;
+    box-shadow: #484848 5px 5px;
 }
 .nav{
     position:relative;
@@ -94,6 +105,11 @@ body{
     /*vertical-align: middle;*/
 }
 .navButton:hover{
+    background-color: #ffffff;
+    color:#484848;
+    cursor: pointer;
+}
+.navButton:active{
     background-color: #ffffff;
     color:#484848;
 }
@@ -182,4 +198,7 @@ body{
 }
 .signupContainer{
     margin-top: 10%;
+}
+.triangleDown:hover{
+    cursor: pointer;
 }
