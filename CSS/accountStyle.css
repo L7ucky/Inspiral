@@ -10,10 +10,11 @@ body{
     display:inline-block;
 }
 .box{
-    width: 35%;
+    width: 480;
     background-color:#AFEBB6;
     margin-top: 100px;
-    margin-left: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
     display: inline-block;
 }
 .title{
