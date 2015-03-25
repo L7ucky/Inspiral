@@ -26,6 +26,42 @@ body{
     padding-left:-20px;
     /*display:inline-block;*/
 }
+.saveChanges{
+    width: 182px;
+    height: 50px;
+    background: url("SaveChanges.png");
+    background-size: 182px 50px;
+}
+.saveChanges:hover{
+    width: 182px;
+    height: 50px;
+    background: url("SaveChangesHover.png");
+    background-size: 182px 50px;
+}
+.saveChanges:active{
+    width: 182px;
+    height: 50px;
+    background: url("SaveChangesActive.png");
+    background-size: 182px 50px;
+}
+.uploadPhoto{
+    width: 182px;
+    height: 50px;
+    background: url("UploadPhoto.png");
+    background-size: 182px 50px;
+}
+.uploadPhoto:hover{
+    width: 182px;
+    height: 50px;
+    background: url("UploadPhotoHover.png");
+    background-size: 182px 50px;
+}
+.uploadPhoto:active{
+    width: 182px;
+    height: 50px;
+    background: url("UploadPhotoActive.png");
+    background-size: 182px 50px;
+}
 .logo{
     display: inline-block;
     width:100px;
