@@ -2,7 +2,7 @@ body{
     height:100%;
     width: 100%;
     font-family: arial;
-    font-size: 15;
+    font-size: 15px;
     background-color: rgb(229,239,230);
 }
 
@@ -10,7 +10,7 @@ input[type="text"]{
     border-color: rgb(96,214,110);
     border-width: thin;
     font-family: arial;
-    font-size: 20;
+    font-size: 20px;
 }
 .header{
     width:100%;
@@ -28,43 +28,16 @@ input[type="text"]{
     vertical-align: middle;
     position: relative;
 }
-.addInspirationButton{
+#addInspirationButton{
     display: inline-block;
-    width:10%;
-    color: #484848;
-    background-color: #eeeeee;
-    padding: 5px ;
-    margin-top: 7px;
-    margin-bottom: 10px;
+    width:12%;
+    height:30px;
+    line-height: 10px;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 20px;
     margin-left: 10%;
-    text-align:center;
-    line-height: 25px;
-    height:25px;
-
-}
-.addInspirationButton:hover{
-    background-color: #ffffff;
-    cursor: pointer;
-    box-shadow: #484848 5px 5px;
-}
-.sortBy{
-    display: inline-block;
-    width:50px;
-    color:#484848;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 30%;
-    vertical-align: middle;
-    position: relative;
-}
-.triangleDown{
-    display: inline-block;
-    color:#484848;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: .5%;
-    vertical-align: middle;
-    position: relative;
+    float:none;
 }
 .searchBar{
     display: inline-block;
@@ -72,25 +45,23 @@ input[type="text"]{
     color:#484848;
     margin-top: 10px;
     margin-bottom: 10px;
-    margin-left: .5%;
+    left: 30%;
     vertical-align: middle;
     position: relative;
     font-size: 1em;
 }
-.signinButton{
+#signInButton{
+    height:30px;
+    line-height: 10px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+
     display: inline-block;
-    width:150px;
-    height:20px;
-    color:#484848;
-    background-color: #eeeeee;
+    width:10%;
     padding: 5px ;
-    margin-top: 7px;
-    margin-bottom: 10px;
     float:right;
     margin-right:20px;
-    text-align:center;
-    line-height: 25px;
-    height:25px;
 }
 .signinButton:hover{
     background-color: #ffffff;
@@ -107,20 +78,22 @@ input[type="text"]{
     display: inline-block;
     text-align:center;
     line-height:50px;
-    width:24.67%;
+    width:24.7%;
     height:50px;
 
     color:#eeeeee;
     /*vertical-align: middle;*/
 }
 .navButton:hover{
-    background-color: #ffffff;
+    background-color: #e5efe6;
     color:#484848;
     cursor: pointer;
+    border-radius: 10px 10px 0px 0px;
 }
 .navButton:active{
-    background-color: #ffffff;
+    background-color: #e5efe6;
     color:#484848;
+    border-radius: 10px 10px 0px 0px;
 }
 .nextButton{
     display: inline-block;
@@ -243,9 +216,9 @@ input.submitbutton {
     background-image: -ms-linear-gradient(top, #484848, #484848);
     background-image: -o-linear-gradient(top, #484848, #484848);
     background-image: linear-gradient(to bottom, #484848, #484848);
-    -webkit-border-radius: 10;
-    -moz-border-radius: 10;
-    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    /*border-radius: 10px;*/
     text-shadow: 1px 1px 3px #666666;
     -webkit-box-shadow: 3px 3px 5px #666666;
     -moz-box-shadow: 3px 3px 5px #666666;
@@ -297,7 +270,7 @@ div.submitContainer{
 {
     width: 14%;
     height:130px;
-    padding: .3%;
+    padding: .30%;
 }
 #ImageLine /*this is just for the div in which the picture reside*/
 {
@@ -322,3 +295,57 @@ div.submitContainer{
 
 }
 
+/*Custom selector box for sort by */
+.custom-select {
+    display: inline-block;
+    margin-left: 20%;
+    margin-top: 5px;
+    width: 10em;
+    max-height: 10px;
+    cursor: pointer;
+    color: black;
+}
+.select,
+.label{
+    display: block;
+    color: white;
+}
+.select {
+    top: 0;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    background: none transparent;
+    border: 0 none;
+    color: black;
+}
+.label {
+    position:  relative;
+    padding: .5em;
+    border-radius: .5em;
+    cursor: pointer;
+}
+.label::after {
+    content: "▼";
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: .5em;
+    border-left: 1px solid;
+    color: #ffffff;
+}
+.open .label::after {
+    content: "▲";
+    color: #ffffff;
+}
+.select-1 {
+    background: #21cf8f;
+    border-bottom: .25em solid #21ae71;
+}
+.select-1:after {
+     border-color: #21ae71;
+ }
+#select-choice-1{
+    position: inherit;
+    display: inline-block;
+    visibility: collapse;
+}
