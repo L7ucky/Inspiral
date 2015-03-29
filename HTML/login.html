@@ -9,30 +9,24 @@
 <body>
     <div class="header">
         <div class="logo">Inspiral</div>
-        <button class="addInspirationButton">Add Inspiration</button>
-        <div class="sortBy">Sort by</div>
-        <div class="triangleDown">tri</div>
-        <input class="searchBar" placeholder="Search">
-        <button class="signinButton">Sign In</button>
+        <input id="signInButton" class="submitbutton" type="button" value="Sign In">
     </div>
-    <div class="content">
 
-        <div class="mainView">
-            <div id="loginContainer">
-                Sign In:
-                <input class="emailInput" placeholder="Email">
-                <input class="passwordInput" placeholder="Password">
-                <button class="facebookButton" onclick="location.href='index.html?loggedIn=true'">Facebook Login</button>
-                <button class="loginButton" onclick="location.href='index.html?loggedIn=true'">Login</button>
-                <div class="signupContainer" >Sign Up:
-                    <input class="emailInput" placeholder="Email">
-                    <input class="passwordInput" placeholder="Password">
-                    <input class="passwordInput" placeholder="Repeat Password">
-                </div>
-                <button class="loginButton" onclick="location.href='index.html?loggedIn=true'">Sign Up</button>
-            </div>
-        </div>
-
+    <div class="box">
+        <div class="title">Sign In</div>
+        <input type="text" placeholder="Username" style="font-size: 15px; margin-bottom: 5px;">
+        <input type="password" placeholder="Password" style="font-size: 15px; margin-bottom: 5px;">
+        <input type="button" class="submitbutton" value="Facebook Login" onclick="location.href='index.html?loggedIn=true'">
+        <input type="button" class="submitbutton" value="Login" onclick="location.href='index.html?loggedIn=true'">
+    </div>
+    
+    <div class="box">
+        <div class="title">Sign Up</div>
+        <input type="text" placeholder="Username" style="font-size: 15px; margin-bottom: 5px;">
+        <input type="password" placeholder="Password" style="font-size: 15px; margin-bottom: 5px;">
+        <input type="text" placeholder="Email" style="font-size: 15px; margin-bottom: 5px;">
+        <input type="text" placeholder="Class Code" style="font-size: 15px; margin-bottom: 5px;">
+        <input type="button" class="submitbutton" value="Sign Up" onclick="location.href='index.html?loggedIn=true'">
     </div>
 </body>
 </html>
