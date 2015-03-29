@@ -2,7 +2,7 @@
  * Created by Andrew on 3/8/2015.
  */
 // Tyler's Stuff
-	var currentUser = "Tyler Holbrook";
+	var currentUser = "Andrew";
 	function insertComment(string_in, checked)
 	{
 		if (string_in != "")
@@ -35,7 +35,10 @@ var imagelist = ["../Resources/cactus.jpeg", "../Resources/dog.jpeg", "../Resour
 		document.getElementById("fourth").src = imagelist[3];
 		document.getElementById("fifth").src = imagelist[4];
 		document.getElementById("sixth").src = imagelist[5];
-
+		if(window.location.search.indexOf("loggedIn=true") > -1) {
+        document.getElementById("signInButton").value = "Andrew";
+        document.getElementById("signInButton").onclick = function() {location.href="account.html"};
+    }
 	}
 
 function getImages() 
