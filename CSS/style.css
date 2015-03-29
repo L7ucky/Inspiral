@@ -18,6 +18,22 @@ input[type="text"]{
     background-color:#61d66f;
     display:inline-block;
 }
+.box{
+    width: 480;
+    background-color:#AFEBB6;
+    margin-top: 100px;
+    margin-left: 5%;
+    margin-right: 5%;
+    display: inline-block;
+}
+.title{
+    height:35px;
+    background-color:#61d66f;
+    margin-bottom: 10px;
+    text-align: center;
+    padding-top: 15px;
+    padding-left:-20px;
+}
 .logo{
     display: inline-block;
     width:100px;
