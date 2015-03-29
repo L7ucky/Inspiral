@@ -9,7 +9,7 @@
 <body>
     <div class="header">
         <div class="logo">Inspiral</div>
-        <input id="signInButton" class="submitbutton" type="button" value="SignIn" onclick="" >
+        <input id="signInButton" class="submitbutton" type="button" value="Sign In" onclick="location.href='login.html'">
     </div>
 
     <div class="box">
@@ -32,11 +32,11 @@
             </tr>
             <tr>
                 <td>
-                    <input type="button" class="submitbutton" value="Save changes" style="float: left"></div>
+                    <input type="button" class="submitbutton" value="Save Changes" style="float: left"></div>
                 </td>
                 <td style="text-align:center;">
                     <!--input type="file" class="uploadPhoto" accept="image/*"-->
-                    <input type="button" class="submitbutton" value="Upload photo" style="margin-right: 5px; margin-bottom: 5px;"></div>
+                    <input type="button" class="submitbutton" value="Upload Photo" style="margin-right: 5px; margin-bottom: 5px;"></div>
                 </td>
             </tr>
         </table>
@@ -48,22 +48,22 @@
             <tr>
                 <td style="text-align:right;">Group:</td>
                 <td style="text-align:center;"><input id="currentGroup" type="text" style="font-size: 15px;" value="Byters" readonly></td>
-                <td onclick="leave()">
-                    <input type="button" class="submitbutton" value="Leave" style="font-size:15px; margin-right: 5px;"></div>
+                <td>
+                    <input type="button" class="submitbutton" value="Leave" style="font-size:15px; margin-right: 5px;" onclick="leave()"></div>
                 </td>
             </tr>
             <tr>
                 <td style="text-align:right;">Create new group:</td>
                 <td style="text-align:center;"><input id="newGroup" type="text" style="font-size: 15px;"></td>
-                <td onclick="newGroup()">
-                    <input type="button" class="submitbutton" value="Create" style="font-size:15px; margin-right: 5px;"></div>
+                <td>
+                    <input type="button" class="submitbutton" value="Create" style="font-size:15px; margin-right: 5px;" onclick="newGroup()"></div>
                 </td>
             </tr>
             <tr>
                 <td style="text-align:right;">Join group:</td>
                 <td style="text-align:center;"><input id="joinGroup" type="text" style="font-size: 15px;"></td>
                 <td onclick="joinGroup()">
-                    <input type="button" class="submitbutton" value="Join" style="font-size:15px; margin-right: 5px; margin-bottom: 5px;"></div>
+                    <input type="button" class="submitbutton" value="Join" style="font-size:15px; margin-right: 5px; margin-bottom: 5px;" onclick="joinGroup()"></div>
                 </td>
             </tr>
         </table>
