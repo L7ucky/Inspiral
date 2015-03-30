@@ -25,7 +25,7 @@ input[type="password"]{
     display:inline-block;
 }
 .box{
-    width: 480;
+    width: 480px;
     background-color:#AFEBB6;
     margin-top: 100px;
     margin-left: 5%;
@@ -61,13 +61,24 @@ input[type="password"]{
     margin-left: 10%;
     float:none;
 }
+.sortByWrapper{
+    display: inline-block;
+    width: 7%;
+    margin-left:25%;
+
+    margin-top: 5px;
+    max-height: 10px;
+    cursor: pointer;
+    color: black;
+
+}
 .searchBar{
     display: inline-block;
     width:20%;
     color:#484848;
     margin-top: 10px;
     margin-bottom: 10px;
-    left: 30%;
+    margin-left:.5%;
     vertical-align: middle;
     position: relative;
     font-size: 1em;
@@ -261,6 +272,7 @@ input.submitbutton:hover {
   background-image: -o-linear-gradient(top, #666666, #666666);
   background-image: linear-gradient(to bottom, #666666, #666666);
   text-decoration: none;
+    cursor: pointer;
 }
 input.submitbutton:active {
     position: relative;
@@ -294,6 +306,9 @@ div.submitContainer{
     height:130px;
     padding: .30%;
 }
+.picture:hover{
+    cursor: pointer;
+}
 #ImageLine /*this is just for the div in which the picture reside*/
 {
     width: 100%;
@@ -318,56 +333,35 @@ div.submitContainer{
 }
 
 /*Custom selector box for sort by */
-.custom-select {
-    display: inline-block;
-    margin-left: 20%;
-    margin-top: 5px;
-    width: 10em;
-    max-height: 10px;
-    cursor: pointer;
-    color: black;
-}
-.select,
-.label{
-    display: block;
-    color: white;
-}
-.select {
-    top: 0;
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    background: none transparent;
-    border: 0 none;
-    color: black;
-}
 .label {
-    position:  relative;
-    padding: .5em;
-    border-radius: .5em;
-    cursor: pointer;
-}
-.label::after {
-    content: "▼";
-    position: absolute;
-    right: 0;
-    top: 0;
-    padding: .5em;
-    border-left: 1px solid;
-    color: #ffffff;
-}
-.open .label::after {
-    content: "▲";
-    color: #ffffff;
-}
-.select-1 {
-    background: #21cf8f;
-    border-bottom: .25em solid #21ae71;
-}
-.select-1:after {
-     border-color: #21ae71;
- }
-#select-choice-1{
-    position: inherit;
     display: inline-block;
-    visibility: collapse;
+    cursor: pointer;
+    color: #484848;
+}
+#sortBySelect select{
+    border: none;
+    color: #eee;
+    background: transparent;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 2px 10px;
+    width:125%;
+    *background: #484848;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+#sortBySelect{
+    overflow:hidden;
+    width:115px;
+    color:#eeeeee;
+    -moz-border-radius: 9px;
+    -webkit-border-radius: 9px;
+    border-radius: 9px;
+    background: #484848;
+    /*background: #484848 url('../Resources/TinyArrow.jpg')no-repeat scroll 80px center;*/
+}
+#sortBySelect:hover{
+    box-shadow:1px 1px 5px #f4f4f4;
+    cursor: pointer;
 }
