@@ -45,11 +45,12 @@ input[type="password"]{
     display: inline-block;
     width:100px;
     color:white;
-    padding: 5px ;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    vertical-align: middle;
-    position: relative;
+    padding: 4px ;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    line-height: 0;
+    text-align: center;
+    font-size: x-large;
 }
 #addInspirationButton{
     display: inline-block;

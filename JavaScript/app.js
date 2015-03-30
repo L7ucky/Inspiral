@@ -4,7 +4,10 @@
 // Tyler's Stuff
 	var currentUser = "Andrew";
     var loggedIn = false;
-	function insertComment(string_in, checked)
+    var imagelistPrivate = ["../Resources/cactus.jpeg", "../Resources/dog.jpeg", "../Resources/husky.jpeg", "../Resources/nike.jpeg", "../Resources/patriot.jpeg","../Resources/rooney.jpeg","../Resources/starwars.jpeg", "../Resources/sword.jpeg","../Resources/cow.jpeg","../Resources/greenChurch.jpeg","../Resources/dragon.jpeg","../Resources/moutain.jpeg","../Resources/roller.jpeg",];
+    var imagelist = ["../Resources/cat.jpg", "../Resources/rain.jpg", "../Resources/weather.jpg", "../Resources/lights.jpg", "../Resources/park.jpg","../Resources/kitten.jpg","../Resources/message.jpg", "../Resources/sword.jpeg","../Resources/cow.jpeg","../Resources/greenChurch.jpeg","../Resources/dragon.jpeg","../Resources/moutain.jpeg","../Resources/roller.jpeg",];
+	var currentImages = imagelist;
+    function insertComment(string_in, checked)
 	{
 		if (string_in != "")
 		{
@@ -34,18 +37,17 @@
 
 
 //Dantley's Stuff
-    var imagelist = ["../Resources/cactus.jpeg", "../Resources/dog.jpeg", "../Resources/husky.jpeg", "../Resources/nike.jpeg", "../Resources/patriot.jpeg","../Resources/rooney.jpeg","../Resources/starwars.jpeg", "../Resources/sword.jpeg","../Resources/cow.jpeg","../Resources/greenChurch.jpeg","../Resources/dragon.jpeg","../Resources/moutain.jpeg","../Resources/roller.jpeg",];
-	var numberScrollRight = 6;
-	var numnberScrollLeft = imagelist.length-1;
+    var numberScrollRight = 6;
+	var numnberScrollLeft = currentImages.length-1;
 	var currentImageForLoad=0;
 	function initPicture()
 	{
-		document.getElementById("first").src = imagelist[0];
-		document.getElementById("second").src = imagelist[1];
-		document.getElementById("third").src = imagelist[2];
-		document.getElementById("fourth").src = imagelist[3];
-		document.getElementById("fifth").src = imagelist[4];
-		document.getElementById("sixth").src = imagelist[5];
+		document.getElementById("first").src = currentImages[0];
+		document.getElementById("second").src = currentImages[1];
+		document.getElementById("third").src = currentImages[2];
+		document.getElementById("fourth").src = currentImages[3];
+		document.getElementById("fifth").src = currentImages[4];
+		document.getElementById("sixth").src = currentImages[5];
 	}
 	function setAccountButton()
 	{
@@ -79,8 +81,8 @@ function rightArrow ()
 	document.getElementById("fourth").src=document.getElementById("fifth").src;
 	document.getElementById("fifth").src=document.getElementById("sixth").src;
 	//alert(numberScrollRight);
-	document.getElementById("sixth").src=imagelist[numberScrollRight];
-	if(numberScrollRight==imagelist.length-1)
+	document.getElementById("sixth").src=currentImages[numberScrollRight];
+	if(numberScrollRight==currentImages.length-1)
 	{
 		numberScrollRight=0;
 	}
@@ -88,7 +90,7 @@ function rightArrow ()
 	{
 		numberScrollRight++;
 	}
-	if(numnberScrollLeft==imagelist.length-1)
+	if(numnberScrollLeft==currentImages.length-1)
 	{
 		numnberScrollLeft=0;
 	}
@@ -107,10 +109,10 @@ function leftArrow()
 	document.getElementById("third").src=document.getElementById("second").src;
 	document.getElementById("second").src=document.getElementById("first").src;
 	//alert(numnberScrollLeft);
-	document.getElementById("first").src=imagelist[numnberScrollLeft];
+	document.getElementById("first").src=currentImages[numnberScrollLeft];
 	if (numnberScrollLeft ==0)
 	{
-		numnberScrollLeft = imagelist.length-1;
+		numnberScrollLeft = currentImages.length-1;
 	}
 	else
 	{
@@ -118,7 +120,7 @@ function leftArrow()
 	}
 	if (numberScrollRight ==0)
 	{
-		numberScrollRight = imagelist.length-1;
+		numberScrollRight = currentImages.length-1;
 	}
 	else
 	{
@@ -128,8 +130,9 @@ function leftArrow()
 
 }
 function goToPrivate(){
-    if(loggedIn)
+    if(loggedIn){
         location.href = 'Private.html?loggedIn=true';
+    }
     else
         location.href = 'login.html';
 }
@@ -150,6 +153,12 @@ function goToPublic(){
         location.href = 'Public.html?loggedIn=true';
     else
         location.href = 'Public.html?loggedIn=false';
+}
+function goAddInspiration(){
+    if(loggedIn)
+        location.href = 'add_inspiration.html?loggedIn=true';
+    else
+        location.href = 'login.html';
 }
 window.onload = function(){
     setAccountButton();
