@@ -126,30 +126,15 @@ function leftArrow()
 
 }
 
-//Functionality for the custom selector
-//document.getElementsByClassName("select").onclick("click" , function() {
-//
-//    this.parent(".custom-select").toggleClass("open");
-//
-//});
-//
-//$(document).mouseup(function (e)
-//{
-//    var container = document.getElementsByClassName(".custom-select");
-//
-//    if (container.has(e.target).length === 0)
-//    {
-//        container.removeClass("open");
-//    }
-//});
-//
-//
-//document.getElementsByTagName("select").on("change" , function() {
-//
-//    var selection = this.find("option:selected").text(),
-//        labelFor = this.attr("id"),
-//        label = document.getElementById("[for='" + labelFor + "']");
-//
-//    label.find(".selection-choice").html(selection);
-//
-//});
+document.getElementById("privateNavButton").onclick = function () {
+    location.href = "Private.html";
+};
+document.getElementById("groupNavButton").onclick = function () {
+    location.href = "Group.html";
+};
+document.getElementById("classNavButton").onclick = function () {
+    location.href = "Class.html";
+};
+document.getElementById("publicNavButton").onclick = function () {
+    location.href = "Public.html";
+};
