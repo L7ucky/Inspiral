@@ -40,6 +40,8 @@ input[type="text"]{
     float:none;
 }
 .searchBar{
+    border-color: rgb(96,214,110);
+    border-width: thin;
     display: inline-block;
     width:20%;
     color:#484848;
@@ -180,6 +182,7 @@ input[type="text"]{
     /*height:390px;
     width:650px;*/
     margin:0px;
+    margin-top: -10px;
     padding: 10px;
     position: relative;
     float: left;
@@ -268,9 +271,9 @@ div.submitContainer{
 /*DANTLeY"S STUFF*/
 .picture/*this is for the class of the pictures*/
 {
-    width: 14%;
+    width: 13%;
     height:130px;
-    padding: .30%;
+    padding: .4%;
 }
 #ImageLine /*this is just for the div in which the picture reside*/
 {
@@ -280,7 +283,7 @@ div.submitContainer{
 {
     display: inline-block;
     margin-top: 20px;
-    margin-right: .5%;
+    margin-right: 3%;
     float: left;
     height: 110px;
 
@@ -288,10 +291,11 @@ div.submitContainer{
 #scrollImageRight /*scrollImage is for the arrow buttons sorry it is a bad name*/
 {
     display: inline-block;
-    margin-right: 0px;
     margin-top: 20px;
-    float: none;
+    float: right;
     height: 110px;
+
+    margin-right:1.25%;
 
 }
 
@@ -348,4 +352,34 @@ div.submitContainer{
     position: inherit;
     display: inline-block;
     visibility: collapse;
+}
+
+
+.uploadPreview{
+    width:36%;
+    padding: 10px;
+    margin: -10px 10% 0px 10%;
+    float: left;
+}
+.textupload{
+    height:0px;
+    width:100%;
+    /*height:315px;
+    width:750px;*/
+    margin-top: 25px;
+    padding: 50px;
+    float: left;
+    background-color: white;
+}
+input.visibilityCheckbox{
+    width: 20px; 
+    height: 20px;
+    background-color: white;
+    vertical-align: middle;
+}
+img{
+    border-width: 0px;
+}
+input.browse{
+    margin-top: 19%;    
 }

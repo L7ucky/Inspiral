@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel='stylesheet' type="text/css" href="../CSS/style.css">
+    <script src="../JavaScript/app.js"></script>
+
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">Inspiral</div>
+        <input id="addInspirationButton" class="submitbutton" type="button" value="Add Inspiration" onclick="" >
+        <!--<div class="custom-select">-->
+            <!--<label for="select-choice1" class="label select-1"><span class="selection-choice">Sort By</span> </label>-->
+            <!--<select id="select-choice1" class="select">-->
+                <!--<option value="Most Views">Most Views</option>-->
+                <!--<option value="Most Recent">Most Recent</option>-->
+            <!--</select>-->
+        <!--</div>-->
+        <input class="searchBar" placeholder="Search">
+        <input id="signInButton" class="submitbutton" type="button" value="SignIn" onclick="" >
+    </div>
+
+    <div class="nav">
+        <div class="navButton" id="privateNavButton">Private</div>
+        <div class="navButton" id="groupNavButton">Group</div>
+        <div class="navButton" id="classNavButton">Class</div>
+        <div class="navButton" id="publicNavButton">Public</div>
+    </div>
+    
+
+    <div class="content" style="margin-top: 80px">
+        <div class="uploadPreview" id="uploadPreview"> <img src="../Resources/defaultimage.jpg" height="100%" width="100%"></div>
+
+        <div class="submitContainer" style="float: right; margin-right: 12.8%; width: 29.5%;">
+
+        <input type="file" class="browse" id="browse" name="fileSelected">
+        <input class="textupload" type="text" id="textupload" autocomplete= "off" name="textupload" placeholder="Text inspiration or link...">
+            
+        
+
+            <div class="submitContainer" style="width: 117%; margin-top: 15px">
+
+            <input class="submitbutton" type="button" value="Submit" style=" margin-top: -2px; " onclick= "insertInspiration(textupload.value, visibilityCheckbox1.checked, visibilityCheckbox2.checked, visibilityCheckbox3.checked, visibilityCheckbox4.checked); return false;">
+            Visibility:    
+
+            <input class="visibilityCheckbox" type="checkbox" id="visibilityCheckbox1" style=" margin-top: -8px;"> 
+            <label for="visibilityCheckbox1" style="vertical-align: top;">Public</label>
+
+            <input class="visibilityCheckbox" type="checkbox" id="visibilityCheckbox2" style=" margin-top: -8px;">
+            <label for="visibilityCheckbox2" style="vertical-align: top;">Class</label>
+
+            <br>
+            <input class="visibilityCheckbox" type="checkbox" id="visibilityCheckbox3" style="margin-left: 64.5px;">
+            <label for="visibilityCheckbox3" style="vertical-align: middle;">Group</label>
+
+            <input class="visibilityCheckbox" type="checkbox" id="visibilityCheckbox4">
+            <label for="visibilityCheckbox4" style="vertical-align: middle;">Private</label>
+        </div></div>
+    </div>
+
+    
+
+</body>
+</html>
