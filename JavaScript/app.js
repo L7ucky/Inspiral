@@ -45,7 +45,10 @@ var imagelist = ["../Resources/cactus.jpeg", "../Resources/dog.jpeg", "../Resour
 		document.getElementById("fourth").src = imagelist[3];
 		document.getElementById("fifth").src = imagelist[4];
 		document.getElementById("sixth").src = imagelist[5];
-		if(window.location.search.indexOf("loggedIn=true") > -1) {
+	}
+	function setAccountButton()
+	{
+    if(window.location.search.indexOf("loggedIn=true") > -1) {
         document.getElementById("signInButton").value = "Andrew";
         document.getElementById("signInButton").onclick = function() {location.href="account.html"};
     }

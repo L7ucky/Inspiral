@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="header">
-        <div class="logo">Inspiral</div>
+        <a href="index.html?loggedIn=true"><div class="logo">Inspiral</div></a>
         <input id="signInButton" class="submitbutton" type="button" value="Andrew">
     </div>
 
@@ -35,8 +35,8 @@
                     <input type="button" class="submitbutton" value="Save Changes" style="float: left"></div>
                 </td>
                 <td style="text-align:center;">
-                    <!--input type="file" class="uploadPhoto" accept="image/*"-->
-                    <input type="button" class="submitbutton" value="Upload Photo" style="margin-right: 5px; margin-bottom: 5px;"></div>
+                    <input type="file" style="visibility: hidden; width: 1px;" id="upload" accept="image/*"/>
+                    <input type="button" class="submitbutton" value="Upload Photo" onclick="document.getElementById('upload').click();" style="margin-right: 5px; margin-bottom: 5px;"/>
                 </td>
             </tr>
         </table>
@@ -62,7 +62,7 @@
             <tr>
                 <td style="text-align:right;">Join group:</td>
                 <td style="text-align:center;"><input id="joinGroup" type="text" style="font-size: 15px;"></td>
-                <td onclick="joinGroup()">
+                <td>
                     <input type="button" class="submitbutton" value="Join" style="font-size:15px; margin-right: 5px; margin-bottom: 5px;" onclick="joinGroup()"></div>
                 </td>
             </tr>
