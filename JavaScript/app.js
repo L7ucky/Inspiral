@@ -2,11 +2,7 @@
  * Created by Andrew on 3/8/2015.
  */
 // Tyler's Stuff
-<<<<<<< HEAD
-	var currentUser = "Current User";
-=======
 	var currentUser = "Andrew";
->>>>>>> 6d655b076dde5a2708581140556d4979f6ef479d
 	function insertComment(string_in, checked)
 	{
 		if (string_in != "")
