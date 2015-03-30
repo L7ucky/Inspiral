@@ -3,6 +3,7 @@
  */
 // Tyler's Stuff
 	var currentUser = "Andrew";
+    var loggedIn = false;
 	function insertComment(string_in, checked)
 	{
 		if (string_in != "")
@@ -33,7 +34,7 @@
 
 
 //Dantley's Stuff
-var imagelist = ["../Resources/cactus.jpeg", "../Resources/dog.jpeg", "../Resources/husky.jpeg", "../Resources/nike.jpeg", "../Resources/patriot.jpeg","../Resources/rooney.jpeg","../Resources/starwars.jpeg", "../Resources/sword.jpeg","../Resources/cow.jpeg","../Resources/greenChurch.jpeg","../Resources/dragon.jpeg","../Resources/moutain.jpeg","../Resources/roller.jpeg",];
+    var imagelist = ["../Resources/cactus.jpeg", "../Resources/dog.jpeg", "../Resources/husky.jpeg", "../Resources/nike.jpeg", "../Resources/patriot.jpeg","../Resources/rooney.jpeg","../Resources/starwars.jpeg", "../Resources/sword.jpeg","../Resources/cow.jpeg","../Resources/greenChurch.jpeg","../Resources/dragon.jpeg","../Resources/moutain.jpeg","../Resources/roller.jpeg",];
 	var numberScrollRight = 6;
 	var numnberScrollLeft = imagelist.length-1;
 	var currentImageForLoad=0;
@@ -48,10 +49,11 @@ var imagelist = ["../Resources/cactus.jpeg", "../Resources/dog.jpeg", "../Resour
 	}
 	function setAccountButton()
 	{
-    if(window.location.search.indexOf("loggedIn=true") > -1) {
-        document.getElementById("signInButton").value = "Andrew";
-        document.getElementById("signInButton").onclick = function() {location.href="account.html"};
-    }
+        if(window.location.search.indexOf("loggedIn=true") > -1) {
+            loggedIn=true;
+            document.getElementById("signInButton").value = currentUser;
+            document.getElementById("signInButton").onclick = function() {location.href="account.html"};
+        }
 	}
 
 function getImages() 
@@ -125,16 +127,30 @@ function leftArrow()
 
 
 }
-
-document.getElementById("privateNavButton").onclick = function () {
-    location.href = "Private.html";
-};
-document.getElementById("groupNavButton").onclick = function () {
-    location.href = "Group.html";
-};
-document.getElementById("classNavButton").onclick = function () {
-    location.href = "Class.html";
-};
-document.getElementById("publicNavButton").onclick = function () {
-    location.href = "Public.html";
+function goToPrivate(){
+    if(loggedIn)
+        location.href = 'Private.html?loggedIn=true';
+    else
+        location.href = 'login.html';
+}
+function goToClass(){
+    if(loggedIn)
+        location.href = 'Class.html?loggedIn=true';
+    else
+        location.href = 'login.html';
+}
+function goToGroup(){
+    if(loggedIn)
+        location.href = 'Group.html?loggedIn=true';
+    else
+        location.href = 'login.html';
+}
+function goToPublic(){
+    if(loggedIn)
+        location.href = 'Public.html?loggedIn=true';
+    else
+        location.href = 'Public.html?loggedIn=false';
+}
+window.onload = function(){
+    setAccountButton();
 };
