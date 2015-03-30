@@ -8,10 +8,10 @@
 
 </head>
 
-<body onload="initPicture()">
+<body onload="initPicture(); setAccountButton();">
     <div class="header">
         <div class="logo">Inspiral</div>
-        <input id="addInspirationButton" class="submitbutton" type="button" value="Add Inspiration" onclick="" >
+        <input id="addInspirationButton" class="submitbutton" type="button" value="Add Inspiration" onclick="location.href='add_inspiration.html' + window.location.search">
         <div class="sortByWrapper">
             <label class="label" for="sortBySelect">Sort By:</label>
             <select id="sortBySelect"  onselect="sortBy()">
@@ -24,10 +24,10 @@
     </div>
 
     <div class="nav">
-        <div class="navButton" id="privateNavButton" onclick="location.href = 'Private.html';">Private</div>
-        <div class="navButton" id="groupNavButton" onclick="location.href = 'Group.html';">Group</div>
-        <div class="navButton navButtonActive" id="classNavButton" onclick="location.href = 'Class.html';">Class</div>
-        <div class="navButton" id="publicNavButton" onclick="location.href = 'Public.html';">Public</div>
+        <div class="navButton" id="privateNavButton" onclick="location.href = 'Private.html' + location.search;">Private</div>
+        <div class="navButton" id="groupNavButton" onclick="location.href = 'Group.html' + location.search;">Group</div>
+        <div class="navButton navButtonActive" id="classNavButton" onclick="location.href = 'Class.html' + location.search;">Class</div>
+        <div class="navButton" id="publicNavButton" onclick="location.href = 'Public.html' + location.search;">Public</div>
     </div>
     
 
