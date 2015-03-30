@@ -19,6 +19,16 @@
 			privateCheckbox.checked = false;
 		}
 	}
+	function insertInspiration(string_in, checked1, checked2, checked3, checked4)
+	{
+		textupload.value = "";
+		visibilityCheckbox1.checked = false;
+		visibilityCheckbox2.checked = false;
+		visibilityCheckbox3.checked = false;
+		visibilityCheckbox4.checked = false;
+		browse.value = "";
+	}
+
 
 
 
