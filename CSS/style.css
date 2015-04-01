@@ -4,6 +4,7 @@ body{
     font-family: arial;
     font-size: 15px;
     background-color: rgb(229,239,230);
+    margin: 0px 0px 0px 0px;
 }
 
 input[type="text"]{
