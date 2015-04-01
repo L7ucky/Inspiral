@@ -4,9 +4,12 @@
 // Tyler's Stuff
 	var currentUser = "Andrew";
     var loggedIn = false;
-    var imagelistPrivate = ["../Resources/cactus.jpeg", "../Resources/dog.jpeg", "../Resources/husky.jpeg", "../Resources/nike.jpeg", "../Resources/patriot.jpeg","../Resources/rooney.jpeg","../Resources/starwars.jpeg", "../Resources/sword.jpeg","../Resources/cow.jpeg","../Resources/greenChurch.jpeg","../Resources/dragon.jpeg","../Resources/moutain.jpeg","../Resources/roller.jpeg",];
+    var imagelistPrivate = ["../Resources/cactus.jpeg", "../Resources/cactus.jpeg", "../Resources/cactus.jpeg", "../Resources/nike.jpeg", "../Resources/patriot.jpeg","../Resources/rooney.jpeg","../Resources/starwars.jpeg", "../Resources/sword.jpeg","../Resources/cow.jpeg","../Resources/greenChurch.jpeg","../Resources/dragon.jpeg","../Resources/moutain.jpeg","../Resources/roller.jpeg",];
+    var imagelistClass = ["../Resources/dog.jpeg", "../Resources/dog.jpeg", "../Resources/dog.jpeg", "../Resources/nike.jpeg", "../Resources/patriot.jpeg","../Resources/rooney.jpeg","../Resources/starwars.jpeg", "../Resources/sword.jpeg","../Resources/cow.jpeg","../Resources/greenChurch.jpeg","../Resources/dragon.jpeg","../Resources/moutain.jpeg","../Resources/roller.jpeg",];
+    var imagelistGroup = ["../Resources/husky.jpeg", "../Resources/husky.jpeg", "../Resources/husky.jpeg", "../Resources/nike.jpeg", "../Resources/patriot.jpeg","../Resources/rooney.jpeg","../Resources/starwars.jpeg", "../Resources/sword.jpeg","../Resources/cow.jpeg","../Resources/greenChurch.jpeg","../Resources/dragon.jpeg","../Resources/moutain.jpeg","../Resources/roller.jpeg",];
     var imagelist = ["../Resources/Cat.jpg", "../Resources/rain.jpg", "../Resources/weather.jpg", "../Resources/lights.jpg", "../Resources/park.jpg","../Resources/kitten.jpg","../Resources/message.jpg", "../Resources/sword.jpeg","../Resources/cow.jpeg","../Resources/greenChurch.jpeg","../Resources/dragon.jpeg","../Resources/moutain.jpeg","../Resources/roller.jpeg",];
 	var currentImages = imagelist;
+    var currentPage ='Public';
     function insertComment(string_in, checked)
 	{
 		if (string_in != "")
@@ -37,10 +40,12 @@
 
 //Dantley's Stuff
     var numberScrollRight = 6;
-	var numnberScrollLeft = currentImages.length-1;
+	var numberScrollLeft = currentImages.length-1;
 	var currentImageForLoad=0;
 	function initPicture()
 	{
+        determinePage();
+        numberScrollLeft = currentImages.length-1;
 		document.getElementById("first").src = currentImages[0];
 		document.getElementById("second").src = currentImages[1];
 		document.getElementById("third").src = currentImages[2];
@@ -56,6 +61,21 @@
             document.getElementById("signInButton").onclick = function() {location.href="account.html"};
         }
 	}
+
+function determinePage(){
+    if(window.location.pathname.indexOf("Private") > -1) {
+        currentImages = imagelistPrivate;
+    }
+    else if(window.location.pathname.indexOf("Group") > -1) {
+        currentImages = imagelistGroup;
+    }
+    else if(window.location.pathname.indexOf("Class") > -1) {
+        currentImages = imagelistClass;
+    }
+    else{
+        currentImages = imagelist;
+    }
+}
 
 function getImages() 
 {
@@ -89,13 +109,13 @@ function rightArrow ()
 	{
 		numberScrollRight++;
 	}
-	if(numnberScrollLeft==currentImages.length-1)
+	if(numberScrollLeft==currentImages.length-1)
 	{
-		numnberScrollLeft=0;
+		numberScrollLeft=0;
 	}
 	else
 	{
-		numnberScrollLeft++;
+		numberScrollLeft++;
 	}
 
 }
@@ -107,15 +127,15 @@ function leftArrow()
 	document.getElementById("fourth").src=document.getElementById("third").src;
 	document.getElementById("third").src=document.getElementById("second").src;
 	document.getElementById("second").src=document.getElementById("first").src;
-	//alert(numnberScrollLeft);
-	document.getElementById("first").src=currentImages[numnberScrollLeft];
-	if (numnberScrollLeft ==0)
+	//alert(numberScrollLeft);
+	document.getElementById("first").src=currentImages[numberScrollLeft];
+	if (numberScrollLeft ==0)
 	{
-		numnberScrollLeft = currentImages.length-1;
+		numberScrollLeft = currentImages.length-1;
 	}
 	else
 	{
-		numnberScrollLeft--;
+		numberScrollLeft--;
 	}
 	if (numberScrollRight ==0)
 	{
