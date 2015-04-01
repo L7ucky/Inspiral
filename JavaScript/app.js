@@ -181,4 +181,10 @@ function goAddInspiration(){
 }
 window.onload = function(){
     setAccountButton();
+    initPicture();
 };
+function updateMainImage(index){
+
+    document.getElementById('mainImage').src= currentImages[index];
+    console.log(document.getElementById('mainImage').src);
+}
