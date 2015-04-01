@@ -12,12 +12,14 @@ input[type="text"]{
     border-width: thin;
     font-family: arial;
     font-size: 20px;
+    margin: auto;
 }
 input[type="password"]{
     border-color: rgb(96,214,110);
     border-width: thin;
     font-family: arial;
     font-size: 20px;
+    margin: auto;
 }
 .header{
     width:100%;
@@ -268,8 +270,9 @@ a.divLink {
     float: left;
 }
 input.submitbutton {
-    float:right; 
-    margin-right:-22px;
+    /*float:right; */
+    margin: auto;
+    /*margin-right:-22px;*/
     background: #484848;
     background-image: -webkit-linear-gradient(top, #484848, #484848);
     background-image: -moz-linear-gradient(top, #484848, #484848);
@@ -344,7 +347,7 @@ div.submitContainer{
 {
     display: inline-block;
     margin-top: 20px;
-    margin-right: 3%;
+    margin-right: 2%;
     float: left;
     height: 110px;
 
