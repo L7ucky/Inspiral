@@ -131,7 +131,7 @@ input[type="password"]{
     border-radius: 10px 10px 0px 0px;
 }
 .navButtonActive{
-    background-color: #lightgray;
+    background-color: lightgray;
     color:#484848;
     border-radius: 10px 10px 0px 0px;
 }
