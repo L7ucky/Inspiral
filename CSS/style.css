@@ -328,7 +328,14 @@ div.submitContainer{
     float: left; 
 
 }
-
+/*id for sign up button*/
+#signUpButton
+{
+    margin: auto;
+    float: none;
+    margin-bottom: 2%;
+    display: block;
+}
 
 /*DANTLeY"S STUFF*/
 .picture/*this is for the class of the pictures*/
