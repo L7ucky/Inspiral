@@ -8,7 +8,7 @@
 
 </head>
 
-<body>
+<body onload="initPicture(); setAccountButton();">
     <div class="header">
         <div class="logo">Inspiral</div>
         <input id="addInspirationButton" class="submitbutton" type="button" value="Add Inspiration" onclick="location.href='add_inspiration.html' + window.location.search">
@@ -24,14 +24,14 @@
     </div>
 
     <div class="nav">
-<<<<<<< HEAD
-        <div class="navButton navButtonActive" id="publicNavButton" >Public</div>
+        <div class="navButton" id="publicNavButton" onclick="goToPublic()">Public</div>
+<<<<<<< .merge_file_a04704
         <div class="navButton " id="classNavButton" onclick="goToClass()">Class</div>
+        <div class="navButton navButtonActive" id="groupNavButton" >Group</div>
 =======
-        <div class="navButton navButtonActive" id="publicNavButton">Public</div>
         <div class="navButton" id="classNavButton" onclick="goToClass()">Class</div>
->>>>>>> d25d3880402c0f12766d5a6fd4e743a4312ecd8d
-        <div class="navButton" id="groupNavButton" onclick="goToGroup()">Group</div>
+        <div class="navButton navButtonActive" id="groupNavButton">Group</div>
+>>>>>>> .merge_file_a07756
         <div class="navButton" id="privateNavButton" onclick="goToPrivate()">Private</div>
     </div>
     
@@ -46,7 +46,7 @@
         <img class="picture" id="third" src="../Resources/whiteBox.jpeg" onclick="updateMainImage(2)">
         <img class="picture" id="fourth" src="../Resources/whiteBox.jpeg" onclick="updateMainImage(3)">
         <img class="picture" id="fifth" src="../Resources/whiteBox.jpeg" onclick="updateMainImage(4)">
-        <img class="picture" id="sixth" src="../Resources/whiteBox.jpeg" onclick="updateMainImage(0)">
+        <img class="picture" id="sixth" src="../Resources/whiteBox.jpeg" onclick="updateMainImage(5)">
             
            <!--  <img onclick="rightArrow()" id="scrollImage" src="../Resources/rightArrow.jpeg"> -->
             <input id="scrollImageRight" class="submitbutton" type="button" value=">>" style="height: 100px" onclick="rightArrow()" >
