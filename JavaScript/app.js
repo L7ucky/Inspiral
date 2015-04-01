@@ -23,7 +23,6 @@
 			output += "</p>";
 			document.getElementById("commentshere").innerHTML = output;
 			thecomment.value = "";
-			privateCheckbox.checked = false;
 		}
 	}
 	function insertInspiration(string_in, checked1, checked2, checked3, checked4)
