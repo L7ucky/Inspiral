@@ -3,7 +3,8 @@ body{
     width: 100%;
     font-family: arial;
     font-size: 15px;
-    background-color: rgb(229,239,230);
+    /*background-color: rgb(229,239,230);*/
+    background-color: gray;
 }
 
 input[type="text"]{
