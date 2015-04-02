@@ -46,10 +46,11 @@ input[type="password"]{
 }
 .logo{
     display: inline-block;
+    float: left;
     width:100px;
     color:white;
     padding: 4px ;
-    margin-top: 5px;
+    margin-top: 20px;
     margin-bottom: 0px;
     line-height: 0;
     text-align: center;
@@ -61,10 +62,10 @@ input[type="password"]{
     height:30px;
     line-height: 10px;
     text-align: center;
-    margin-top: 5px;
+    margin-top: 10px;
     margin-bottom: 20px;
     margin-left: 10%;
-    float:none;
+    float: left;
 }
 .sortByWrapper{
     display: inline-block;
