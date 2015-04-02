@@ -27,7 +27,8 @@
 
         <div class="submitContainer" style="float: right; margin-right: 12.8%; width: 29.5%;">
 
-        <input type="file" class="browse" id="browse" name="fileSelected">
+        <input type="file" style="visibility: hidden; width: 1px;" id="upload" accept="image/*"/>
+        <input type="button" class="submitbutton" value="Upload Photo" onclick="document.getElementById('upload').click();" style="float: left; margin-bottom: 20px;"/>
         <input class="textupload" type="text" id="textupload" autocomplete= "off" name="textupload" placeholder="Text inspiration or link...">
             
         
