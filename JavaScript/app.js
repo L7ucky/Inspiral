@@ -37,6 +37,28 @@ function insertInspiration(string_in, checked1, checked2, checked3, checked4)
 		browse.value = "";
 }
 
+function  checkboxesCalculate (name, checked) {
+	if (checked && name == "visibilityCheckbox1" && visibilityCheckbox2.checked == false &&
+		visibilityCheckbox3.checked == false &&	visibilityCheckbox4.checked == false)
+	{
+		visibilityCheckbox2.checked = true;
+		visibilityCheckbox3.checked = true;
+		visibilityCheckbox4.checked = true;
+	}
+	else if(checked && name == "visibilityCheckbox2" && visibilityCheckbox1.checked == false &&
+		visibilityCheckbox3.checked == false &&	visibilityCheckbox4.checked == false)
+	{
+		visibilityCheckbox3.checked = true;
+		visibilityCheckbox4.checked = true;
+	}
+	else if(checked && name == "visibilityCheckbox3" && visibilityCheckbox2.checked == false &&
+		visibilityCheckbox1.checked == false &&	visibilityCheckbox4.checked == false)
+	{
+		visibilityCheckbox4.checked = true;
+	}
+	
+}
+
 
 
 
