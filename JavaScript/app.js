@@ -50,6 +50,15 @@ function insertInspiration(string_in, checked1, checked2, checked3, checked4)
 		browse.value = "";
 }
 
+function refreshPictures()
+{
+    document.getElementById("first").src = currentImages[0];
+    document.getElementById("second").src = currentImages[1];
+    document.getElementById("third").src = currentImages[2];
+    document.getElementById("fourth").src = currentImages[3];
+    document.getElementById("fifth").src = currentImages[4];
+    document.getElementById("sixth").src = currentImages[5];
+}
 function  checkboxesCalculate (name, checked) {
 	if (checked && name == "visibilityCheckbox1" && visibilityCheckbox2.checked == false &&
 		visibilityCheckbox3.checked == false &&	visibilityCheckbox4.checked == false)
@@ -72,31 +81,14 @@ function  checkboxesCalculate (name, checked) {
 	
 }
 
-
-
-
-//Dantley's Stuff
-    var numberScrollRight = 6;
-	var numnberScrollLeft = currentImages.length-1;
-	var currentImageForLoad=0;
-	function refreshPictures()
-	{
-		document.getElementById("first").src = currentImages[0];
-		document.getElementById("second").src = currentImages[1];
-		document.getElementById("third").src = currentImages[2];
-		document.getElementById("fourth").src = currentImages[3];
-		document.getElementById("fifth").src = currentImages[4];
-		document.getElementById("sixth").src = currentImages[5];
-	}
-	function setAccountButton()
-	{
-        if(window.location.search.indexOf("loggedIn=true") > -1) {
-            loggedIn=true;
-            document.getElementById("signInButton").value = currentUser;
-            document.getElementById("signInButton").onclick = function() {location.href="account.html"};
-        }
-	}
-
+function setAccountButton()
+{
+    if(window.location.search.indexOf("loggedIn=true") > -1) {
+        loggedIn=true;
+        document.getElementById("signInButton").value = currentUser;
+        document.getElementById("signInButton").onclick = function() {location.href="account.html"};
+    }
+}
 
 function determinePage(){
     if(window.location.pathname.indexOf("Private") > -1) {
