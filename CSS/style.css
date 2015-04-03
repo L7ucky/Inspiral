@@ -46,10 +46,11 @@ input[type="password"]{
 }
 .logo{
     display: inline-block;
+    float: left;
     width:100px;
     color:white;
     padding: 4px ;
-    margin-top: 5px;
+    margin-top: 20px;
     margin-bottom: 0px;
     line-height: 0;
     text-align: center;
@@ -61,15 +62,15 @@ input[type="password"]{
     height:30px;
     line-height: 10px;
     text-align: center;
-    margin-top: 5px;
+    margin-top: 10px;
     margin-bottom: 20px;
     margin-left: 10%;
-    float:none;
+    float: left;
 }
 .sortByWrapper{
     display: inline-block;
     width: 7%;
-    margin-left:25%;
+    margin-left:23%;
 
     margin-top: 5px;
     max-height: 10px;
@@ -117,6 +118,7 @@ input[type="password"]{
     height:50px;
     background-color: #484848;
     font-size: 19px;
+    margin-bottom: 20px;
 }
 }
 @media(max-width: 1350px){
@@ -141,15 +143,18 @@ input[type="password"]{
     /*vertical-align: middle;*/
 }
 .navButton:hover{
-    background-color: lightgray;
-    color:#484848;
+    background-color: rgb(141, 141, 141);
     cursor: pointer;
     border-radius: 10px 10px 0px 0px;
 }
 .navButtonActive{
     background-color: lightgray;
-    color:#484848;
     border-radius: 10px 10px 0px 0px;
+}
+.navButtonActive:hover{
+    background-color: lightgray;
+    border-radius: 10px 10px 0px 0px;
+    cursor: default;
 }
 .nextButton{
     display: inline-block;
@@ -292,7 +297,6 @@ input.submitbutton {
     background: #484848;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
-    text-shadow: 1px 1px 3px #666666;
     -webkit-box-shadow: 3px 3px 5px #666666;
     -moz-box-shadow: 3px 3px 5px #666666;
     box-shadow: 3px 3px 5px #666666;
@@ -302,6 +306,7 @@ input.submitbutton {
     padding: 10px 20px 10px 20px;
     text-decoration: none;
     outline: none;
+    border: none;
 }
 
 input.submitbutton:hover {
