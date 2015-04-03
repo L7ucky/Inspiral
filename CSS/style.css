@@ -150,6 +150,7 @@ input[type="password"]{
 .navButtonActive{
     background-color: lightgray;
     border-radius: 10px 10px 0px 0px;
+    color: #484848;
 }
 .navButtonActive:hover{
     background-color: lightgray;
