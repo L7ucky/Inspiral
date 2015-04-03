@@ -154,6 +154,7 @@ input[type="password"]{
 .navButtonActive:hover{
     background-color: lightgray;
     border-radius: 10px 10px 0px 0px;
+    cursor: default;
 }
 .nextButton{
     display: inline-block;
