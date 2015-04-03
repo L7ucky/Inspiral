@@ -26,6 +26,19 @@ function insertComment(string_in, checked)
 			thecomment.value = "";
 		}
 }
+//this is the function to change image on upload image
+function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                document.getElementById("uploadImage").src= e.target.result;
+                   // .attr('src', e.target.result);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
 
 function insertInspiration(string_in, checked1, checked2, checked3, checked4)
 {
