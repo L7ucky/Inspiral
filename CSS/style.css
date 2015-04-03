@@ -143,14 +143,16 @@ input[type="password"]{
     /*vertical-align: middle;*/
 }
 .navButton:hover{
-    background-color: lightgray;
-    color:#484848;
+    background-color: rgb(141, 141, 141);
     cursor: pointer;
     border-radius: 10px 10px 0px 0px;
 }
 .navButtonActive{
     background-color: lightgray;
-    color:#484848;
+    border-radius: 10px 10px 0px 0px;
+}
+.navButtonActive:hover{
+    background-color: lightgray;
     border-radius: 10px 10px 0px 0px;
 }
 .nextButton{
