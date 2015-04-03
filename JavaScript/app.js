@@ -125,30 +125,6 @@ function rightArrow ()
     currentImages = newArray;
     refreshPictures();
 
-	//document.getElementById("first").src=document.getElementById("second").src;
-	//document.getElementById("second").src=document.getElementById("third").src;
-	//document.getElementById("third").src=document.getElementById("fourth").src;
-	//document.getElementById("fourth").src=document.getElementById("fifth").src;
-	//document.getElementById("fifth").src=document.getElementById("sixth").src;
-	////alert(numberScrollRight);
-	//document.getElementById("sixth").src=currentImages[numberScrollRight];
-	//if(numberScrollRight==currentImages.length-1)
-	//{
-	//	numberScrollRight=0;
-	//}
-	//else
-	//{
-	//	numberScrollRight++;
-	//}
-	//if(numnberScrollLeft==currentImages.length-1)
-	//{
-	//	numnberScrollLeft=0;
-	//}
-	//else
-	//{
-	//	numnberScrollLeft++;
-	//}
-
 }
 
 function leftArrow()
@@ -161,31 +137,6 @@ function leftArrow()
     newArray.push(first);
     currentImages = newArray;
     refreshPictures();
-
-	//document.getElementById("sixth").src=document.getElementById("fifth").src;
-	//document.getElementById("fifth").src=document.getElementById("fourth").src;
-	//document.getElementById("fourth").src=document.getElementById("third").src;
-	//document.getElementById("third").src=document.getElementById("second").src;
-	//document.getElementById("second").src=document.getElementById("first").src;
-	////alert(numnberScrollLeft);
-	//document.getElementById("first").src=currentImages[numnberScrollLeft];
-	//if (numnberScrollLeft ==0)
-	//{
-	//	numnberScrollLeft = currentImages.length-1;
-	//}
-	//else
-	//{
-	//	numnberScrollLeft--;
-	//}
-	//if (numberScrollRight ==0)
-	//{
-	//	numberScrollRight = currentImages.length-1;
-	//}
-	//else
-	//{
-	//	numberScrollRight--;
-	//}
-
 
 }
 
@@ -228,12 +179,16 @@ function goAddInspiration(){
 window.onload = function(){
     setAccountButton();
     refreshPictures();
+    updateMainImage(0);
 };
 
-function updateMainImage(index){
+function updateMainImage(index,homepage){
+    if(homepage){
+        goToPublic();
+    }
 
     document.getElementById('mainImage').src= currentImages[index];
-    console.log(document.getElementById('mainImage').src);
+
 }
 
 // Account page stuff
