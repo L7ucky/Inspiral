@@ -38,16 +38,16 @@
             <input class="submitbutton" type="button" value="Submit" style=" margin-top: -5px; " onclick= "insertInspiration(textupload.value, visibilityCheckbox1.checked, visibilityCheckbox2.checked, visibilityCheckbox3.checked, visibilityCheckbox4.checked); location.href='Public.html' + location.search; return false;">
             Visibility:    
 
-            <input class="visibilityCheckbox" type="checkbox" id="visibilityCheckbox1" style=" margin-top: 0px;"> 
+            <input class="visibilityCheckbox" type="checkbox" id="visibilityCheckbox1" style=" margin-top: 0px;" onclick="checkboxesCalculate('visibilityCheckbox1',visibilityCheckbox1.checked);"> 
             <label for="visibilityCheckbox1" style="vertical-align: top;">Public</label>
 
-            <input class="visibilityCheckbox" type="checkbox" id="visibilityCheckbox2" style=" margin-top: 0px;">
+            <input class="visibilityCheckbox" type="checkbox" id="visibilityCheckbox2" style=" margin-top: 0px;" onclick="checkboxesCalculate('visibilityCheckbox2',visibilityCheckbox2.checked);">
             <label for="visibilityCheckbox2" style="vertical-align: top;">Class</label>
 
-            <input class="visibilityCheckbox" type="checkbox" id="visibilityCheckbox3" style=" margin-top: 0px;">
+            <input class="visibilityCheckbox" type="checkbox" id="visibilityCheckbox3" style=" margin-top: 0px;" onclick="checkboxesCalculate('visibilityCheckbox3',visibilityCheckbox3.checked);">
             <label for="visibilityCheckbox3" style="vertical-align: top;">Group</label>
 
-            <input class="visibilityCheckbox" type="checkbox" id="visibilityCheckbox4" style=" margin-top: 0px;">
+            <input class="visibilityCheckbox" type="checkbox" id="visibilityCheckbox4" style=" margin-top: 0px;" onclick="checkboxesCalculate('visibilityCheckbox4',visibilityCheckbox4.checked);">
             <label for="visibilityCheckbox4" style="vertical-align: top;">Private</label>
         </div></div>
     </div>
