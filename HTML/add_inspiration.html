@@ -10,22 +10,15 @@
 
 <body onload="setAccountButton();">
     <div class="header">
-        <a onclick="location.href='index.html' + window.location.search; return false;" href="index.html"><div class="logo">Inspiral</div></a>
-        <!--<div class="custom-select">-->
-            <!--<label for="select-choice1" class="label select-1"><span class="selection-choice">Sort By</span> </label>-->
-            <!--<select id="select-choice1" class="select">-->
-                <!--<option value="Most Views">Most Views</option>-->
-                <!--<option value="Most Recent">Most Recent</option>-->
-            <!--</select>-->
-        <!--</div>-->
-        <input id="signInButton" class="submitbutton" type="button" value="Sign In" onclick="location.href='login.html'">
-    </div>
+        <div class="logo" style="float: none;">Inspiral</div>
+        <input id="signInButton" class="submitbutton" type="button" value="Sign In" onclick="location.href='login.html'"/>
+    </div>  
 
     <div class="nav">
-        <div class="navButton" id="privateNavButton" onclick="location.href = 'Private.html' + location.search;">Private</div>
-        <div class="navButton" id="groupNavButton" onclick="location.href = 'Group.html' + location.search;">Group</div>
-        <div class="navButton" id="classNavButton" onclick="location.href = 'Class.html' + location.search;">Class</div>
-        <div class="navButton" id="publicNavButton" onclick="location.href = 'Public.html' + location.search;">Public</div>
+        <div class="navButton" id="publicNavButton" onclick="goToPublic()">Public</div>
+        <div class="navButton" id="classNavButton" onclick="goToClass()">Class</div>
+        <div class="navButton" id="groupNavButton" onclick="goToGroup()">Group</div>
+        <div class="navButton" id="privateNavButton" onclick="goToPrivate()">Private</div>
     </div>
     
 
@@ -34,7 +27,8 @@
 
         <div class="submitContainer" style="float: right; margin-right: 12.8%; width: 29.5%;">
 
-        <input type="file" class="browse" id="browse" name="fileSelected">
+        <input type="file" style="visibility: hidden; width: 1px;" id="upload" accept="image/*"/>
+        <input type="button" class="submitbutton" value="Upload Photo" onclick="document.getElementById('upload').click();" style="float: left; margin-bottom: 20px;"/>
         <input class="textupload" type="text" id="textupload" autocomplete= "off" name="textupload" placeholder="Text inspiration or link...">
             
         

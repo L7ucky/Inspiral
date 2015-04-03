@@ -24,10 +24,10 @@
     </div>
 
     <div class="nav">
-        <div class="navButton" id="privateNavButton" onclick="goToPrivate()">Private</div>
-        <div class="navButton navButtonActive" id="groupNavButton">Group</div>
-        <div class="navButton" id="classNavButton" onclick="goToClass()">Class</div>
         <div class="navButton" id="publicNavButton" onclick="goToPublic()">Public</div>
+        <div class="navButton " id="classNavButton" onclick="goToClass()">Class</div>
+        <div class="navButton navButtonActive" id="groupNavButton" >Group</div>
+        <div class="navButton" id="privateNavButton" onclick="goToPrivate()">Private</div>
     </div>
     
 
@@ -36,12 +36,12 @@
     <div id="ImageLine">
             <input id="scrollImageLeft" class="submitbutton" type="button" value="<<" style="height: 100px" onclick="leftArrow()">
           <!--   onclick="leftArrow()" src="../Resources/leftArrow.jpeg"> -->
-            <img class="picture" id="first" src="../Resources/whiteBox.jpeg">
-            <img class="picture" id="second" src="../Resources/whiteBox.jpeg">
-            <img class="picture" id="third" src="../Resources/whiteBox.jpeg">
-            <img class="picture" id="fourth" src="../Resources/whiteBox.jpeg">
-            <img class="picture" id="fifth" src="../Resources/whiteBox.jpeg">
-            <img class="picture" id="sixth" src="../Resources/whiteBox.jpeg">
+        <img class="picture" id="first" src="../Resources/whiteBox.jpeg" onclick="updateMainImage(0)">
+        <img class="picture" id="second" src="../Resources/whiteBox.jpeg" onclick="updateMainImage(1)">
+        <img class="picture" id="third" src="../Resources/whiteBox.jpeg" onclick="updateMainImage(2)">
+        <img class="picture" id="fourth" src="../Resources/whiteBox.jpeg" onclick="updateMainImage(3)">
+        <img class="picture" id="fifth" src="../Resources/whiteBox.jpeg" onclick="updateMainImage(4)">
+        <img class="picture" id="sixth" src="../Resources/whiteBox.jpeg" onclick="updateMainImage(5)">
             
            <!--  <img onclick="rightArrow()" id="scrollImage" src="../Resources/rightArrow.jpeg"> -->
             <input id="scrollImageRight" class="submitbutton" type="button" value=">>" style="height: 100px" onclick="rightArrow()" >
@@ -51,7 +51,7 @@
 
     <!-- TYLER'S STUFF -->
     <div class="content" style="margin-top: 20px">
-        <div class="pictureView"><img src="../Resources/samplepicture.jpg" height="100%" width="100%"></div>
+        <div class="pictureView"><img id="mainImage" src="../Resources/samplepicture.jpg" height="100%" width="100%"></div>
 
         <div class="comments" id="commentshere">
         <p class="aComment">User 1: This is a sample comment.</p>
