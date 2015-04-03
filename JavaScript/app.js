@@ -96,9 +96,9 @@ function getImages()
 function rightArrow () 
 {
     var newArray = [];
-    newArray.add(currentImages[currentImages.length-1]);
+    newArray.push(currentImages[currentImages.length-1]);
     for(var i = 0; i<currentImages.length-1;i++){
-        newArray.add(currentImages[i]);
+        newArray.push(currentImages[i]);
     }
     currentImages = newArray;
     refreshPictures();
@@ -133,11 +133,10 @@ function leftArrow()
 {
     var first = currentImages[0];
     var newArray = [];
-    newArray.add(currentImages[currentImages.length-1]);
     for(var i = 1; i<currentImages.length;i++){
-        newArray.add(currentImages[i]);
+        newArray.push(currentImages[i]);
     }
-    newArray.add(first);
+    newArray.push(first);
     currentImages = newArray;
     refreshPictures();
 
@@ -206,7 +205,7 @@ function goAddInspiration(){
 
 window.onload = function(){
     setAccountButton();
-    initPicture();
+    refreshPictures();
 };
 
 function updateMainImage(index){
