@@ -8,22 +8,43 @@ var imagelistPrivate = ["../Resources/cactus.jpeg", "../Resources/cactus.jpeg", 
 var imagelistClass = ["../Resources/dog.jpeg", "../Resources/dog.jpeg", "../Resources/dog.jpeg", "../Resources/nike.jpeg", "../Resources/patriot.jpeg","../Resources/rooney.jpeg","../Resources/starwars.jpeg", "../Resources/sword.jpeg","../Resources/cow.jpeg","../Resources/greenChurch.jpeg","../Resources/dragon.jpeg","../Resources/moutain.jpeg","../Resources/roller.jpeg",];
 var imagelistGroup = ["../Resources/husky.jpeg", "../Resources/husky.jpeg", "../Resources/husky.jpeg", "../Resources/nike.jpeg", "../Resources/patriot.jpeg","../Resources/rooney.jpeg","../Resources/starwars.jpeg", "../Resources/sword.jpeg","../Resources/cow.jpeg","../Resources/greenChurch.jpeg","../Resources/dragon.jpeg","../Resources/moutain.jpeg","../Resources/roller.jpeg",];
 var imagelist = ["../Resources/Cat.jpg", "../Resources/rain.jpg", "../Resources/weather.jpg", "../Resources/lights.jpg", "../Resources/park.jpg","../Resources/kitten.jpg","../Resources/message.jpg", "../Resources/sword.jpeg","../Resources/cow.jpeg","../Resources/greenChurch.jpeg","../Resources/dragon.jpeg","../Resources/moutain.jpeg","../Resources/roller.jpeg",];
+
+var comments = {};
+comments["../Resources/Cat.jpg"] = ["Josh: This is a cat.", "Dantley: It looks like it has magical powers. It must be a liger."];
+comments["../Resources/cactus.jpeg"] = [];
+comments["../Resources/nike.jpeg"] = [];
+comments["../Resources/patriot.jpeg"] = [];
+comments["../Resources/rooney.jpeg"] = [];
+comments["../Resources/starwars.jpeg"] = ["Josh: Padme's beauty inspires me.", "Dantley: I personally prefer Leia."];
+comments["../Resources/sword.jpeg"] = ["Josh: Do you think we could use a sword in our advertisement?"];
+comments["../Resources/cow.jpeg"] = ["Josh: I look like a cow in this picture."];
+comments["../Resources/greenChurch.jpeg"] = ["Dantley: This is a picture of the painting I made of a dream I had two weeks ago."];
+comments["../Resources/dragon.jpeg"] = [];
+comments["../Resources/moutain.jpeg"] = [];
+comments["../Resources/roller.jpeg"] = [];
+comments["../Resources/dog.jpeg"] = [];
+comments["../Resources/husky.jpeg"] = [];
+comments["../Resources/lights.jpg"] = [];
+comments["../Resources/message.jpg"] = ["Jesse: I took a picture of this at the beach last week.", "Josh: Wow! I've never seen a message in a bottle like that before!"];
+comments["../Resources/park.jpg"] = ["Josh: I took this one while playing ultimate frisbee at Kiwanis."];
+comments["../Resources/rain.jpg"] = [];
+comments["../Resources/kitten.jpg"] = ["Tyler: This is a precious photo my wife took of little Katniss."];
+comments["../Resources/weather.jpg"] =[];
+
 var currentImages = imagelist;
 var currentPage ='Public';
+var currentIndex = 0;
 
 function insertComment(string_in, checked)
 {
 		if (string_in != "")
 		{
-			var output = document.getElementById("commentshere").innerHTML;
-			output += "<p class='aComment'>";
-			output += currentUser;
-			output +=": ";
-			if (checked) output += "(Private) ";
-			output += string_in;
-			output += "</p>";
-			document.getElementById("commentshere").innerHTML = output;
-			thecomment.value = "";
+      console.log(currentImages[currentIndex]);
+
+      if(checked) comments[currentImages[currentIndex]].push(currentUser + ": (Private) " + string_in);
+      else comments[currentImages[currentIndex]].push(currentUser + ": " + string_in);
+      updateMainImage(currentIndex, false);
+      thecomment.value = "";
 		}
 }
 //this is the function to change image on upload image
@@ -183,7 +204,11 @@ function updateMainImage(index,homepage){
     }
 
     document.getElementById('mainImage').src= currentImages[index];
-
+    document.getElementById('commentshere').innerHTML = "";
+    for(var i=0;i<comments[currentImages[index]].length;i++){
+        document.getElementById('commentshere').innerHTML += "<p class='aComment'>" + comments[currentImages[index]][i] + "</p>";
+    }
+    currentIndex = index;
 }
 
 // Account page stuff
