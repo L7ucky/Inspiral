@@ -8,7 +8,7 @@
 
 </head>
 
-<body onload="refreshPictures(); setAccountButton();">
+<body onload="onLoad()">
     <div class="header">
         <div class="logo">Inspiral</div>
         <input id="addInspirationButton" class="submitbutton" type="button" value="Add Inspiration" onclick="location.href='add_inspiration.html' + window.location.search">
@@ -46,12 +46,7 @@
     <div class="content" style="margin-top: 20px">
         <div class="pictureView"><img id="mainImage" src="../Resources/defaultimage.jpg" height="100%" width="100%"></div>
 
-        <div class="comments" id="commentshere">
-        <p class="aComment">User 1: This is a sample comment.</p>
-        <p class="aComment">User 2: Great job!!</p>
-        <p class="aComment">User 3: (Private) Oh man, this is amazing. I can't even believe my eyes!! So good. Wow dude. you're awesome.</p>
-
-        </div>
+        <div class="comments" id="commentshere"></div>
 
         <div class="submitContainer" style="margin-left: 77px;">
             
