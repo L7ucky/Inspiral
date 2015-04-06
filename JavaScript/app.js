@@ -98,7 +98,7 @@ function setAccountButton()
         document.getElementById("signInButton").onclick = function() {location.href="account.html"};
     }
     else {
-        document.getElementById("thecomment").disabled = true;    
+        document.getElementById("thecomment").disabled = true; 
     }
 }
 
@@ -198,6 +198,12 @@ window.onload = function(){
     refreshPictures();
     updateMainImage(0);
 };
+
+function onLoad() {
+    setAccountButton();
+    refreshPictures();
+    updateMainImage(0);
+}
 
 function updateMainImage(index,homepage){
     if(homepage){
