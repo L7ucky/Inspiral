@@ -11,6 +11,10 @@ var imagelist = ["../Resources/Cat.jpg", "../Resources/rain.jpg", "../Resources/
 var currentImages = imagelist;
 var currentPage ='Public';
 
+function logOut()
+{
+	loggedIn = false;
+}
 function insertComment(string_in, checked)
 {
 		if (string_in != "")

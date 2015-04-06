@@ -38,7 +38,18 @@
                 <td style="text-align:center;">
                     <input type="file" style="visibility: hidden; width: 1px;" id="upload" accept="image/*"/>
                     <input type="button" class="submitbutton" value="Upload Photo" onclick="document.getElementById('upload').click();" style="margin-right: 5px; margin-bottom: 5px;"/>
-                </td>
+				</td>
+            </tr>
+
+
+
+            <tr>
+            	<!-- Sign out button that can be removed! -->
+				<td style="text-align:center;">
+					<input type="button" class="submitbutton" value="Sign Out" onclick="logOut(); goToPublic();" style="margin-right: 5px; margin-bottom: 5px; float:left;">
+				</td>
+            	<!-- Sign out button that can be removed! -->
+
             </tr>
         </table>
     </div>
