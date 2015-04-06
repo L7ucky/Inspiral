@@ -37,10 +37,8 @@ var currentIndex = 0;
 
 function insertComment(string_in, checked)
 {
-		if (string_in != "")
+		if (string_in != "" && window.location.search.indexOf("loggedIn=true") > -1)
 		{
-      console.log(currentImages[currentIndex]);
-
       if(checked) comments[currentImages[currentIndex]].push(currentUser + ": (Private) " + string_in);
       else comments[currentImages[currentIndex]].push(currentUser + ": " + string_in);
       updateMainImage(currentIndex, false);
@@ -98,6 +96,9 @@ function setAccountButton()
         loggedIn=true;
         document.getElementById("signInButton").value = currentUser;
         document.getElementById("signInButton").onclick = function() {location.href="account.html"};
+    }
+    else {
+        document.getElementById("thecomment").disabled = true;    
     }
 }
 
