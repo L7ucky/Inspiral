@@ -183,9 +183,7 @@ function setAccountButton()
         document.getElementById("signInButton").onclick = function() {location.href="account.html"};
     }
     else {
-        document.getElementById("thecomment").disabled = true;
-        document.getElementById("thecomment").style.backgroundColor = "lightgray";
-        document.getElementById("thecomment").placeholder="";
+        document.getElementById("submitContainer1").hidden = true;
     }
 }
 
