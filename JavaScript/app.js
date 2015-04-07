@@ -99,7 +99,8 @@ function search(){
 
     setTimeout(function(){
         determinePage();
-        var val = document.getElementById("searchInput").value;
+        var value = document.getElementById("searchInput").value;
+        var val = value.toLowerCase();
 
         if(val == "") {
             searching = false;
@@ -110,18 +111,26 @@ function search(){
             searching= true;
             var newArray = [];
             for(var i = 0; i<currentImages.length;i++){
-                var str = currentImages[i];
+                var newString = currentImages[i];
+                var newStr = newString.toLowerCase();
+                var strArray = newStr.split("../resources/");
+                var str = strArray[1];
                 var n = str.search(val);
                 if(n>-1){
-                    newArray.push(str);
+                    newArray.push(newStr);
                 }
             }
             currentImages = newArray;
-
+            refreshPictures();
         }
-        if(currentImages.length>0)
-            updateMainImage(0)
-        refreshPictures();},300);
+        if(currentImages.length>0){
+            updateMainImage(0);
+            refreshPictures();
+        }
+        else{
+            refreshPictures();
+        }
+    },300);
 
 }
 
@@ -250,7 +259,8 @@ function rightArrow()
 }
 
 function goToPrivate(){
-    document.getElementById("searchInput").value ="";
+    if(document.getElementById("searchInput"))
+        document.getElementById("searchInput").value ="";
     searching=false;
     if(loggedIn){
         location.href = 'Private.html?loggedIn=true';
@@ -260,7 +270,8 @@ function goToPrivate(){
 }
 
 function goToClass(){
-    document.getElementById("searchInput").value ="";
+    if(document.getElementById("searchInput"))
+        document.getElementById("searchInput").value ="";
     searching=false;
     if(loggedIn)
         location.href = 'Class.html?loggedIn=true';
@@ -269,7 +280,8 @@ function goToClass(){
 }
 
 function goToGroup(){
-    document.getElementById("searchInput").value ="";
+    if(document.getElementById("searchInput"))
+        document.getElementById("searchInput").value ="";
     searching=false;
     if(loggedIn)
         location.href = 'Group.html?loggedIn=true';
@@ -278,7 +290,8 @@ function goToGroup(){
 }
 
 function goToPublic(){
-    document.getElementById("searchInput").value ="";
+    if(document.getElementById("searchInput"))
+        document.getElementById("searchInput").value ="";
     searching=false;
     if(loggedIn)
         location.href = 'Public.html?loggedIn=true';
@@ -287,7 +300,8 @@ function goToPublic(){
 }
 
 function goAddInspiration(){
-    document.getElementById("searchInput").value ="";
+    if(document.getElementById("searchInput"))
+        document.getElementById("searchInput").value ="";
     searching=false;
     if(loggedIn)
         location.href = 'add_inspiration.html?loggedIn=true';
