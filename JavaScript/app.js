@@ -34,6 +34,39 @@ comments["../Resources/weather.jpg"] =[];
 var currentImages = imagelist;
 var currentPage ='Public';
 var currentIndex = 0;
+var searching = false;
+
+function imageBarFull(){
+    var len = currentImages.length;
+    if(len<6)
+        return false;
+    else
+        return true;
+}
+//function setImageSpacesVisibility(){
+//    var len = currentImages.length;
+//    for(var i =0;i<6;i++){
+//        var curImageSlot;
+//        if(i == 0)
+//            curImageSlot = document.getElementById("first");
+//        else if(i == 1)
+//            curImageSlot = document.getElementById("second");
+//        else if(i == 2)
+//            curImageSlot = document.getElementById("third");
+//        else if(i == 3)
+//            curImageSlot = document.getElementById("fourth");
+//        else if(i == 4)
+//            curImageSlot = document.getElementById("fifth");
+//        else if(i == 5)
+//            curImageSlot = document.getElementById("sixth");
+//
+//        if(i<len)
+//            curImageSlot.visibility = 'visible';
+//        else
+//            curImageSlot.visibility = 'hidden';
+//
+//    }
+//}
 
 function insertComment(string_in, checked)
 {
@@ -58,15 +91,60 @@ function readURL(input) {
             reader.readAsDataURL(input.files[0]);
         }
     }
+function search(){
 
+    setTimeout(function(){
+        determinePage();
+        var val = document.getElementById("searchInput").value;
+
+        if(val == "") {
+            searching = false;
+            determinePage();
+        }
+        else{
+
+            searching= true;
+            var newArray = [];
+            for(var i = 0; i<currentImages.length;i++){
+                var str = currentImages[i];
+                var n = str.search(val);
+                if(n>-1){
+                    newArray.push(str);
+                }
+            }
+            currentImages = newArray;
+
+        }
+        refreshPictures();},300);
+
+}
 function refreshPictures()
 {
-    document.getElementById("first").src = currentImages[0];
-    document.getElementById("second").src = currentImages[1];
-    document.getElementById("third").src = currentImages[2];
-    document.getElementById("fourth").src = currentImages[3];
-    document.getElementById("fifth").src = currentImages[4];
-    document.getElementById("sixth").src = currentImages[5];
+    var len = currentImages.length;
+    for(var i =0;i<6;i++) {
+        var curImageSlot;
+        if (i == 0)
+            curImageSlot = document.getElementById("first");
+        else if (i == 1)
+            curImageSlot = document.getElementById("second");
+        else if (i == 2)
+            curImageSlot = document.getElementById("third");
+        else if (i == 3)
+            curImageSlot = document.getElementById("fourth");
+        else if (i == 4)
+            curImageSlot = document.getElementById("fifth");
+        else if (i == 5)
+            curImageSlot = document.getElementById("sixth");
+
+        if (i < len) {
+            curImageSlot.src = currentImages[i];
+            curImageSlot.style.visibility = 'visible';
+        }
+        else {
+            curImageSlot.src = "../Resources/defaultimage.jpg";
+            curImageSlot.style.visibility = 'hidden';
+        }
+    }
 }
 function  checkboxesCalculate (name, checked) {
 	if (checked && name == "visibilityCheckbox1" && visibilityCheckbox2.checked == false &&
@@ -103,6 +181,7 @@ function setAccountButton()
 }
 
 function determinePage(){
+
     if(window.location.pathname.indexOf("Private") > -1) {
         currentImages = imagelistPrivate;
     }
@@ -115,6 +194,8 @@ function determinePage(){
     else{
         currentImages = imagelist;
     }
+
+
 }
 
 function getImages() 
@@ -132,32 +213,36 @@ function getImages()
    // alert("test");
 }
 
-function rightArrow () 
+function leftArrow ()
 {
-    var newArray = [];
-    newArray.push(currentImages[currentImages.length-1]);
-    for(var i = 0; i<currentImages.length-1;i++){
-        newArray.push(currentImages[i]);
+    if(imageBarFull()){
+        var newArray = [];
+        newArray.push(currentImages[currentImages.length-1]);
+        for(var i = 0; i<currentImages.length-1;i++){
+            newArray.push(currentImages[i]);
+        }
+        currentImages = newArray;
+        refreshPictures();
     }
-    currentImages = newArray;
-    refreshPictures();
-
 }
 
-function leftArrow()
+function rightArrow()
 {
-    var first = currentImages[0];
-    var newArray = [];
-    for(var i = 1; i<currentImages.length;i++){
-        newArray.push(currentImages[i]);
+    if(imageBarFull()){
+        var first = currentImages[0];
+        var newArray = [];
+        for(var i = 1; i<currentImages.length;i++){
+            newArray.push(currentImages[i]);
+        }
+        newArray.push(first);
+        currentImages = newArray;
+        refreshPictures();
     }
-    newArray.push(first);
-    currentImages = newArray;
-    refreshPictures();
-
 }
 
 function goToPrivate(){
+    document.getElementById("searchInput").value ="";
+    searching=false;
     if(loggedIn){
         location.href = 'Private.html?loggedIn=true';
     }
@@ -166,6 +251,8 @@ function goToPrivate(){
 }
 
 function goToClass(){
+    document.getElementById("searchInput").value ="";
+    searching=false;
     if(loggedIn)
         location.href = 'Class.html?loggedIn=true';
     else
@@ -173,6 +260,8 @@ function goToClass(){
 }
 
 function goToGroup(){
+    document.getElementById("searchInput").value ="";
+    searching=false;
     if(loggedIn)
         location.href = 'Group.html?loggedIn=true';
     else
@@ -180,6 +269,8 @@ function goToGroup(){
 }
 
 function goToPublic(){
+    document.getElementById("searchInput").value ="";
+    searching=false;
     if(loggedIn)
         location.href = 'Public.html?loggedIn=true';
     else
@@ -187,6 +278,8 @@ function goToPublic(){
 }
 
 function goAddInspiration(){
+    document.getElementById("searchInput").value ="";
+    searching=false;
     if(loggedIn)
         location.href = 'add_inspiration.html?loggedIn=true';
     else
@@ -195,6 +288,7 @@ function goAddInspiration(){
 
 window.onload = function(){
     setAccountButton();
+    determinePage();
     refreshPictures();
     updateMainImage(0);
 };

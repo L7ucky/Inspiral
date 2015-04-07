@@ -12,7 +12,7 @@
     <div class="header">
         <div class="logo">Inspiral</div>
         <input id="addInspirationButton" class="submitbutton" type="button" value="Add Inspiration" onclick="location.href='add_inspiration.html' + window.location.search">
-        <input class="searchBar" placeholder="Search">
+        <input class="searchBar" id="searchInput" placeholder="Search" onkeyup="search()" onblur="search()">
         <input id="signInButton" class="submitbutton" type="button" value="Sign In" onclick="location.href='login.html'">
     </div>
 
