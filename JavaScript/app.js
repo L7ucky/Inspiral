@@ -12,61 +12,29 @@ var imagelist = ["../Resources/Cat.jpg", "../Resources/rain.jpg", "../Resources/
 var comments = {};
 comments["../Resources/Cat.jpg"] = ["Josh: This is a cat.", "Dantley: It looks like it has magical powers. It must be a liger."];
 comments["../Resources/cactus.jpeg"] = [];
-comments["../Resources/nike.jpeg"] = [];
-comments["../Resources/patriot.jpeg"] = [];
-comments["../Resources/rooney.jpeg"] = [];
+comments["../Resources/nike.jpeg"] = ["Andrew: Respect the swoosh!"];
+comments["../Resources/patriot.jpeg"] = ["Josh: Reminds me of Football."];
+comments["../Resources/rooney.jpeg"] = ["Andrew: Does this guy play soccer?","Tyler: I think he just scored a goal!"];
 comments["../Resources/starwars.jpeg"] = ["Josh: Padme's beauty inspires me.", "Dantley: I personally prefer Leia."];
 comments["../Resources/sword.jpeg"] = ["Josh: Do you think we could use a sword in our advertisement?"];
 comments["../Resources/cow.jpeg"] = ["Josh: I look like a cow in this picture."];
 comments["../Resources/greenChurch.jpeg"] = ["Dantley: This is a picture of the painting I made of a dream I had two weeks ago."];
-comments["../Resources/dragon.jpeg"] = [];
+comments["../Resources/dragon.jpeg"] = ["Andrew: This is a Fire-breathing beast!"];
 comments["../Resources/moutain.jpeg"] = [];
 comments["../Resources/roller.jpeg"] = [];
-comments["../Resources/dog.jpeg"] = [];
+comments["../Resources/dog.jpeg"] = ["Josh: This is a dog."];
 comments["../Resources/husky.jpeg"] = [];
 comments["../Resources/lights.jpg"] = [];
 comments["../Resources/message.jpg"] = ["Jesse: I took a picture of this at the beach last week.", "Josh: Wow! I've never seen a message in a bottle like that before!"];
 comments["../Resources/park.jpg"] = ["Josh: I took this one while playing ultimate frisbee at Kiwanis."];
 comments["../Resources/rain.jpg"] = [];
-comments["../Resources/kitten.jpg"] = ["Tyler: This is a precious photo my wife took of little Katniss."];
+comments["../Resources/kitten.jpg"] = ["Tyler: This is a precious photo my wife took of little Katniss.","Josh: This looks like my cat."];
 comments["../Resources/weather.jpg"] =[];
 
 var currentImages = imagelist;
 var currentPage ='Public';
 var currentIndex = 0;
 var searching = false;
-
-function imageBarFull(){
-    var len = currentImages.length;
-    if(len<6)
-        return false;
-    else
-        return true;
-}
-//function setImageSpacesVisibility(){
-//    var len = currentImages.length;
-//    for(var i =0;i<6;i++){
-//        var curImageSlot;
-//        if(i == 0)
-//            curImageSlot = document.getElementById("first");
-//        else if(i == 1)
-//            curImageSlot = document.getElementById("second");
-//        else if(i == 2)
-//            curImageSlot = document.getElementById("third");
-//        else if(i == 3)
-//            curImageSlot = document.getElementById("fourth");
-//        else if(i == 4)
-//            curImageSlot = document.getElementById("fifth");
-//        else if(i == 5)
-//            curImageSlot = document.getElementById("sixth");
-//
-//        if(i<len)
-//            curImageSlot.visibility = 'visible';
-//        else
-//            curImageSlot.visibility = 'hidden';
-//
-//    }
-//}
 
 function logOut()
 {
@@ -95,6 +63,21 @@ function readURL(input) {
             reader.readAsDataURL(input.files[0]);
         }
     }
+function searchComments(path,val){
+    val = val.toLowerCase();
+
+    if(comments[path] &&(comments[path].length>0)){
+        var commentsArray =comments[path];
+        for(var k =0; k<commentsArray.length;k++){
+            var str = commentsArray[k].toLowerCase();
+            var n = str.search(val);
+            if(n>-1){
+                return true;
+            }
+        }
+    }
+    return false;
+}
 function search(){
 
     setTimeout(function(){
@@ -116,8 +99,8 @@ function search(){
                 var strArray = newStr.split("../resources/");
                 var str = strArray[1];
                 var n = str.search(val);
-                if(n>-1){
-                    newArray.push(newStr);
+                if(n>-1 || searchComments(newString,val)){
+                    newArray.push(newString);
                 }
             }
             currentImages = newArray;
@@ -132,6 +115,14 @@ function search(){
         }
     },300);
 
+}
+
+function imageBarFull(){
+    var len = currentImages.length;
+    if(len<6)
+        return false;
+    else
+        return true;
 }
 
 function refreshPictures()
