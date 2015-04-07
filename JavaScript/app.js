@@ -68,6 +68,10 @@ function imageBarFull(){
 //    }
 //}
 
+function logOut()
+{
+	loggedIn = false;
+}
 function insertComment(string_in, checked)
 {
 		if (string_in != "" && window.location.search.indexOf("loggedIn=true") > -1)
@@ -176,7 +180,9 @@ function setAccountButton()
         document.getElementById("signInButton").onclick = function() {location.href="account.html"};
     }
     else {
-        document.getElementById("thecomment").disabled = true; 
+        document.getElementById("thecomment").disabled = true;
+        document.getElementById("thecomment").style.backgroundColor = "lightgray";
+        document.getElementById("thecomment").placeholder="";
     }
 }
 
