@@ -119,9 +119,12 @@ function search(){
             currentImages = newArray;
 
         }
+        if(currentImages.length>0)
+            updateMainImage(0)
         refreshPictures();},300);
 
 }
+
 function refreshPictures()
 {
     var len = currentImages.length;
