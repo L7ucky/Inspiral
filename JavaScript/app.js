@@ -39,7 +39,8 @@ var searching = false;
 
 function logOut()
 {
-	loggedIn = false;
+	loggedIn = false; 
+	determineTabName();
     changePage('public');
 }
 function insertComment(string_in, checked)
@@ -438,5 +439,10 @@ function determineTabName()
 		{
 			document.getElementById("classNavButton").innerHTML = "Class (Section 1)";
 			document.getElementById("groupNavButton").innerHTML = "Group (Byters)";
+		}
+		else
+		{
+			document.getElementById("classNavButton").innerHTML = "Class";
+			document.getElementById("groupNavButton").innerHTML = "Group";
 		}
 }
