@@ -286,7 +286,7 @@ function changePage(page){
         document.getElementById("loginWrapper").style.display ="inline";
         currentPage ='login';
     }
-    else if(page == "group"){
+    else if(page == "group"&&loggedIn){
         document.getElementById("mainViewWrapper").style.display ="inline";
         currentPage = 'group';
     }
@@ -294,19 +294,19 @@ function changePage(page){
         document.getElementById("mainViewWrapper").style.display ="inline";
         currentPage = 'public';
     }
-    else if(page == "private"){
+    else if(page == "private"&&loggedIn){
         document.getElementById("mainViewWrapper").style.display ="inline";
         currentPage ='private';
     }
-    else if(page == "class"){
+    else if(page == "class"&&loggedIn){
         document.getElementById("mainViewWrapper").style.display ="inline";
         currentPage ='class';
     }
-    else if(page == "account"){
+    else if(page == "account"&&loggedIn){
         document.getElementById("accountWrapper").style.display ="inline";
         currentPage ='account';
     }
-    else if(page == "addInspiration"){
+    else if(page == "addInspiration"&&loggedIn){
         document.getElementById("addInspirationWrapper").style.display ="inline";
         currentPage ='addInspiration';
     }

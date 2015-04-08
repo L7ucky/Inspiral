@@ -20,7 +20,7 @@
         <div class="navButton" id="publicNavButton" onclick="changePage('public')">Public</div>
         <div class="navButton" id="classNavButton" onclick="changePage('class')">Class</div>
         <div class="navButton" id="groupNavButton" onclick="changePage('group')">Group</div>
-        <div class="navButton" id="privateNavButton" onclick="changePage('private')">My Page</div>
+        <div class="navButton" id="privateNavButton" onclick="changePage('private')">Private</div>
     </div>
 
 
@@ -117,7 +117,7 @@
                     <label for="visibilityCheckbox3" style="vertical-align: top;">Group</label>
 
                     <input class="visibilityCheckbox" type="checkbox" id="visibilityCheckbox4" style=" margin-top: 0px;" onclick="checkboxesCalculate('visibilityCheckbox4',visibilityCheckbox4.checked);">
-                    <label for="visibilityCheckbox4" style="vertical-align: top;">My Page</label>
+                    <label for="visibilityCheckbox4" style="vertical-align: top;">Private</label>
                 </div></div>
         </div>
     </div>
@@ -257,8 +257,13 @@
             <div class="title" onclick="determineTabName();">Sign In</div>
             <input id="signInUsername" type="text" placeholder="Username" style="font-size: 15px; margin-bottom: 5px; display: block;" oninput="updateSignInButton()" onkeydown="submitOnEnter(event, 'signUpButton2')">
             <input id="signInPassword" type="password" placeholder="Password" style="font-size: 15px; margin-bottom: 5px; display: block;" oninput="updateSignInButton()" onkeydown="submitOnEnter(event, 'signUpButton2')">
-            <a href=""><img src="../Resources/facebook.png" width="35px" height="35px" style="display: block; float: left; margin-top: 5px; margin-left: 10%;" onclick="login(); determineTabName(); return false;"></a>
+<<<<<<< HEAD
+            <a href=""><img src="../Resources/facebook.png" width="35px" height="35px" style="display: block; float: left; margin-top: 5px; margin-left: 10%;" onclick="login(); return false;"></a>
             <input type="button" class="submitbutton" value="Login" id="signUpButton2" onclick="login()" disabled="false">
+=======
+            <a href=""><img src="../Resources/facebook.png" width="35px" height="35px" style="display: block; float: left; margin-top: 5px; margin-left: 10%;" onclick="login(); determineTabName(); return false;"></a>
+            <input type="button" class="submitbutton" value="Login" id="signUpButton2" onclick="login()" disabled="true">
+>>>>>>> 38eaeb32fbc18257b75a5f94a9449f59eef933d7
         </div>
 
         <div class="box" style="width: 200px;">
