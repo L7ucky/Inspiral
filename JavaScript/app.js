@@ -39,7 +39,8 @@ var searching = false;
 
 function logOut()
 {
-	loggedIn = false;
+	loggedIn = false; 
+	determineTabName();
     changePage('public');
 }
 function insertComment(string_in, checked)
@@ -325,6 +326,7 @@ function onLoad() {
     determinePage();
     refreshPictures();
     updateMainImage(0);
+    determineTabName();
 }
 
 window.onload = function(){
@@ -341,11 +343,20 @@ function updateMainImage(index,homepage){
 
     document.getElementById('mainImage').src= currentImages[index];
     document.getElementById('commentshere').innerHTML = "";
-    for(var i=0;i<comments[currentImages[index]].length;i++){
-        document.getElementById('commentshere').innerHTML += "<p class='aComment'>" + comments[currentImages[index]][i] + "</p>";
+    if (comments[currentImages[index]].length == 0)
+    {
+    	document.getElementById('commentshere').innerHTML += "<p class='aComment' style='color: gray'>" + "No comments yet." + "</p>";
     }
+    else{
+	   	for(var i=0;i<comments[currentImages[index]].length;i++)
+	   	{
+	       	document.getElementById('commentshere').innerHTML += "<p class='aComment'>" + comments[currentImages[index]][i] + "</p>";
+	   	}
+	}
     currentIndex = index;
 }
+
+
 
 // Account page stuff
 
@@ -421,4 +432,17 @@ function updateSaveChangesButton() {
         document.getElementById("saveChangesButton").disabled = true;
     else
         document.getElementById("saveChangesButton").disabled = false;
+}
+function determineTabName()
+{
+	if (loggedIn == true) 
+		{
+			document.getElementById("classNavButton").innerHTML = "Class (Section 1)";
+			document.getElementById("groupNavButton").innerHTML = "Group (Byters)";
+		}
+		else
+		{
+			document.getElementById("classNavButton").innerHTML = "Class";
+			document.getElementById("groupNavButton").innerHTML = "Group";
+		}
 }
