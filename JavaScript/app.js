@@ -195,19 +195,24 @@ function setAccountButton()
 
 function determinePage(){
 
-    if(currentPage == 'Public') {
+    document.getElementById("publicNavButton").className = "navButton";
+    document.getElementById("privateNavButton").className = "navButton";
+    document.getElementById("groupNavButton").className = "navButton";
+    document.getElementById("classNavButton").className = "navButton";
+
+    if(currentPage == 'public') {
         currentImages = imagelistPublic;
         document.getElementById("publicNavButton").className = "navButton navButtonActive";
     }
-    else if(currentPage == 'Private') {
+    else if(currentPage == 'private') {
         currentImages = imagelistPrivate;
         document.getElementById("privateNavButton").className = "navButton navButtonActive";
     }
-    else if(currentPage == 'Group') {
+    else if(currentPage == 'group') {
         currentImages = imagelistGroup;
         document.getElementById("groupNavButton").className = "navButton navButtonActive";
     }
-    else if(currentPage == 'Class') {
+    else if(currentPage == 'class') {
         currentImages = imagelistClass;
         document.getElementById("classNavButton").className = "navButton navButtonActive";
     }
@@ -261,6 +266,15 @@ function login(){
     loggedIn = true;
     changePage("public");
 }
+function accountButtonPressed(){
+    if(loggedIn){
+        changePage('account');
+    }
+    else{
+        changePage('login');
+    }
+
+}
 function changePage(page){
     document.getElementById("mainViewWrapper").style.display ="none";
     document.getElementById("addInspirationWrapper").style.display ="none";
@@ -268,35 +282,35 @@ function changePage(page){
     document.getElementById("loginWrapper").style.display ="none";
 
     if(page == "login"){
-        document.getElementById("loginWrapper").style.display ="visible";
+        document.getElementById("loginWrapper").style.display ="inline";
         currentPage ='login';
     }
     else if(page == "group"){
-        document.getElementById("mainViewWrapper").style.display ="visible";
+        document.getElementById("mainViewWrapper").style.display ="inline";
         currentPage = 'group';
     }
     else if(page == "public"){
-        document.getElementById("mainViewWrapper").style.display ="visible";
+        document.getElementById("mainViewWrapper").style.display ="inline";
         currentPage = 'public';
     }
     else if(page == "private"){
-        document.getElementById("mainViewWrapper").style.display ="visible";
+        document.getElementById("mainViewWrapper").style.display ="inline";
         currentPage ='private';
     }
     else if(page == "class"){
-        document.getElementById("mainViewWrapper").style.display ="visible";
+        document.getElementById("mainViewWrapper").style.display ="inline";
         currentPage ='class';
     }
     else if(page == "account"){
-        document.getElementById("accountWrapper").style.display ="visible";
+        document.getElementById("accountWrapper").style.display ="inline";
         currentPage ='account';
     }
     else if(page == "addInspiration"){
-        document.getElementById("addInspirationWrapper").style.display ="visible";
+        document.getElementById("addInspirationWrapper").style.display ="inline";
         currentPage ='addInspiration';
     }
     else {
-        document.getElementById("loginWrapper").style.display = "visible";
+        document.getElementById("loginWrapper").style.display = "inline";
         currentPage = 'login';
     }
     if(document.getElementById("searchInput"))
@@ -314,6 +328,7 @@ function onLoad() {
 }
 
 window.onload = function(){
+    changePage('public');
     onLoad();
 };
 
