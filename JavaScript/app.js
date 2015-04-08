@@ -33,6 +33,7 @@ comments["../Resources/weather.jpg"] =[];
 
 var currentImages = imagelistPublic;
 var currentPage = "public";
+var currentImageIndex = 0;
 
 var currentIndex = 0;
 var searching = false;
@@ -336,6 +337,7 @@ window.onload = function(){
 
 function updateMainImage(index,homepage){
     console.log(currentPage);
+    currentImageIndex = index;
 
     if(homepage){
         changePage('public');
@@ -446,3 +448,59 @@ function determineTabName()
 			document.getElementById("groupNavButton").innerHTML = "Group";
 		}
 }
+function moveToRight(){
+    if(currentImages.length== 0){
+        return;
+    }
+    else if(currentImageIndex==currentImages.length-1){
+        updateMainImage(0);
+    }
+    else if(currentImageIndex==5){
+        rightArrow();
+        updateMainImage(5);
+    }
+    else
+        updateMainImage(currentImageIndex+1);
+}
+function moveToLeft(){
+    if(currentImages.length<=6 && currentImageIndex == 0){
+        updateMainImage(currentImages.length-1);
+    }
+    else if(currentImages.length== 0){
+        return;
+    }
+    else if(currentImageIndex==0){
+        leftArrow();
+        updateMainImage(0);
+    }
+    else
+        updateMainImage(currentImageIndex-1);
+}
+document.onkeydown = function(event) {
+    if (!event)
+        event = window.event;
+    var code = event.keyCode;
+    if (event.charCode && code == 0)
+        code = event.charCode;
+    switch(code) {
+        case 37:
+            // Key left.
+            moveToLeft();
+            console.log('left key!');
+            break;
+        case 38:
+            // Key up.
+            console.log('up key!');
+            break;
+        case 39:
+            // Key right.
+            moveToRight();
+            console.log('right key!');
+            break;
+        case 40:
+            // Key down.
+            console.log('down key!');
+            break;
+    }
+
+};
