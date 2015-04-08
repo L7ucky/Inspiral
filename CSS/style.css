@@ -328,6 +328,12 @@ input.submitbutton:active {
     -moz-box-shadow: 0px 0px 0px #666666;
     box-shadow: 0px 0px 0px #666666;
 }
+input.submitbutton:disabled {
+    background-color: rgb(205, 205, 205);
+    box-shadow: none;
+    color: white;
+    cursor: default;
+}
 
 input.privateCheckbox{
     width: 20px; 
