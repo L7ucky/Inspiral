@@ -11,13 +11,13 @@
 <body onload="onLoad()">
     <div class="header">
         <div class="logo">Inspiral</div>
-        <input id="addInspirationButton" class="submitbutton" type="button" value="Add Inspiration" onclick="goAddInspiration()">
+        <input id="addInspirationButton" class="submitbutton" type="button" value="Add Inspiration" onclick="changePage('addInspiration')">
         <input class="searchBar" id="searchInput" placeholder="Search" oninput="search()">
         <input id="signInButton" class="submitbutton" type="button" value="Sign In" onclick="changePage('login')">
     </div>
 
     <div class="nav">
-        <div class="navButton navButtonActive" id="publicNavButton" onclick="changePage('public')">Public</div>
+        <div class="navButton" id="publicNavButton" onclick="changePage('public')">Public</div>
         <div class="navButton" id="classNavButton" onclick="changePage('class')">Class</div>
         <div class="navButton" id="groupNavButton" onclick="changePage('group')">Group</div>
         <div class="navButton" id="privateNavButton" onclick="changePage('private')">Private</div>
@@ -258,7 +258,7 @@
             <input id="signInUsername" type="text" placeholder="Username" style="font-size: 15px; margin-bottom: 5px; display: block;" oninput="updateSignInButton()" onkeydown="submitOnEnter(event, 'signUpButton2')">
             <input id="signInPassword" type="password" placeholder="Password" style="font-size: 15px; margin-bottom: 5px; display: block;" oninput="updateSignInButton()" onkeydown="submitOnEnter(event, 'signUpButton2')">
             <a href=""><img src="../Resources/facebook.png" width="35px" height="35px" style="display: block; float: left; margin-top: 5px; margin-left: 10%;" onclick="login(); return false;"></a>
-            <input type="button" class="submitbutton" value="Login" id="signUpButton2" onclick="login()" disabled="true">
+            <input type="button" class="submitbutton" value="Login" id="signUpButton2" onclick="login()" disabled="false">
         </div>
 
         <div class="box" style="width: 200px;">
@@ -267,7 +267,7 @@
             <input id="signUpPassword" type="password" placeholder="Password" style="font-size: 15px; margin-bottom: 5px; display: block;" oninput="updateSignUpButton()" onkeydown="submitOnEnter(event, 'signUpButton')">
             <input id="signUpEmail" type="text" placeholder="Email" style="font-size: 15px; margin-bottom: 5px; display: block;" oninput="updateSignUpButton()" onkeydown="submitOnEnter(event, 'signUpButton')">
             <input id="signUpClassCode" type="text" placeholder="Class Code" style="font-size: 15px; margin-bottom: 5px; display: block;" oninput="updateSignUpButton()" onkeydown="submitOnEnter(event, 'signUpButton')">
-            <input type="button" class="submitbutton" value="Sign Up" id="signUpButton"style="display: block; " onclick="login()" disabled="true">
+            <input type="button" class="submitbutton" value="Sign Up" id="signUpButton"style="display: block; " onclick="login()" disabled="false">
         </div>
     </div>
 </body>
