@@ -403,9 +403,9 @@ function updateCommentSubmitButton() {
         document.getElementById("commentButton").disabled = false;
 }
 
-function submitOnEnter(event) {
+function submitOnEnter(event, button) {
     if(event.keyCode == 13)
-        document.getElementById("commentButton").click();
+        document.getElementById(button).click();
 }
 
 function updateCreateButton() {

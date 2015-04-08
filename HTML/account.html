@@ -73,14 +73,14 @@
             </tr>
             <tr>
                 <td style="text-align:right;">Create new group:</td>
-                <td style="text-align:center;"><input id="newGroup" type="text" style="font-size: 15px;" oninput="updateCreateButton()"></td>
+                <td style="text-align:center;"><input id="newGroup" type="text" style="font-size: 15px;" oninput="updateCreateButton()" onkeydown="submitOnEnter(event, 'createGroupButton')"></td>
                 <td>
                     <input id="createGroupButton" type="button" class="submitbutton" value="Create" style="font-size:15px; margin-right: 5px;" onclick="newGroup()" disabled="true"></div>
                 </td>
             </tr>
             <tr>
                 <td style="text-align:right;">Join group:</td>
-                <td style="text-align:center;"><input id="joinGroup" type="text" style="font-size: 15px;" oninput="updateJoinButton()"></td>
+                <td style="text-align:center;"><input id="joinGroup" type="text" style="font-size: 15px;" oninput="updateJoinButton()" onkeydown="submitOnEnter(event, 'joinGroupButton')"></td>
                 <td>
                     <input id="joinGroupButton" type="button" class="submitbutton" value="Join" style="font-size:15px; margin-right: 5px; margin-bottom: 5px; padding-left: 29px; padding-right: 28px;" onclick="joinGroup()" disabled="true"></div>
                 </td>
