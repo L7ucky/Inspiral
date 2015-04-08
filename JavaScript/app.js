@@ -58,6 +58,7 @@ function insertComment(string_in, checked)
       else comments[currentImages[currentIndex]].push(currentUser + ": " + string_in);
       updateMainImage(currentIndex, false);
       thecomment.value = "";
+      document.getElementById("commentButton").disabled = true;
 		}
 }
 //this is the function to change image on upload image
@@ -395,4 +396,9 @@ function updateCommentSubmitButton() {
     }
     else
         document.getElementById("commentButton").disabled = false;
+}
+
+function submitOnEnter(event){
+    if(event.keyCode == 13)
+        document.getElementById("commentButton").click();
 }
