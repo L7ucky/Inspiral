@@ -32,27 +32,19 @@ comments["../Resources/kitten.jpg"] = ["Tyler: This is a precious photo my wife 
 comments["../Resources/weather.jpg"] =[];
 
 var currentImages = imagelistPublic;
-var currentPage = "";
-if(location.href.indexOf("Public.html") > -1) {
-    if(location.search.indexOf("tab=private") > -1)
-        currentPage = "Private";
-    else if(location.search.indexOf("tab=group") > -1)
-        currentPage = "Group";
-    else if(location.search.indexOf("tab=class") > -1)
-        currentPage = "Class";
-    else
-        currentPage = "Public";
-}
+var currentPage = "public";
+
 var currentIndex = 0;
 var searching = false;
 
 function logOut()
 {
 	loggedIn = false;
+    changePage('public');
 }
 function insertComment(string_in, checked)
 {
-		if (string_in != "" && window.location.search.indexOf("loggedIn=true") > -1)
+		if (string_in != "" && loggedIn)
 		{
       if(checked) comments[currentImages[currentIndex]].push(currentUser + ": (Private) " + string_in);
       else comments[currentImages[currentIndex]].push(currentUser + ": " + string_in);
@@ -138,7 +130,6 @@ function imageBarFull(){
 
 function refreshPictures()
 {
-    console.log(currentPage);
 
     var len = currentImages.length;
     for(var i =0;i<6;i++) {
@@ -190,49 +181,42 @@ function  checkboxesCalculate (name, checked) {
 
 function setAccountButton()
 {
-        console.log(currentPage);
 
-    if(window.location.search.indexOf("loggedIn=true") > -1) {
-        loggedIn=true;
+
+    if(loggedIn) {
         document.getElementById("signInButton").value = currentUser;
-        document.getElementById("signInButton").onclick = function() {location.href="account.html?loggedIn=true"};
+        document.getElementById("signInButton").onclick = function() {changePage('account')};
     }
     else {
+        document.getElementById("signInButton").value = 'Sign In';
         document.getElementById("submitContainer1").hidden = true;
     }
 }
 
 function determinePage(){
 
-    console.log(currentPage);
+    document.getElementById("publicNavButton").className = "navButton";
+    document.getElementById("privateNavButton").className = "navButton";
+    document.getElementById("groupNavButton").className = "navButton";
+    document.getElementById("classNavButton").className = "navButton";
 
-    if(currentPage !== '') {
-        document.getElementById("publicNavButton").className = "navButton";
-        document.getElementById("classNavButton").className = "navButton";
-        document.getElementById("groupNavButton").className = "navButton";
-        document.getElementById("privateNavButton").className = "navButton";
-        
-        document.getElementById("publicNavButton").onclick = goToPublic;
-        document.getElementById("classNavButton").onclick = goToClass;
-        document.getElementById("groupNavButton").onclick = goToGroup;
-        document.getElementById("privateNavButton").onclick = goToPrivate;
-    }
-    if(currentPage == 'Private') {
-        currentImages = imagelistPrivate;
-        document.getElementById("privateNavButton").className = "navButton navButtonActive";
-    }
-    else if(currentPage == 'Group') {
-        currentImages = imagelistGroup;
-        document.getElementById("groupNavButton").className = "navButton navButtonActive";
-    }
-    else if(currentPage == 'Class') {
-        currentImages = imagelistClass;
-        document.getElementById("classNavButton").className = "navButton navButtonActive";
-    }
-    else if(currentPage == 'Public') {
+    if(currentPage == 'public') {
         currentImages = imagelistPublic;
         document.getElementById("publicNavButton").className = "navButton navButtonActive";
     }
+    else if(currentPage == 'private') {
+        currentImages = imagelistPrivate;
+        document.getElementById("privateNavButton").className = "navButton navButtonActive";
+    }
+    else if(currentPage == 'group') {
+        currentImages = imagelistGroup;
+        document.getElementById("groupNavButton").className = "navButton navButtonActive";
+    }
+    else if(currentPage == 'class') {
+        currentImages = imagelistClass;
+        document.getElementById("classNavButton").className = "navButton navButtonActive";
+    }
+
 }
 
 function getImages() 
@@ -277,80 +261,66 @@ function rightArrow()
     }
 }
 
-function goToPrivate(){
-    if(!loggedIn){
-        location.href = 'login.html';
-        return;
-    }
-    if(location.href.indexOf("Public.html") == -1){
-        location.href = 'Public.html?loggedIn=true&tab=private';
-        return;
-    }
-    if(document.getElementById("searchInput"))
-        document.getElementById("searchInput").value ="";
-    searching=false;
-    currentPage = 'Private';
-    onLoad();
-}
 
-function goToClass(){
-    if(!loggedIn){
-        location.href = 'login.html';
-        return;
-    }
-    if(location.href.indexOf("Public.html") == -1){
-        location.href = 'Public.html?loggedIn=true&tab=class';
-        return;
-    }
-    if(document.getElementById("searchInput"))
-        document.getElementById("searchInput").value ="";
-    searching=false;
-    currentPage = 'Class';
-    onLoad();
+function login(){
+    loggedIn = true;
+    changePage("public");
 }
+function accountButtonPressed(){
+    if(loggedIn){
+        changePage('account');
+    }
+    else{
+        changePage('login');
+    }
 
-function goToGroup(){
-    if(!loggedIn){
-        location.href = 'login.html';
-        return;
-    }
-    if(location.href.indexOf("Public.html") == -1){
-        location.href = 'Public.html?loggedIn=true&tab=group';
-        return;
-    }
-    if(document.getElementById("searchInput"))
-        document.getElementById("searchInput").value ="";
-    searching=false;
-    currentPage = 'Group';
-    onLoad();
 }
+function changePage(page){
+    document.getElementById("mainViewWrapper").style.display ="none";
+    document.getElementById("addInspirationWrapper").style.display ="none";
+    document.getElementById("accountWrapper").style.display ="none";
+    document.getElementById("loginWrapper").style.display ="none";
 
-function goToPublic(){
-    if(location.href.indexOf("Public.html") == -1){
-        if(loggedIn)
-            location.href = 'Public.html?loggedIn=true';
-        else
-            location.href = 'Public.html';
+    if(page == "login"){
+        document.getElementById("loginWrapper").style.display ="inline";
+        currentPage ='login';
+    }
+    else if(page == "group"){
+        document.getElementById("mainViewWrapper").style.display ="inline";
+        currentPage = 'group';
+    }
+    else if(page == "public"){
+        document.getElementById("mainViewWrapper").style.display ="inline";
+        currentPage = 'public';
+    }
+    else if(page == "private"){
+        document.getElementById("mainViewWrapper").style.display ="inline";
+        currentPage ='private';
+    }
+    else if(page == "class"){
+        document.getElementById("mainViewWrapper").style.display ="inline";
+        currentPage ='class';
+    }
+    else if(page == "account"){
+        document.getElementById("accountWrapper").style.display ="inline";
+        currentPage ='account';
+    }
+    else if(page == "addInspiration"){
+        document.getElementById("addInspirationWrapper").style.display ="inline";
+        currentPage ='addInspiration';
+    }
+    else {
+        document.getElementById("loginWrapper").style.display = "inline";
+        currentPage = 'login';
     }
     if(document.getElementById("searchInput"))
         document.getElementById("searchInput").value ="";
     searching=false;
-    currentPage = 'Public';
     onLoad();
-}
 
-function goAddInspiration(){
-    if(document.getElementById("searchInput"))
-        document.getElementById("searchInput").value ="";
-    searching=false;
-    if(loggedIn)
-        location.href = 'add_inspiration.html?loggedIn=true';
-    else
-        location.href = 'login.html';
 }
 
 function onLoad() {
-    console.log(currentPage);
     setAccountButton();
     determinePage();
     refreshPictures();
@@ -358,13 +328,16 @@ function onLoad() {
     determineTabName();
 }
 
-window.onload = onLoad;
+window.onload = function(){
+    changePage('public');
+    onLoad();
+};
 
 function updateMainImage(index,homepage){
     console.log(currentPage);
 
     if(homepage){
-        goToPublic();
+        changePage('public');
     }
 
     document.getElementById('mainImage').src= currentImages[index];
