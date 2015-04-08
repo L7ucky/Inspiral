@@ -180,7 +180,7 @@ function setAccountButton()
     if(window.location.search.indexOf("loggedIn=true") > -1) {
         loggedIn=true;
         document.getElementById("signInButton").value = currentUser;
-        document.getElementById("signInButton").onclick = function() {location.href="account.html"};
+        document.getElementById("signInButton").onclick = function() {location.href="account.html?loggedIn=true"};
     }
     else {
         document.getElementById("submitContainer1").hidden = true;

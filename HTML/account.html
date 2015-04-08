@@ -8,9 +8,16 @@
 </head>
 <body>
     <div class="header">
-        <a href="Public.html?loggedIn=true"><div class="logo">Inspiral</div></a>
-        <input id="addInspirationButton" class="submitbutton" type="button" value="Add Inspiration" onclick="location.href='add_inspiration.html?loggedIn=true'">
-        <input id="signInButton" class="submitbutton" type="button" value="Andrew">
+        <div class="logo" style="float: none;">Inspiral</div>
+        <input id="addInspirationButton" class="submitbutton" type="button" value="Add Inspiration" onclick="goAddInspiration()" style="float: none;">
+        <input id="signInButton" class="submitbutton" type="button" value="Sign In" onclick="location.href='login.html'">
+    </div>
+    
+    <div class="nav">
+        <div class="navButton" id="publicNavButton" onclick="goToPublic()">Public</div>
+        <div class="navButton" id="classNavButton" onclick="goToClass()">Class</div>
+        <div class="navButton" id="groupNavButton" onclick="goToGroup()">Group</div>
+        <div class="navButton" id="privateNavButton" onclick="goToPrivate()">Private</div>
     </div>
 
     <div class="box">
