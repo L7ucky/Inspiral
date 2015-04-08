@@ -188,6 +188,7 @@ function setAccountButton()
     if(loggedIn) {
         document.getElementById("signInButton").value = currentUser;
         document.getElementById("signInButton").onclick = function() {changePage('account')};
+        document.getElementById("submitContainer1").hidden = false;
     }
     else {
         document.getElementById("signInButton").value = 'Sign In';
