@@ -55,6 +55,7 @@ input[type="password"]{
     line-height: 0;
     text-align: center;
     font-size: x-large;
+    cursor: pointer;
 }
 #addInspirationButton{
     display: inline-block;
@@ -108,6 +109,7 @@ input[type="password"]{
     padding: 5px ;
     float:right;
     margin-right:20px;
+    transition: background-color .3s;
 }
 .signinButton:hover{
     background-color: #ffffff;
@@ -143,6 +145,7 @@ input[type="password"]{
     line-height:50px;
     width:24.7%;
     height:50px;
+    transition: background-color .3s, color .3s;
 
     color:#eeeeee;
     /*vertical-align: middle;*/
@@ -170,6 +173,7 @@ input[type="password"]{
     vertical-align: middle;
     margin-left:4%;
     color:#ffffff;
+    transition: background-color .3s;
 
 }
 .nextButton:hover{
@@ -313,6 +317,7 @@ input.submitbutton {
     text-decoration: none;
     outline: none;
     border: none;
+    transition: background-color .3s;
 }
 
 input.submitbutton:hover {
