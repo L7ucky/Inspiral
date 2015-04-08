@@ -7,7 +7,7 @@ var loggedIn = false;
 var imagelistPrivate = ["../Resources/cactus.jpeg", "../Resources/cactus.jpeg", "../Resources/cactus.jpeg", "../Resources/nike.jpeg", "../Resources/patriot.jpeg","../Resources/rooney.jpeg","../Resources/starwars.jpeg", "../Resources/sword.jpeg","../Resources/cow.jpeg","../Resources/greenChurch.jpeg","../Resources/dragon.jpeg","../Resources/moutain.jpeg","../Resources/roller.jpeg",];
 var imagelistClass = ["../Resources/dog.jpeg", "../Resources/dog.jpeg", "../Resources/dog.jpeg", "../Resources/nike.jpeg", "../Resources/patriot.jpeg","../Resources/rooney.jpeg","../Resources/starwars.jpeg", "../Resources/sword.jpeg","../Resources/cow.jpeg","../Resources/greenChurch.jpeg","../Resources/dragon.jpeg","../Resources/moutain.jpeg","../Resources/roller.jpeg",];
 var imagelistGroup = ["../Resources/husky.jpeg", "../Resources/husky.jpeg", "../Resources/husky.jpeg", "../Resources/nike.jpeg", "../Resources/patriot.jpeg","../Resources/rooney.jpeg","../Resources/starwars.jpeg", "../Resources/sword.jpeg","../Resources/cow.jpeg","../Resources/greenChurch.jpeg","../Resources/dragon.jpeg","../Resources/moutain.jpeg","../Resources/roller.jpeg",];
-var imagelist = ["../Resources/Cat.jpg", "../Resources/rain.jpg", "../Resources/weather.jpg", "../Resources/lights.jpg", "../Resources/park.jpg","../Resources/kitten.jpg","../Resources/message.jpg", "../Resources/sword.jpeg","../Resources/cow.jpeg","../Resources/greenChurch.jpeg","../Resources/dragon.jpeg","../Resources/moutain.jpeg","../Resources/roller.jpeg",];
+var imagelistPublic = ["../Resources/Cat.jpg", "../Resources/rain.jpg", "../Resources/weather.jpg", "../Resources/lights.jpg", "../Resources/park.jpg","../Resources/kitten.jpg","../Resources/message.jpg", "../Resources/sword.jpeg","../Resources/cow.jpeg","../Resources/greenChurch.jpeg","../Resources/dragon.jpeg","../Resources/moutain.jpeg","../Resources/roller.jpeg",];
 
 var comments = {};
 comments["../Resources/Cat.jpg"] = ["Josh: This is a cat.", "Dantley: It looks like it has magical powers. It must be a liger."];
@@ -31,8 +31,18 @@ comments["../Resources/rain.jpg"] = [];
 comments["../Resources/kitten.jpg"] = ["Tyler: This is a precious photo my wife took of little Katniss.","Josh: This looks like my cat."];
 comments["../Resources/weather.jpg"] =[];
 
-var currentImages = imagelist;
-var currentPage ='Public';
+var currentImages = imagelistPublic;
+var currentPage = "";
+if(location.href.indexOf("Public.html") > -1) {
+    if(location.search.indexOf("tab=private") > -1)
+        currentPage = "Private";
+    else if(location.search.indexOf("tab=group") > -1)
+        currentPage = "Group";
+    else if(location.search.indexOf("tab=class") > -1)
+        currentPage = "Class";
+    else
+        currentPage = "Public";
+}
 var currentIndex = 0;
 var searching = false;
 
@@ -127,6 +137,8 @@ function imageBarFull(){
 
 function refreshPictures()
 {
+    console.log(currentPage);
+
     var len = currentImages.length;
     for(var i =0;i<6;i++) {
         var curImageSlot;
@@ -177,6 +189,8 @@ function  checkboxesCalculate (name, checked) {
 
 function setAccountButton()
 {
+        console.log(currentPage);
+
     if(window.location.search.indexOf("loggedIn=true") > -1) {
         loggedIn=true;
         document.getElementById("signInButton").value = currentUser;
@@ -189,20 +203,35 @@ function setAccountButton()
 
 function determinePage(){
 
-    if(window.location.pathname.indexOf("Private") > -1) {
+    console.log(currentPage);
+
+    if(currentPage !== '') {
+        document.getElementById("publicNavButton").className = "navButton";
+        document.getElementById("classNavButton").className = "navButton";
+        document.getElementById("groupNavButton").className = "navButton";
+        document.getElementById("privateNavButton").className = "navButton";
+        
+        document.getElementById("publicNavButton").onclick = goToPublic;
+        document.getElementById("classNavButton").onclick = goToClass;
+        document.getElementById("groupNavButton").onclick = goToGroup;
+        document.getElementById("privateNavButton").onclick = goToPrivate;
+    }
+    if(currentPage == 'Private') {
         currentImages = imagelistPrivate;
+        document.getElementById("privateNavButton").className = "navButton navButtonActive";
     }
-    else if(window.location.pathname.indexOf("Group") > -1) {
+    else if(currentPage == 'Group') {
         currentImages = imagelistGroup;
+        document.getElementById("groupNavButton").className = "navButton navButtonActive";
     }
-    else if(window.location.pathname.indexOf("Class") > -1) {
+    else if(currentPage == 'Class') {
         currentImages = imagelistClass;
+        document.getElementById("classNavButton").className = "navButton navButtonActive";
     }
-    else{
-        currentImages = imagelist;
+    else if(currentPage == 'Public') {
+        currentImages = imagelistPublic;
+        document.getElementById("publicNavButton").className = "navButton navButtonActive";
     }
-
-
 }
 
 function getImages() 
@@ -248,44 +277,65 @@ function rightArrow()
 }
 
 function goToPrivate(){
+    if(!loggedIn){
+        location.href = 'login.html';
+        return;
+    }
+    if(location.href.indexOf("Public.html") == -1){
+        location.href = 'Public.html?loggedIn=true&tab=private';
+        return;
+    }
     if(document.getElementById("searchInput"))
         document.getElementById("searchInput").value ="";
     searching=false;
-    if(loggedIn){
-        location.href = 'Private.html?loggedIn=true';
-    }
-    else
-        location.href = 'login.html';
+    currentPage = 'Private';
+    onLoad();
 }
 
 function goToClass(){
+    if(!loggedIn){
+        location.href = 'login.html';
+        return;
+    }
+    if(location.href.indexOf("Public.html") == -1){
+        location.href = 'Public.html?loggedIn=true&tab=class';
+        return;
+    }
     if(document.getElementById("searchInput"))
         document.getElementById("searchInput").value ="";
     searching=false;
-    if(loggedIn)
-        location.href = 'Class.html?loggedIn=true';
-    else
-        location.href = 'login.html';
+    currentPage = 'Class';
+    onLoad();
 }
 
 function goToGroup(){
+    if(!loggedIn){
+        location.href = 'login.html';
+        return;
+    }
+    if(location.href.indexOf("Public.html") == -1){
+        location.href = 'Public.html?loggedIn=true&tab=group';
+        return;
+    }
     if(document.getElementById("searchInput"))
         document.getElementById("searchInput").value ="";
     searching=false;
-    if(loggedIn)
-        location.href = 'Group.html?loggedIn=true';
-    else
-        location.href = 'login.html';
+    currentPage = 'Group';
+    onLoad();
 }
 
 function goToPublic(){
+    if(location.href.indexOf("Public.html") == -1){
+        if(loggedIn)
+            location.href = 'Public.html?loggedIn=true';
+        else
+            location.href = 'Public.html';
+    }
     if(document.getElementById("searchInput"))
         document.getElementById("searchInput").value ="";
     searching=false;
-    if(loggedIn)
-        location.href = 'Public.html?loggedIn=true';
-    else
-        location.href = 'Public.html?loggedIn=false';
+    currentPage = 'Public';
+    onLoad();
 }
 
 function goAddInspiration(){
@@ -298,20 +348,19 @@ function goAddInspiration(){
         location.href = 'login.html';
 }
 
-window.onload = function(){
+function onLoad() {
+    console.log(currentPage);
     setAccountButton();
     determinePage();
     refreshPictures();
     updateMainImage(0);
-};
-
-function onLoad() {
-    setAccountButton();
-    refreshPictures();
-    updateMainImage(0);
 }
 
+window.onload = onLoad;
+
 function updateMainImage(index,homepage){
+    console.log(currentPage);
+
     if(homepage){
         goToPublic();
     }
