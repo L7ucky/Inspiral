@@ -68,21 +68,21 @@
                 <td style="text-align:right;">Group:</td>
                 <td style="text-align:center;"><input id="currentGroup" type="text" style="font-size: 15px; background-color: #C0EFC7;" value="Byters" readonly></td>
                 <td>
-                    <input type="button" class="submitbutton" value="Leave" style="font-size:15px; margin-right: 5px; padding-left: 22px; padding-right: 22px;" onclick="leave()">
+                    <input id="leaveGroupButton" type="button" class="submitbutton" value="Leave" style="font-size:15px; margin-right: 5px; padding-left: 22px; padding-right: 22px;" onclick="leave()">
                 </td>
             </tr>
             <tr>
                 <td style="text-align:right;">Create new group:</td>
-                <td style="text-align:center;"><input id="newGroup" type="text" style="font-size: 15px;"></td>
+                <td style="text-align:center;"><input id="newGroup" type="text" style="font-size: 15px;" oninput="updateCreateButton()"></td>
                 <td>
-                    <input type="button" class="submitbutton" value="Create" style="font-size:15px; margin-right: 5px;" onclick="newGroup()"></div>
+                    <input id="createGroupButton" type="button" class="submitbutton" value="Create" style="font-size:15px; margin-right: 5px;" onclick="newGroup()" disabled="true"></div>
                 </td>
             </tr>
             <tr>
                 <td style="text-align:right;">Join group:</td>
-                <td style="text-align:center;"><input id="joinGroup" type="text" style="font-size: 15px;"></td>
+                <td style="text-align:center;"><input id="joinGroup" type="text" style="font-size: 15px;" oninput="updateJoinButton()"></td>
                 <td>
-                    <input type="button" class="submitbutton" value="Join" style="font-size:15px; margin-right: 5px; margin-bottom: 5px; padding-left: 29px; padding-right: 28px;" onclick="joinGroup()"></div>
+                    <input id="joinGroupButton" type="button" class="submitbutton" value="Join" style="font-size:15px; margin-right: 5px; margin-bottom: 5px; padding-left: 29px; padding-right: 28px;" onclick="joinGroup()" disabled="true"></div>
                 </td>
             </tr>
         </table>

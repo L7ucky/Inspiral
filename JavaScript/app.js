@@ -378,16 +378,21 @@ function updateMainImage(index,homepage){
 
 function leave() {
     document.getElementById("currentGroup").value = "";
+    document.getElementById("leaveGroupButton").disabled = true;
 }
 
 function newGroup() {
     document.getElementById("currentGroup").value = document.getElementById("newGroup").value;
     document.getElementById("newGroup").value = "";
+    document.getElementById("createGroupButton").disabled = true;
+    document.getElementById("leaveGroupButton").disabled = false;
 }
 
 function joinGroup() {
     document.getElementById("currentGroup").value = document.getElementById("joinGroup").value;
     document.getElementById("joinGroup").value = "";
+    document.getElementById("joinGroupButton").disabled = true;
+    document.getElementById("leaveGroupButton").disabled = false;
 }
 
 function updateCommentSubmitButton() {
@@ -398,7 +403,23 @@ function updateCommentSubmitButton() {
         document.getElementById("commentButton").disabled = false;
 }
 
-function submitOnEnter(event){
+function submitOnEnter(event) {
     if(event.keyCode == 13)
         document.getElementById("commentButton").click();
+}
+
+function updateCreateButton() {
+    if(document.getElementById("newGroup").value == ""){
+        document.getElementById("createGroupButton").disabled = true;
+    }
+    else
+        document.getElementById("createGroupButton").disabled = false;
+}
+
+function updateJoinButton() {
+    if(document.getElementById("joinGroup").value == ""){
+        document.getElementById("joinGroupButton").disabled = true;
+    }
+    else
+        document.getElementById("joinGroupButton").disabled = false;
 }
