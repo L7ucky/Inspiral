@@ -27,10 +27,10 @@
                 <td>
                     <table>
                         <tr><td style="text-align:right;">Username:</td><td>Andrew</td></tr>
-                        <tr><td style="text-align:right;">Email:</td><td><input type="text" style="font-size: 15px;" value="bob@builder"></td></tr>
+                        <tr><td style="text-align:right;">Email:</td><td><input id="editEmail" type="text" style="font-size: 15px;" value="bob@builder" oninput="updateSaveChangesButton()"></td></tr>
                         <tr><td style="text-align:right;">Notifications:</td>
-                        <td><input type="radio" name="notifications" checked>On
-                        <input type="radio" name="notifications">Off</td></tr>
+                        <td><input type="radio" name="notifications" checked onchange="updateSaveChangesButton()">On
+                        <input type="radio" name="notifications" onchange="updateSaveChangesButton()">Off</td></tr>
                         <tr><td style="text-align:right;">Class code:</td><td>012345</td></tr>
                     </table>
                 </td>
@@ -40,7 +40,7 @@
             </tr>
             <tr>
                 <td>
-                    <input type="button" class="submitbutton" value="Save Changes" style="float: left" onclick="goToPublic()"></div>
+                    <input type="button" id="saveChangesButton" class="submitbutton" value="Save Changes" style="float: left" onclick="goToPublic()" disabled></div>
                 </td>
                 <td style="text-align:center;">
                     <input type="file" style="visibility: hidden; width: 1px;" id="upload" accept="image/*"/>

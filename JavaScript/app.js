@@ -442,3 +442,10 @@ function updateSignUpButton() {
     else
         document.getElementById("signUpButton").disabled = false;
 }
+
+function updateSaveChangesButton() {
+    if(document.getElementById("editEmail").value == "")
+        document.getElementById("saveChangesButton").disabled = true;
+    else
+        document.getElementById("saveChangesButton").disabled = false;
+}
