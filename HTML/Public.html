@@ -13,53 +13,262 @@
         <div class="logo">Inspiral</div>
         <input id="addInspirationButton" class="submitbutton" type="button" value="Add Inspiration" onclick="goAddInspiration()">
         <input class="searchBar" id="searchInput" placeholder="Search" oninput="search()">
-        <input id="signInButton" class="submitbutton" type="button" value="Sign In" onclick="location.href='login.html'">
+        <input id="signInButton" class="submitbutton" type="button" value="Sign In" onclick="login()">
     </div>
 
     <div class="nav">
-        <div class="navButton navButtonActive" id="publicNavButton">Public</div>
-        <div class="navButton" id="classNavButton" onclick="goToClass()">Class</div>
-        <div class="navButton" id="groupNavButton" onclick="goToGroup()">Group</div>
-        <div class="navButton" id="privateNavButton" onclick="goToPrivate()">Private</div>
+        <div class="navButton navButtonActive" id="publicNavButton" onclick="changePage('public')">Public</div>
+        <div class="navButton" id="classNavButton" onclick="changePage('class')">Class</div>
+        <div class="navButton" id="groupNavButton" onclick="changePage('group')">Group</div>
+        <div class="navButton" id="privateNavButton" onclick="changePage('private')">Private</div>
     </div>
-    
 
 
-    <!-- DANTLEY"S STUFF -->
-    <div id="ImageLine">
+
+
+
+
+
+
+
+
+
+    <div id="mainViewWrapper">
+        <!-- DANTLEY"S STUFF -->
+        <div id="ImageLine">
             <input id="scrollImageLeft" class="submitbutton" type="button" value="<<" style="height: 100px" onclick="leftArrow()">
-          <!--   onclick="leftArrow()" src="../Resources/leftArrow.jpeg"> -->
-        <img class="picture" id="first" src="../Resources/whiteBox.jpeg" onclick="updateMainImage(0)">
-        <img class="picture" id="second" src="../Resources/whiteBox.jpeg" onclick="updateMainImage(1)">
-        <img class="picture" id="third" src="../Resources/whiteBox.jpeg" onclick="updateMainImage(2)">
-        <img class="picture" id="fourth" src="../Resources/whiteBox.jpeg" onclick="updateMainImage(3)">
-        <img class="picture" id="fifth" src="../Resources/whiteBox.jpeg" onclick="updateMainImage(4)">
-        <img class="picture" id="sixth" src="../Resources/whiteBox.jpeg" onclick="updateMainImage(5)">
-            
-           <!--  <img onclick="rightArrow()" id="scrollImage" src="../Resources/rightArrow.jpeg"> -->
+            <!--   onclick="leftArrow()" src="../Resources/leftArrow.jpeg"> -->
+            <img class="picture" id="first" src="../Resources/whiteBox.jpeg" onclick="updateMainImage(0)">
+            <img class="picture" id="second" src="../Resources/whiteBox.jpeg" onclick="updateMainImage(1)">
+            <img class="picture" id="third" src="../Resources/whiteBox.jpeg" onclick="updateMainImage(2)">
+            <img class="picture" id="fourth" src="../Resources/whiteBox.jpeg" onclick="updateMainImage(3)">
+            <img class="picture" id="fifth" src="../Resources/whiteBox.jpeg" onclick="updateMainImage(4)">
+            <img class="picture" id="sixth" src="../Resources/whiteBox.jpeg" onclick="updateMainImage(5)">
+
+            <!--  <img onclick="rightArrow()" id="scrollImage" src="../Resources/rightArrow.jpeg"> -->
             <input id="scrollImageRight" class="submitbutton" type="button" value=">>" style="height: 100px" onclick="rightArrow()" >
         </div>
-    
 
 
-    <!-- TYLER'S STUFF -->
-    <div class="content" style="margin-top: 20px">
-        <div class="pictureView"><img id="mainImage" src="../Resources/defaultimage.jpg" height="100%" width="100%"></div>
 
-        <div class="comments" id="commentshere"></div>
+        <!-- TYLER'S STUFF -->
+        <div class="content" style="margin-top: 20px">
+            <div class="pictureView"><img id="mainImage" src="../Resources/defaultimage.jpg" height="100%" width="100%"></div>
 
-        <div id="submitContainer1" class="submitContainer" style="margin-left: 77px;">
-            
-            <input class="addComment" type="text" id="thecomment" autocomplete= "off" name="thecomment" placeholder="Add a comment..." oninput="updateCommentSubmitButton()" onkeydown="submitOnEnter(event, 'commentButton')">
-        
+            <div class="comments" id="commentshere"></div>
 
-            <div class="submitContainer" style="width: 100%">
-            <input id="commentButton" class="submitbutton" type="button" value="Submit" style=" margin-top: -2px;" onclick= "insertComment(thecomment.value, privateCheckbox.checked); return false;" disabled="true">
+            <div id="submitContainer1" class="submitContainer" style="margin-left: 77px;">
 
-            <label class="privateCheckbox" for="privateCheckbox">Private comment</label>
-            <input class="privateCheckbox" type="checkbox" id="privateCheckbox" style=" margin-top: -1px; margin-left: 0px;" > 
-        </div></div>
+                <input class="addComment" type="text" id="thecomment" autocomplete= "off" name="thecomment" placeholder="Add a comment..." oninput="updateCommentSubmitButton()" onkeydown="submitOnEnter(event, 'commentButton')">
+
+
+                <div class="submitContainer" style="width: 100%">
+                    <input id="commentButton" class="submitbutton" type="button" value="Submit" style=" margin-top: -2px;" onclick= "insertComment(thecomment.value, privateCheckbox.checked); return false;" disabled="true">
+
+                    <label class="privateCheckbox" for="privateCheckbox">Private comment</label>
+                    <input class="privateCheckbox" type="checkbox" id="privateCheckbox" style=" margin-top: -1px; margin-left: 0px;" >
+                </div></div>
+        </div>
     </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="addInspirationWrapper">
+
+
+        <div class="content" style="margin-top: 80px">
+            <div class="uploadPreview" id="uploadPreview">
+                <img id="uploadImage" src="../Resources/defaultimage.jpg" height="100%" width="100%"></div>
+
+            <div class="submitContainer" style="float: right; margin-right: 12.8%; width: 29.5%;">
+
+                <input type="file" onchange="readURL(this);" style="visibility: hidden; width: 1px;" id="upload" accept="image/*"/>
+                <input type="button" class="submitbutton" value="Upload Photo" onclick="document.getElementById('upload').click();" style="float: left; margin-bottom: 20px;"/>
+                <input class="textupload" type="text" id="textupload" autocomplete= "off" name="textupload" placeholder="Text inspiration or link...">
+
+
+
+                <div class="submitContainer" style="width: 117%; margin-top: 15px">
+
+                    <input class="submitbutton" type="button" value="Submit" style=" margin-top: -5px; " onclick= "changePage('public'); return false;">
+                    Visibility:
+
+                    <input class="visibilityCheckbox" type="checkbox" id="visibilityCheckbox1" style=" margin-top: 0px;" onclick="checkboxesCalculate('visibilityCheckbox1',visibilityCheckbox1.checked);">
+                    <label for="visibilityCheckbox1" style="vertical-align: top;">Public</label>
+
+                    <input class="visibilityCheckbox" type="checkbox" id="visibilityCheckbox2" style=" margin-top: 0px;" onclick="checkboxesCalculate('visibilityCheckbox2',visibilityCheckbox2.checked);">
+                    <label for="visibilityCheckbox2" style="vertical-align: top;">Class</label>
+
+                    <input class="visibilityCheckbox" type="checkbox" id="visibilityCheckbox3" style=" margin-top: 0px;" onclick="checkboxesCalculate('visibilityCheckbox3',visibilityCheckbox3.checked);">
+                    <label for="visibilityCheckbox3" style="vertical-align: top;">Group</label>
+
+                    <input class="visibilityCheckbox" type="checkbox" id="visibilityCheckbox4" style=" margin-top: 0px;" onclick="checkboxesCalculate('visibilityCheckbox4',visibilityCheckbox4.checked);">
+                    <label for="visibilityCheckbox4" style="vertical-align: top;">Private</label>
+                </div></div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="accountWrapper">
+        <div class="box">
+            <div class="title">Personal Info</div>
+            <table style="width:100%;">
+                <tr>
+                    <td>
+                        <table>
+                            <tr>
+                                <td style="text-align:right;">Username:</td>
+                                <td>Andrew</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:right;">Email:</td>
+                                <td><input id="editEmail" type="text" style="font-size: 15px;" value="bob@builder"
+                                           oninput="updateSaveChangesButton()"></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:right;">Notifications:</td>
+                                <td><input type="radio" name="notifications" checked onchange="updateSaveChangesButton()">On
+                                    <input type="radio" name="notifications" onchange="updateSaveChangesButton()">Off
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:right;">Class code:</td>
+                                <td>012345</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td style="text-align:center;">
+                        <img src="../Resources/ProfilePic.png" height="150px">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" id="saveChangesButton" class="submitbutton" value="Save Changes"
+                               style="float: left" onclick="changePage('public')" disabled>
+                    </td>
+                    <td style="text-align:center;">
+                        <input type="file" style="visibility: hidden; width: 1px;" id="upload" accept="image/*"/>
+                        <input type="button" class="submitbutton" value="Upload Photo"
+                               onclick="document.getElementById('upload').click();"
+                               style="margin-right: 5px; margin-bottom: 5px;"/>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <!-- Sign out button that can be removed! -->
+                    <td style="text-align:center;">
+                        <input type="button" class="submitbutton" value="Sign Out" onclick="logOut();"
+                               style="margin-right: 5px; margin-bottom: 5px; float:left;">
+                    </td>
+                    <!-- Sign out button that can be removed! -->
+
+                </tr>
+            </table>
+        </div>
+
+        <div class="box">
+            <div class="title">Groups</div>
+            <table style="Width:100%">
+                <tr>
+                    <td style="text-align:right;">Group:</td>
+                    <td style="text-align:center;"><input id="currentGroup" type="text"
+                                                          style="font-size: 15px; background-color: #C0EFC7;" value="Byters"
+                                                          readonly></td>
+                    <td>
+                        <input id="leaveGroupButton" type="button" class="submitbutton" value="Leave"
+                               style="font-size:15px; margin-right: 5px; padding-left: 22px; padding-right: 22px;"
+                               onclick="leave()">
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">Create new group:</td>
+                    <td style="text-align:center;"><input id="newGroup" type="text" style="font-size: 15px;"
+                                                          oninput="updateCreateButton()"
+                                                          onkeydown="submitOnEnter(event, 'createGroupButton')"></td>
+                    <td>
+                        <input id="createGroupButton" type="button" class="submitbutton" value="Create"
+                               style="font-size:15px; margin-right: 5px;" onclick="newGroup()" disabled="true">
+
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:right;">Join group:</td>
+                    <td style="text-align:center;"><input id="joinGroup" type="text" style="font-size: 15px;"
+                                                          oninput="updateJoinButton()"
+                                                          onkeydown="submitOnEnter(event, 'joinGroupButton')"></td>
+                    <td>
+                        <input id="joinGroupButton" type="button" class="submitbutton" value="Join"
+                               style="font-size:15px; margin-right: 5px; margin-bottom: 5px; padding-left: 29px; padding-right: 28px;"
+                               onclick="joinGroup()" disabled="true">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="loginWrapper">
+        <div class="box" style="width: 200px;">
+            <div class="title">Sign In</div>
+            <input id="signInUsername" type="text" placeholder="Username" style="font-size: 15px; margin-bottom: 5px; display: block;" oninput="updateSignInButton()" onkeydown="submitOnEnter(event, 'signUpButton2')">
+            <input id="signInPassword" type="password" placeholder="Password" style="font-size: 15px; margin-bottom: 5px; display: block;" oninput="updateSignInButton()" onkeydown="submitOnEnter(event, 'signUpButton2')">
+            <a href=""><img src="../Resources/facebook.png" width="35px" height="35px" style="display: block; float: left; margin-top: 5px; margin-left: 10%;" onclick="login(); return false;"></a>
+            <input type="button" class="submitbutton" value="Login" id="signUpButton2" onclick="login()" disabled="true">
+        </div>
+
+        <div class="box" style="width: 200px;">
+            <div class="title">Sign Up</div>
+            <input id="signUpUsername" type="text" placeholder="Username" style="font-size: 15px; margin-bottom: 5px; display:block;" oninput="updateSignUpButton()" onkeydown="submitOnEnter(event, 'signUpButton')">
+            <input id="signUpPassword" type="password" placeholder="Password" style="font-size: 15px; margin-bottom: 5px; display: block;" oninput="updateSignUpButton()" onkeydown="submitOnEnter(event, 'signUpButton')">
+            <input id="signUpEmail" type="text" placeholder="Email" style="font-size: 15px; margin-bottom: 5px; display: block;" oninput="updateSignUpButton()" onkeydown="submitOnEnter(event, 'signUpButton')">
+            <input id="signUpClassCode" type="text" placeholder="Class Code" style="font-size: 15px; margin-bottom: 5px; display: block;" oninput="updateSignUpButton()" onkeydown="submitOnEnter(event, 'signUpButton')">
+            <input type="button" class="submitbutton" value="Sign Up" id="signUpButton"style="display: block; " onclick="login()" disabled="true">
+        </div>
+    </div>
 </body>
 </html>
