@@ -388,3 +388,11 @@ function joinGroup() {
     document.getElementById("currentGroup").value = document.getElementById("joinGroup").value;
     document.getElementById("joinGroup").value = "";
 }
+
+function updateCommentSubmitButton() {
+    if(document.getElementById("thecomment").value == ""){
+        document.getElementById("commentButton").disabled = true;
+    }
+    else
+        document.getElementById("commentButton").disabled = false;
+}

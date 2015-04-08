@@ -12,7 +12,7 @@
     <div class="header">
         <div class="logo">Inspiral</div>
         <input id="addInspirationButton" class="submitbutton" type="button" value="Add Inspiration" onclick="goAddInspiration()">
-        <input class="searchBar" id="searchInput" placeholder="Search" onkeyup="search()">
+        <input class="searchBar" id="searchInput" placeholder="Search" oninput="search()">
         <input id="signInButton" class="submitbutton" type="button" value="Sign In" onclick="location.href='login.html'">
     </div>
 
@@ -50,11 +50,11 @@
 
         <div id="submitContainer1" class="submitContainer" style="margin-left: 77px;">
             
-            <input class="addComment" type="text" id="thecomment" autocomplete= "off" name="thecomment" placeholder="Add a comment...">
+            <input class="addComment" type="text" id="thecomment" autocomplete= "off" name="thecomment" placeholder="Add a comment..." oninput="updateCommentSubmitButton()">
         
 
             <div class="submitContainer" style="width: 100%">
-            <input class="submitbutton" type="button" value="Submit" style=" margin-top: -2px;" onclick= "insertComment(thecomment.value, privateCheckbox.checked); return false;">
+            <input id="commentButton" class="submitbutton" type="button" value="Submit" style=" margin-top: -2px;" onclick= "insertComment(thecomment.value, privateCheckbox.checked); return false;" disabled="true">
 
             <label class="privateCheckbox" for="privateCheckbox">Private comment</label>
             <input class="privateCheckbox" type="checkbox" id="privateCheckbox" style=" margin-top: -1px; margin-left: 0px;" > 
