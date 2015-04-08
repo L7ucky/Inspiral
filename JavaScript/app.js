@@ -431,3 +431,14 @@ function updateSignInButton() {
     else
         document.getElementById("signUpButton2").disabled = false;
 }
+
+function updateSignUpButton() {
+    if(document.getElementById("signUpUsername").value == ""
+    || document.getElementById("signUpPassword").value == ""
+    || document.getElementById("signUpEmail").value == ""
+    || document.getElementById("signUpClassCode").value == ""){
+        document.getElementById("signUpButton").disabled = true;
+    }
+    else
+        document.getElementById("signUpButton").disabled = false;
+}

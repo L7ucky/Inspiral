@@ -30,11 +30,11 @@
     
     <div class="box" style="width: 200px;">
         <div class="title">Sign Up</div>
-        <input type="text" placeholder="Username" style="font-size: 15px; margin-bottom: 5px; display:block;">
-        <input type="password" placeholder="Password" style="font-size: 15px; margin-bottom: 5px; display: block;">
-        <input type="text" placeholder="Email" style="font-size: 15px; margin-bottom: 5px; display: block;">
-        <input type="text" placeholder="Class Code" style="font-size: 15px; margin-bottom: 5px; display: block;">
-        <input type="button" class="submitbutton" value="Sign Up" id="signUpButton"style="display: block; " onclick="location.href='Public.html?loggedIn=true'">
+        <input id="signUpUsername" type="text" placeholder="Username" style="font-size: 15px; margin-bottom: 5px; display:block;" oninput="updateSignUpButton()" onkeydown="submitOnEnter(event, 'signUpButton')">
+        <input id="signUpPassword" type="password" placeholder="Password" style="font-size: 15px; margin-bottom: 5px; display: block;" oninput="updateSignUpButton()" onkeydown="submitOnEnter(event, 'signUpButton')">
+        <input id="signUpEmail" type="text" placeholder="Email" style="font-size: 15px; margin-bottom: 5px; display: block;" oninput="updateSignUpButton()" onkeydown="submitOnEnter(event, 'signUpButton')">
+        <input id="signUpClassCode" type="text" placeholder="Class Code" style="font-size: 15px; margin-bottom: 5px; display: block;" oninput="updateSignUpButton()" onkeydown="submitOnEnter(event, 'signUpButton')">
+        <input type="button" class="submitbutton" value="Sign Up" id="signUpButton"style="display: block; " onclick="location.href='Public.html?loggedIn=true'" disabled="true">
     </div>
 </body>
 </html>
