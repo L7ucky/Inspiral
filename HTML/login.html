@@ -22,10 +22,10 @@
 
     <div class="box" style="width: 200px;">
         <div class="title">Sign In</div>
-        <input type="text" placeholder="Username" style="font-size: 15px; margin-bottom: 5px; display: block;">
-        <input type="password" placeholder="Password" style="font-size: 15px; margin-bottom: 5px; display: block;">
+        <input id="signInUsername" type="text" placeholder="Username" style="font-size: 15px; margin-bottom: 5px; display: block;" oninput="updateSignInButton()" onkeydown="submitOnEnter(event, 'signUpButton2')">
+        <input id="signInPassword" type="password" placeholder="Password" style="font-size: 15px; margin-bottom: 5px; display: block;" oninput="updateSignInButton()" onkeydown="submitOnEnter(event, 'signUpButton2')">
         <a href=""><img src="../Resources/facebook.png" width="35px" height="35px" style="display: block; float: left; margin-top: 5px; margin-left: 10%;" onclick="location.href='Public.html?loggedIn=true'; return false;"></a>
-        <input type="button" class="submitbutton" value="Login" id="signUpButton" onclick="location.href='Public.html?loggedIn=true'">
+        <input type="button" class="submitbutton" value="Login" id="signUpButton2" onclick="location.href='Public.html?loggedIn=true'" disabled="true">
     </div>
     
     <div class="box" style="width: 200px;">

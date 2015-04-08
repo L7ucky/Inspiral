@@ -423,3 +423,11 @@ function updateJoinButton() {
     else
         document.getElementById("joinGroupButton").disabled = false;
 }
+
+function updateSignInButton() {
+    if(document.getElementById("signInUsername").value == "" || document.getElementById("signInPassword").value == ""){
+        document.getElementById("signUpButton2").disabled = true;
+    }
+    else
+        document.getElementById("signUpButton2").disabled = false;
+}

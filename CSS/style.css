@@ -357,6 +357,14 @@ div.submitContainer{
     display: block;
 }
 
+#signUpButton2
+{
+    margin: auto;
+    float: none;
+    margin-bottom: 2%;
+    display: block;
+}
+
 /*DANTLeY"S STUFF*/
 .picture/*this is for the class of the pictures*/
 {
