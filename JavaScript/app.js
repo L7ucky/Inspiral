@@ -2,7 +2,8 @@
  * Created by Andrew on 3/8/2015.
  */
 // Tyler's Stuff
-var currentUser = "Andrew";
+var currentUser = "Username";
+var currGroup = "Byters"
 var loggedIn = false;
 var imagelistPrivate = ["../Resources/cactus.jpeg", "../Resources/cactus.jpeg", "../Resources/cactus.jpeg", "../Resources/nike.jpeg", "../Resources/patriot.jpeg","../Resources/rooney.jpeg","../Resources/starwars.jpeg", "../Resources/sword.jpeg","../Resources/cow.jpeg","../Resources/greenChurch.jpeg","../Resources/dragon.jpeg","../Resources/moutain.jpeg","../Resources/roller.jpeg",];
 var imagelistClass = ["../Resources/dog.jpeg", "../Resources/dog.jpeg", "../Resources/dog.jpeg", "../Resources/nike.jpeg", "../Resources/patriot.jpeg","../Resources/rooney.jpeg","../Resources/starwars.jpeg", "../Resources/sword.jpeg","../Resources/cow.jpeg","../Resources/greenChurch.jpeg","../Resources/dragon.jpeg","../Resources/moutain.jpeg","../Resources/roller.jpeg",];
@@ -263,7 +264,20 @@ function rightArrow()
 }
 
 
-function login(){
+function login(usernameEntered, classCodeEntered){
+	currentUser = usernameEntered;
+	if (document.getElementById("signUpEmail").value != "")
+	{
+		document.getElementById("editEmail").value = document.getElementById("signUpEmail").value;
+	}
+	document.getElementById("editClassCode").innerHTML = classCodeEntered;
+	document.getElementById("UsernameSlot").innerHTML = usernameEntered;
+	document.getElementById("signInUsername").value = "";
+	document.getElementById("signInPassword").value = "";
+	document.getElementById("signUpUsername").value = "";
+	document.getElementById("signUpPassword").value = "";
+	document.getElementById("signUpEmail").value = "";
+	document.getElementById("signUpClassCode").value = "";
     loggedIn = true;
     changePage("public");
 }
@@ -366,6 +380,7 @@ function leave() {
 }
 
 function newGroup() {
+	currGroup = document.getElementById("newGroup").value;
     document.getElementById("currentGroup").value = document.getElementById("newGroup").value;
     document.getElementById("newGroup").value = "";
     document.getElementById("createGroupButton").disabled = true;
@@ -373,6 +388,7 @@ function newGroup() {
 }
 
 function joinGroup() {
+	currGroup = document.getElementById("joinGroup").value;
     document.getElementById("currentGroup").value = document.getElementById("joinGroup").value;
     document.getElementById("joinGroup").value = "";
     document.getElementById("joinGroupButton").disabled = true;
@@ -437,8 +453,12 @@ function determineTabName()
 {
 	if (loggedIn == true) 
 		{
-			document.getElementById("classNavButton").innerHTML = "Class (Section 1)";
-			document.getElementById("groupNavButton").innerHTML = "Group (Byters)";
+			document.getElementById("classNavButton").innerHTML = "Class (Section 2)";
+			var x = "Group (";
+				if (currGroup == "") x += "No group";
+				else x += currGroup;
+				x += ")";
+			document.getElementById("groupNavButton").innerHTML = x;
 		}
 		else
 		{
