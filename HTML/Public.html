@@ -269,7 +269,7 @@
             <div class="title" onclick="determineTabName();">Sign In</div>
             <input id="signInUsername" type="text" placeholder="Username" style="font-size: 15px; margin-bottom: 5px; display: block;" oninput="updateSignInButton()" onkeydown="submitOnEnter(event, 'signUpButton2')">
             <input id="signInPassword" type="password" placeholder="Password" style="font-size: 15px; margin-bottom: 5px; display: block;" oninput="updateSignInButton()" onkeydown="submitOnEnter(event, 'signUpButton2')">
-            <a href=""><img src="../Resources/facebook.png" width="35px" height="35px" style="display: block; float: left; margin-top: 5px; margin-left: 10%;" onclick="login(signInUsername.value, '012345'); determineTabName(); return false;"></a>
+            <a href=""><img src="../Resources/facebook.png" width="35px" height="35px" style="display: block; float: left; margin-top: 5px; margin-left: 10%;" onclick="facebookLogin(); return false;"></a>
             <input type="button" class="submitbutton" value="Login" id="signUpButton2" onclick="login(signInUsername.value, '012345')" disabled="false">
         </div>
 

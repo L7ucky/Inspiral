@@ -320,8 +320,8 @@ function login(usernameEntered, classCodeEntered){
 	document.getElementById("signUpPassword").value = "";
 	document.getElementById("signUpEmail").value = "";
 	document.getElementById("signUpClassCode").value = "";
-    loggedIn = true;
-    changePage("public");
+  loggedIn = true;
+  changePage("public");
 }
 function accountButtonPressed(){
     if(loggedIn){
@@ -584,3 +584,11 @@ document.onkeydown = function(event) {
     }
 
 };
+
+function facebookLogin() {
+    if(document.getElementById('signInUsername').value != '')
+        login(document.getElementById('signInUsername').value, '012345');
+    else
+        login('Andrew', '012345');
+    determineTabName();
+}
