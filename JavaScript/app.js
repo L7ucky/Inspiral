@@ -71,6 +71,7 @@ function readURL(input) {
 
             reader.onload = function (e) {
                 document.getElementById("uploadImage").src= e.target.result;
+                document.getElementById("ProfilePic").src= e.target.result;
                    // .attr('src', e.target.result);
             };
 
