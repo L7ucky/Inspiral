@@ -105,7 +105,6 @@ function searchComments(postID,val){
 function getImageName(url){
     var index = url.lastIndexOf("/") + 1;
     var name = url.substr(index);
-    console.log(name);
     return name;
 }
 
