@@ -593,3 +593,22 @@ function facebookLogin() {
         login('Andrew', '012345');
     determineTabName();
 }
+
+var fileUploaded = false;
+
+function updateSubmitInspiration() {
+    if(!fileUploaded && document.getElementById("textupload").value == "")
+        document.getElementById("submitInspiration").disabled = true;
+    else if(!document.getElementById("visibilityCheckbox1").checked
+            && !document.getElementById("visibilityCheckbox2").checked
+            && !document.getElementById("visibilityCheckbox3").checked
+            && !document.getElementById("visibilityCheckbox4").checked)
+        document.getElementById("submitInspiration").disabled = true;
+    else
+        document.getElementById("submitInspiration").disabled = false;
+}
+
+function uploadFile() {
+    fileUploaded = true;
+    updateSubmitInspiration();
+}

@@ -106,27 +106,27 @@
 
             <div class="submitContainer" style="float: right; margin-left: 0px; margin-right: 12.8%; width: 29.5%;">
 
-                <input type="file" onchange="readURL(this);" style="visibility: hidden; width: 1px;" id="upload" accept="image/*"/>
+                <input type="file" onchange="readURL(this); uploadFile();" style="visibility: hidden; width: 1px;" id="upload" accept="image/*"/>
                 <input type="button" class="submitbutton" value="Upload Photo" onclick="document.getElementById('upload').click();" style="float: left; margin-bottom: 20px;"/>
-                <input class="textupload" type="text" id="textupload" autocomplete= "off" name="textupload" placeholder="Text inspiration or link...">
+                <input class="textupload" type="text" id="textupload" autocomplete= "off" name="textupload" placeholder="Text inspiration or link..." oninput="updateSubmitInspiration()">
 
 
 
                 <div class="submitContainer" style="width: 117%; margin-left: 0px; margin-top: 15px">
 
-                    <input id="submitInspiration" class="submitbutton" type="button" value="Submit" style=" margin-top: -5px; " onclick= "checkCheckboxes(); return false;">
+                    <input id="submitInspiration" class="submitbutton" type="button" value="Submit" style=" margin-top: -5px; " onclick= "checkCheckboxes(); return false;" disabled>
                     Visibility:
 
-                    <input class="visibilityCheckbox" type="checkbox" id="visibilityCheckbox1" style=" margin-top: 0px;" onclick="checkboxesCalculate('visibilityCheckbox1',visibilityCheckbox1.checked);">
+                    <input class="visibilityCheckbox" type="checkbox" id="visibilityCheckbox1" style=" margin-top: 0px;" onclick="checkboxesCalculate('visibilityCheckbox1',visibilityCheckbox1.checked);" onchange="updateSubmitInspiration()">
                     <label for="visibilityCheckbox1" style="vertical-align: top;">Public</label>
 
-                    <input class="visibilityCheckbox" type="checkbox" id="visibilityCheckbox2" style=" margin-top: 0px;" onclick="checkboxesCalculate('visibilityCheckbox2',visibilityCheckbox2.checked);">
+                    <input class="visibilityCheckbox" type="checkbox" id="visibilityCheckbox2" style=" margin-top: 0px;" onclick="checkboxesCalculate('visibilityCheckbox2',visibilityCheckbox2.checked);" onchange="updateSubmitInspiration()">
                     <label for="visibilityCheckbox2" style="vertical-align: top;">Class</label>
 
-                    <input class="visibilityCheckbox" type="checkbox" id="visibilityCheckbox3" style=" margin-top: 0px;" onclick="checkboxesCalculate('visibilityCheckbox3',visibilityCheckbox3.checked);">
+                    <input class="visibilityCheckbox" type="checkbox" id="visibilityCheckbox3" style=" margin-top: 0px;" onclick="checkboxesCalculate('visibilityCheckbox3',visibilityCheckbox3.checked);" onchange="updateSubmitInspiration()">
                     <label for="visibilityCheckbox3" style="vertical-align: top;">Group</label>
 
-                    <input class="visibilityCheckbox" type="checkbox" id="visibilityCheckbox4" style=" margin-top: 0px;" onclick="checkboxesCalculate('visibilityCheckbox4',visibilityCheckbox4.checked);">
+                    <input class="visibilityCheckbox" type="checkbox" id="visibilityCheckbox4" style=" margin-top: 0px;" onclick="checkboxesCalculate('visibilityCheckbox4',visibilityCheckbox4.checked);" onchange="updateSubmitInspiration()">
                     <label for="visibilityCheckbox4" style="vertical-align: top;">My Page</label>
                 </div></div>
         </div>
