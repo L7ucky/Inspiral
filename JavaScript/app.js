@@ -39,6 +39,7 @@ var searching = false;
 
 var currentUser = "Andrew";
 var currGroup = "Byters"
+var currClassCode = "012345";
 var loggedIn = false;
 
 
@@ -313,12 +314,13 @@ function rightArrow()
 
 
 function login(usernameEntered, classCodeEntered){
+	currClassCode = classCodeEntered;
 	if (usernameEntered != "") currentUser = usernameEntered;
 	if (document.getElementById("signUpEmail").value != "")
 	{
 		document.getElementById("editEmail").value = document.getElementById("signUpEmail").value;
 	}
-	document.getElementById("editClassCode").innerHTML = classCodeEntered;
+	if (classCodeEntered != "012345") document.getElementById("editClassCode").innerHTML = classCodeEntered;
 	document.getElementById("UsernameSlot").innerHTML = usernameEntered;
 	if (usernameEntered == "") document.getElementById("UsernameSlot").innerHTML = currentUser;
 	document.getElementById("signInUsername").value = "";
@@ -327,8 +329,8 @@ function login(usernameEntered, classCodeEntered){
 	document.getElementById("signUpPassword").value = "";
 	document.getElementById("signUpEmail").value = "";
 	document.getElementById("signUpClassCode").value = "";
-  loggedIn = true;
-  changePage("public");
+  	loggedIn = true;
+  	changePage("public");
 }
 function accountButtonPressed(){
     if(loggedIn){
@@ -527,10 +529,14 @@ function determineTabName()
 {
 	if (loggedIn == true) 
 		{
-			document.getElementById("classNavButton").innerHTML = "Class (Section 1)";
-			var x = "Group (";
-				x += currGroup;
+			var x = "Class (Code: ";
+				x += currClassCode;
 				x += ")";
+			document.getElementById("classNavButton").innerHTML = x;
+
+			x = "Group (";
+			x += currGroup;
+			x += ")";
 			document.getElementById("groupNavButton").innerHTML = x;
 		}
 		else
