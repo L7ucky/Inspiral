@@ -65,7 +65,7 @@ input[type="password"]{
     text-align: center;
     margin-top: 10px;
     margin-bottom: 20px;
-    margin-left: 10%;
+    margin-left: 12%;
     float: left;
 }
 .sortByWrapper{
@@ -83,11 +83,11 @@ input[type="password"]{
     border-color: rgb(96,214,110);
     border-width: thin;
     display: inline-block;
-    width:23.3%;
+    width:25%;
     color:#484848;
     margin-top: 10px;
     margin-bottom: 20px;
-    margin-left:21.8%;
+    margin-left:28%;
     height: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -262,29 +262,19 @@ a.divLink {
 .aComment{
 
     border-style: solid;
-    border-width: 1px;
-    border-color: rgb(175,235,182);
-    border-left-width: 0px;
-    border-right-width: 0px;
-    border-bottom-width: 0px;
-    padding-top: 1px;
-    padding-bottom: 1px;
-    background-color: white;
+    border-width: 2px;
+    border-radius: 5px;
+    border-color: rgb(154, 208, 156);
+    padding: 2px;
+    background-color: #afebb6;
+    color: #484848;
 }
-.pictureView{
-    width:47%;
-    min-height: 450px;
-    margin:auto;
-    padding: 10px;
-    position: relative;
-    float: left;
-    left: 5.5%;
-}
+
 #infoContainer{
     color: #484848;
     display: inline-block;
     height: 450px;
-    width:43%;
+    width:41.4%;
     margin-top: auto;
     margin-left:6%;
     padding-top: 10px;
@@ -322,6 +312,7 @@ a.divLink {
     /*height:315px;
     width:750px;*/
     margin-left: 5%;
+    border-radius: 5px;
     padding: 10px;
     position: relative;
     float: left;
@@ -395,7 +386,7 @@ div.submitContainer{
 }
 #commentButton
 {
-    
+
 }
 #submitInspiration
 {
@@ -419,9 +410,23 @@ div.submitContainer{
 }
 
 /*DANTLeY"S STUFF*/
+.pictureBar{
+    display: inline-block;
+    margin-left: 2%;
+    width:84%;
+}
+.pictureView{
+    width:47%;
+    min-height: 450px;
+    margin:auto;
+    padding: 10px;
+    position: relative;
+    float: left;
+    left: 5.5%;
+}
 .picture/*this is for the class of the pictures*/
 {
-    width: 13%;
+    width: 15.4%;
     height:130px;
     /*padding: .4%;*/
 }
@@ -433,15 +438,17 @@ div.submitContainer{
 }
 #ImageLine /*this is just for the div in which the picture reside*/
 {
+    display: inline-block;
     width: 100%;
 }
 #scrollImageLeft /*scrollImage is for the arrow buttons sorry it is a bad name*/
 {
     display: inline-block;
     margin-top: 20px;
-    margin-right: 2%;
+    margin-left: 1%;
+    margin-right:1%;
     float: left;
-    height: 110px;
+    height: 100px;
 
 }
 #scrollImageRight /*scrollImage is for the arrow buttons sorry it is a bad name*/
@@ -449,9 +456,10 @@ div.submitContainer{
     display: inline-block;
     margin-top: 20px;
     float: right;
-    height: 110px;
+    height: 100px;
 
-    margin-right:1.25%;
+    margin-left: auto;
+    margin-right:1%;
 
 }
 

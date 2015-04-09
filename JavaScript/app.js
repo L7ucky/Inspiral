@@ -9,7 +9,7 @@ var imagelistGroup = [16,17,10,9,7,3,2,1];
 var imagelistPublic = [20,21,16,17,18,19,9,11,0];
 
 var posts = {};
-posts[0] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/Cat.jpg',link:'www.google.com',comments:["Josh: This is a cat.", "Dantley: It looks like it has magical powers. It must be a liger."]};
+posts[0] = {op:'Andrew', note:'Check out this Fire-breathing Cat I found!',image:'http://www.pickycovers.com/uploads/cover/0e68f90451318d6c066def6427777d09.jpg',link:'www.google.com',comments:["Josh: This is a cat.", "Dantley: It looks like it has magical powers. It must be a liger."]};
 posts[1] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/cactus.jpeg',link:'www.google.com',comments:["Josh: This is a cat.", "Dantley: It looks like it has magical powers. It must be a liger."]};
 posts[2] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/nike.jpeg',link:'www.nike.com',comments:["Andrew: Respect the swoosh!"]};
 posts[3] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/patriot.jpeg',link:'www.nike.com',comments:["Josh: Reminds me of Football.","Dantley: Flag.... nice!"]};
@@ -122,7 +122,8 @@ function search(){
                 var newString = getImageName(post.image);
                 var str = newString.toLowerCase();
                 var n = str.search(val);
-                if(n>-1 || searchComments(postID,val)){
+                var p = post.note.toLowerCase().search(val);
+                if(n>-1 || searchComments(postID,val) ||p>-1){
                     newArray.push(postID);
                 }
             }
