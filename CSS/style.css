@@ -307,7 +307,6 @@ a.divLink {
 }
 input.submitbutton {
     float:right; 
-    margin-right:-22px;
     background: #484848;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -356,6 +355,14 @@ div.submitContainer{
     padding-top: 5px;
     float: left; 
 
+}
+#commentButton
+{
+    margin-right: -22px;
+}
+#submitInspiration
+{
+    margin-right: -33px;
 }
 /*id for sign up button*/
 #signUpButton
