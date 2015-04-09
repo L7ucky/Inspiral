@@ -29,30 +29,8 @@ posts[16] = {op:'Andrew', note:'Click the link below to go to the page',image:'.
 posts[17] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/rain.jpg',link:'www.rain.com',comments:[]};
 posts[18] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/kitten.jpg',link:'www.kitten.com',comments:["Tyler: This is a precious photo my wife took of little Katniss.","Josh: This looks like my cat."]};
 posts[19] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/weather.jpg',link:'www.weather.com',comments:["Andrew: Respect the weather channel!"]};
-posts[20] = {op:'Andrew', note:'Click the link below to go to the page',image:'http://blog.jimdo.com/wp-content/uploads/2014/01/tree-247122.jpg',link:'www.beach.com',comments:["Andrew: I want to go there so badly!"]};
-posts[21] = {op:'Andrew', note:'Click the link below to go to the page',image:'http://images.visitcanberra.com.au/images/canberra_hero_image.jpg',link:'www.hotairballons.com',comments:["Andrew: Awesome!!"]};
-
-//var comments = {};
-//comments["../Resources/Cat.jpg"] = ["Josh: This is a cat.", "Dantley: It looks like it has magical powers. It must be a liger."];
-//comments["../Resources/cactus.jpeg"] = [];
-//comments["../Resources/nike.jpeg"] = ["Andrew: Respect the swoosh!"];
-//comments["../Resources/patriot.jpeg"] = ["Josh: Reminds me of Football.","Dantley: Flag.... nice!"];
-//comments["../Resources/rooney.jpeg"] = ["Andrew: Does this guy play soccer?","Tyler: I think he just scored a goal!"];
-//comments["../Resources/starwars.jpeg"] = ["Josh: Padme's beauty inspires me.", "Dantley: I personally prefer Leia."];
-//comments["../Resources/sword.jpeg"] = ["Josh: Do you think we could use a sword in our advertisement?"];
-//comments["../Resources/cow.jpeg"] = ["Josh: I look like a cow in this picture."];
-//comments["../Resources/greenChurch.jpeg"] = ["Dantley: This is a picture of the painting I made of a dream I had two weeks ago."];
-//comments["../Resources/dragon.jpeg"] = ["Andrew: This is a Fire-breathing beast!"];
-//comments["../Resources/moutain.jpeg"] = [];
-//comments["../Resources/roller.jpeg"] = [];
-//comments["../Resources/dog.jpeg"] = ["Josh: This is a dog."];
-//comments["../Resources/husky.jpeg"] = [];
-//comments["../Resources/lights.jpg"] = [];
-//comments["../Resources/message.jpg"] = ["Jesse: I took a picture of this at the beach last week.", "Josh: Wow! I've never seen a message in a bottle like that before!"];
-//comments["../Resources/park.jpg"] = ["Josh: I took this one while playing ultimate frisbee at Kiwanis."];
-//comments["../Resources/rain.jpg"] = [];
-//comments["../Resources/kitten.jpg"] = ["Tyler: This is a precious photo my wife took of little Katniss.","Josh: This looks like my cat."];
-//comments["../Resources/weather.jpg"] =[];
+posts[20] = {op:'Andrew', note:'Click the link below to go to the page',image:'http://blog.jimdo.com/wp-content/uploads/2014/01/tree-247122.jpg',link:'http://www.beach.com',comments:["Andrew: I want to go there so badly!"]};
+posts[21] = {op:'Andrew', note:'Click the link below to go to the page',image:'http://images.visitcanberra.com.au/images/canberra_hero_image.jpg',link:'http://www.hotairballons.com',comments:["Andrew: Awesome!!"]};
 
 var currentImages = imagelistPublic;
 var currentPage = "public";
@@ -70,6 +48,7 @@ function logOut()
 	determineTabName();
     changePage('public');
 }
+
 function insertComment(string_in, checked)
 {
     if (string_in != "" && loggedIn){
@@ -84,6 +63,7 @@ function insertComment(string_in, checked)
 
     }
 }
+
 //this is the function to change image on upload image
 function readURL(input) {
         if (input.files && input.files[0]) {
@@ -97,6 +77,7 @@ function readURL(input) {
             reader.readAsDataURL(input.files[0]);
         }
     }
+
 function searchComments(postID,val){
     val = val.toLowerCase();
     var imgComments = posts[postID].comments;
@@ -409,6 +390,28 @@ window.onload = function(){
     onLoad();
 };
 
+function updatePostInfo(index){
+    var post = posts[currentImages[index]];
+    document.getElementById('op').innerHTML = 'Posted By: '+post.op;
+    if(post.note.length>0){
+        document.getElementById('note').innerHTML = post.note;
+        document.getElementById('note').display = 'inline-block';
+    }
+    else{
+        document.getElementById('note').display = 'none';
+    }
+    if(post.link.length>0){
+        document.getElementById('opLink').display = 'inline-block';
+        document.getElementById('actualLink').innerHTML = post.link;
+        document.getElementById('actualLink').href = post.link;
+        document.getElementById('opLink').style.margin='10px 0px 10px 5%';
+    }
+    else{
+        document.getElementById('opLink').display = 'none';
+    }
+
+}
+
 function updateMainImage(index,homepage){
     currentImageIndex = index;
 
@@ -428,6 +431,7 @@ function updateMainImage(index,homepage){
 	       	document.getElementById('commentshere').innerHTML += "<p class='aComment'>" + posts[currentImages[index]].comments[i] + "</p>";
 	   	}
 	}
+    updatePostInfo(index);
     refreshPictures();
 }
 

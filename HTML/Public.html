@@ -55,19 +55,29 @@
         <div class="content" style="margin-top: 20px">
             <div class="pictureView"><img id="mainImage" src="../Resources/defaultimage.jpg" height="100%" width="100%"></div>
 
-            <div class="comments" id="commentshere"></div>
+            <div id="infoContainer">
+                <div id="op">Posted By: </div>
+                <div id="note">This is a tiny fake note that I wrote for myself.  </div>
+                <div id="opLink" href="google.com">
+                    <a id="actualLink" href="Http://google.com" target="_blank">http://www.Placeholder.com/placeholder.jpg</a>
+                </div>
 
-            <div id="submitContainer1" class="submitContainer" style="margin-left: 77px;">
+                <div class="comments" id="commentshere"></div>
 
-                <input class="addComment" type="text" id="thecomment" autocomplete= "off" name="thecomment" placeholder="Add a comment..." oninput="updateCommentSubmitButton()" onkeydown="submitOnEnter(event, 'commentButton')">
+                <div id="submitContainer1" class="submitContainer">
+
+                    <input class="addComment" type="text" id="thecomment" autocomplete= "off" name="thecomment" placeholder="Add a comment..." oninput="updateCommentSubmitButton()" onkeydown="submitOnEnter(event, 'commentButton')">
 
 
-                <div class="submitContainer" style="width: 100%">
-                    <input id="commentButton" class="submitbutton" type="button" value="Submit" style=" margin-top: -2px;" onclick= "insertComment(thecomment.value, privateCheckbox.checked); return false;" disabled="true">
+                    <div class="submitContainer" style="width: 100%">
+                        <input id="commentButton" class="submitbutton" type="button" value="Submit" onclick= "insertComment(thecomment.value, privateCheckbox.checked); return false;" disabled="true">
 
-                    <label class="privateCheckbox" for="privateCheckbox">Private comment</label>
-                    <input class="privateCheckbox" type="checkbox" id="privateCheckbox" style=" margin-top: -1px; margin-left: 0px;" >
-                </div></div>
+                        <label class="privateCheckbox" for="privateCheckbox">Private comment</label>
+                        <input class="privateCheckbox" type="checkbox" id="privateCheckbox" >
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
