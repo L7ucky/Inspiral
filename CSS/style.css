@@ -260,7 +260,7 @@ a.divLink {
 }
 
 .aComment{
-
+    display:inline-block;
     border-style: solid;
     border-width: 2px;
     border-radius: 5px;
@@ -268,6 +268,10 @@ a.divLink {
     padding: 2px;
     background-color: #afebb6;
     color: #484848;
+}
+.commentLine{
+    display:block;
+    margin: 5px;
 }
 
 #infoContainer{

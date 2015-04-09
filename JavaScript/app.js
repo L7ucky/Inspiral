@@ -436,12 +436,12 @@ function updateMainImage(index,homepage){
     document.getElementById('commentshere').innerHTML = "";
     if (posts[currentImages[index]].comments.length == 0)
     {
-    	document.getElementById('commentshere').innerHTML += "<p class='aComment' style='color: gray'>" + "No comments yet." + "</p>";
+    	document.getElementById('commentshere').innerHTML += "<div class='commentLine'><div class='aComment' style='color: gray'>" + "No comments yet." + "</div></div>";
     }
     else{
 	   	for(var i=0;i<posts[currentImages[index]].comments.length;i++)
 	   	{
-	       	document.getElementById('commentshere').innerHTML += "<p class='aComment'>" + posts[currentImages[index]].comments[i] + "</p>";
+	       	document.getElementById('commentshere').innerHTML += "<div class='commentLine'><div class='aComment'>" + posts[currentImages[index]].comments[i] + "</div></div>";
 	   	}
 	}
     updatePostInfo(index);
