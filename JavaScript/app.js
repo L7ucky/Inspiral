@@ -37,7 +37,7 @@ var currentPage = "public";
 var currentImageIndex = 0;
 var searching = false;
 
-var currentUser = "Username";
+var currentUser = "Andrew";
 var currGroup = "Byters"
 var loggedIn = false;
 
@@ -225,6 +225,15 @@ function  checkboxesCalculate (name, checked) {
 	}
 	
 }
+function checkCheckboxes()
+{
+	if (visibilityCheckbox1.checked == false && visibilityCheckbox2.checked == false &&
+		visibilityCheckbox3.checked == false &&	visibilityCheckbox4.checked == false)
+	{
+		window.alert("Please check at least one visibility option.");
+	}
+	else changePage('public'); 
+}
 
 function setAccountButton()
 {
@@ -297,13 +306,14 @@ function rightArrow()
 
 
 function login(usernameEntered, classCodeEntered){
-	currentUser = usernameEntered;
+	if (usernameEntered != "") currentUser = usernameEntered;
 	if (document.getElementById("signUpEmail").value != "")
 	{
 		document.getElementById("editEmail").value = document.getElementById("signUpEmail").value;
 	}
 	document.getElementById("editClassCode").innerHTML = classCodeEntered;
 	document.getElementById("UsernameSlot").innerHTML = usernameEntered;
+	if (usernameEntered == "") document.getElementById("UsernameSlot").innerHTML = currentUser;
 	document.getElementById("signInUsername").value = "";
 	document.getElementById("signInPassword").value = "";
 	document.getElementById("signUpUsername").value = "";

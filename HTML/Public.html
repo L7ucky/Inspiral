@@ -36,7 +36,7 @@
     <div id="mainViewWrapper">
         <!-- DANTLEY"S STUFF -->
         <div id="ImageLine">
-            <input id="scrollImageLeft" class="submitbutton" type="button" value="<<" style="height: 100px" onclick="moveToLeft()">
+            <input id="scrollImageLeft" class="submitbutton" type="button" value="<<" style="height: 100px; margin-left: 0.5%;" onclick="moveToLeft()">
             <!--   onclick="leftArrow()" src="../Resources/leftArrow.jpeg"> -->
             <img class="picture" id="first" src="../Resources/whiteBox.jpeg" onclick="updateMainImage(0)">
             <img class="picture" id="second" src="../Resources/whiteBox.jpeg" onclick="updateMainImage(1)">
@@ -114,7 +114,7 @@
 
                 <div class="submitContainer" style="width: 117%; margin-top: 15px">
 
-                    <input id="submitInspiration" class="submitbutton" type="button" value="Submit" style=" margin-top: -5px; " onclick= "changePage('public'); return false;">
+                    <input id="submitInspiration" class="submitbutton" type="button" value="Submit" style=" margin-top: -5px; " onclick= "checkCheckboxes(); return false;">
                     Visibility:
 
                     <input class="visibilityCheckbox" type="checkbox" id="visibilityCheckbox1" style=" margin-top: 0px;" onclick="checkboxesCalculate('visibilityCheckbox1',visibilityCheckbox1.checked);">
