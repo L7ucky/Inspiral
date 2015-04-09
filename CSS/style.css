@@ -273,28 +273,61 @@ a.divLink {
 }
 .pictureView{
     width:47%;
-    /*height:390px;
-    width:650px;*/
-    margin:0px;
-    margin-top: -10px;
+    min-height: 450px;
+    margin:auto;
+    padding: 10px;
+    position: relative;
+    float: left;
+    left: 5.5%;
+}
+#infoContainer{
+    color: #484848;
+    display: inline-block;
+    height: 450px;
+    width:43%;
+    margin-top: auto;
+    margin-left:6%;
+    padding-top: 10px;
+
+}
+#op{
+    width:90%;
+    margin-left: 5%;
+ }
+#note{
+    margin-top: 10px;
+    margin-bottom: 0px;
+    width:90%;
+    margin-left: 5%;
+}
+#opLink{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width:90%;
+    margin-left: 5%;
+    text-decoration: none;
+    color: #5ba95b;
+}
+
+#actualLink{
+    text-decoration: none;
+    color: #5ba95b;
+}
+#actualLink:hover{
+     cursor: pointer;
+ }
+.comments{
+    height:200px;
+    width:90%;
+    /*height:315px;
+    width:750px;*/
     margin-left: 5%;
     padding: 10px;
     position: relative;
     float: left;
-    left: 50px;
-}
-
-.comments{
-    height:315px;
-    width:30%;
-    /*height:315px;
-    width:750px;*/
-    margin-left: 77px;
-    padding: 10px;
-    position: relative;
-    float: left;
-    overflow-y: scroll;
+    overflow-y: auto;
     background-color: white;
+
 }
 .addComment{
     height:32px;
@@ -306,8 +339,8 @@ a.divLink {
     float: left;
 }
 input.submitbutton {
-    float:right; 
-    margin-right:-22px;
+    float:right;
+    margin-right: 1%;
     background: #484848;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -348,13 +381,16 @@ input.privateCheckbox{
     width: 20px; 
     height: 20px;
     float: left;
+    margin-left: -5%;
+    margin-top: -1px;
     position: relative;
     background-color: white;
 }
 div.submitContainer{
-    width: 30%;
+    width: 90%;
     padding-top: 5px;
-    float: left; 
+    float: left;
+    margin-left: 5%;
 
 }
 /*id for sign up button*/
