@@ -36,7 +36,7 @@
     <div id="mainViewWrapper">
         <!-- DANTLEY"S STUFF -->
         <div id="ImageLine">
-            <input id="scrollImageLeft" class="submitbutton" type="button" value="<<" style="height: 100px" onclick="leftArrow()">
+            <input id="scrollImageLeft" class="submitbutton" type="button" value="<<" style="height: 100px" onclick="moveToLeft()">
             <!--   onclick="leftArrow()" src="../Resources/leftArrow.jpeg"> -->
             <img class="picture" id="first" src="../Resources/whiteBox.jpeg" onclick="updateMainImage(0)">
             <img class="picture" id="second" src="../Resources/whiteBox.jpeg" onclick="updateMainImage(1)">
@@ -46,7 +46,7 @@
             <img class="picture" id="sixth" src="../Resources/whiteBox.jpeg" onclick="updateMainImage(5)">
 
             <!--  <img onclick="rightArrow()" id="scrollImage" src="../Resources/rightArrow.jpeg"> -->
-            <input id="scrollImageRight" class="submitbutton" type="button" value=">>" style="height: 100px" onclick="rightArrow()" >
+            <input id="scrollImageRight" class="submitbutton" type="button" value=">>" style="height: 100px" onclick="moveToRight()" >
         </div>
 
 
