@@ -37,7 +37,8 @@ var currentPage = "public";
 var currentImageIndex = 0;
 var searching = false;
 
-var currentUser = "Andrew";
+var currentUser = "Username";
+var currGroup = "Byters"
 var loggedIn = false;
 
 
@@ -295,7 +296,20 @@ function rightArrow()
 }
 
 
-function login(){
+function login(usernameEntered, classCodeEntered){
+	currentUser = usernameEntered;
+	if (document.getElementById("signUpEmail").value != "")
+	{
+		document.getElementById("editEmail").value = document.getElementById("signUpEmail").value;
+	}
+	document.getElementById("editClassCode").innerHTML = classCodeEntered;
+	document.getElementById("UsernameSlot").innerHTML = usernameEntered;
+	document.getElementById("signInUsername").value = "";
+	document.getElementById("signInPassword").value = "";
+	document.getElementById("signUpUsername").value = "";
+	document.getElementById("signUpPassword").value = "";
+	document.getElementById("signUpEmail").value = "";
+	document.getElementById("signUpClassCode").value = "";
     loggedIn = true;
     changePage("public");
 }
@@ -421,6 +435,8 @@ function leave() {
 }
 
 function newGroup() {
+	currGroup = document.getElementById("newGroup").value;
+	determineTabName();
     document.getElementById("currentGroup").value = document.getElementById("newGroup").value;
     document.getElementById("newGroup").value = "";
     document.getElementById("createGroupButton").disabled = true;
@@ -428,6 +444,8 @@ function newGroup() {
 }
 
 function joinGroup() {
+	currGroup = document.getElementById("joinGroup").value;
+	determineTabName();
     document.getElementById("currentGroup").value = document.getElementById("joinGroup").value;
     document.getElementById("joinGroup").value = "";
     document.getElementById("joinGroupButton").disabled = true;
@@ -493,7 +511,10 @@ function determineTabName()
 	if (loggedIn == true) 
 		{
 			document.getElementById("classNavButton").innerHTML = "Class (Section 1)";
-			document.getElementById("groupNavButton").innerHTML = "Group (Byters)";
+			var x = "Group (";
+				x += currGroup;
+				x += ")";
+			document.getElementById("groupNavButton").innerHTML = x;
 		}
 		else
 		{

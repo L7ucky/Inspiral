@@ -114,7 +114,7 @@
 
                 <div class="submitContainer" style="width: 117%; margin-top: 15px">
 
-                    <input class="submitbutton" type="button" value="Submit" style=" margin-top: -5px; " onclick= "changePage('public'); return false;">
+                    <input id="submitInspiration" class="submitbutton" type="button" value="Submit" style=" margin-top: -5px; " onclick= "changePage('public'); return false;">
                     Visibility:
 
                     <input class="visibilityCheckbox" type="checkbox" id="visibilityCheckbox1" style=" margin-top: 0px;" onclick="checkboxesCalculate('visibilityCheckbox1',visibilityCheckbox1.checked);">
@@ -159,7 +159,7 @@
                         <table>
                             <tr>
                                 <td style="text-align:right;">Username:</td>
-                                <td>Andrew</td>
+                                <td id="UsernameSlot">Username</td>
                             </tr>
                             <tr>
                                 <td style="text-align:right;">Email:</td>
@@ -168,13 +168,15 @@
                             </tr>
                             <tr>
                                 <td style="text-align:right;">Notifications:</td>
-                                <td><input type="radio" name="notifications" checked onchange="updateSaveChangesButton()">On
-                                    <input type="radio" name="notifications" onchange="updateSaveChangesButton()">Off
+                                <td><input id="notificationsOn" type="radio" name="notifications" checked onchange="updateSaveChangesButton()">
+                                    <label for="notificationsOn">On</label>
+                                    <input id="notificationsOff" type="radio" name="notifications" onchange="updateSaveChangesButton()">
+                                    <label for="notificationsOff">Off</label>
                                 </td>
                             </tr>
                             <tr>
                                 <td style="text-align:right;">Class code:</td>
-                                <td>012345</td>
+                                <td id="editClassCode">012345</td>
                             </tr>
                         </table>
                     </td>
@@ -267,8 +269,8 @@
             <div class="title" onclick="determineTabName();">Sign In</div>
             <input id="signInUsername" type="text" placeholder="Username" style="font-size: 15px; margin-bottom: 5px; display: block;" oninput="updateSignInButton()" onkeydown="submitOnEnter(event, 'signUpButton2')">
             <input id="signInPassword" type="password" placeholder="Password" style="font-size: 15px; margin-bottom: 5px; display: block;" oninput="updateSignInButton()" onkeydown="submitOnEnter(event, 'signUpButton2')">
-            <a href=""><img src="../Resources/facebook.png" width="35px" height="35px" style="display: block; float: left; margin-top: 5px; margin-left: 10%;" onclick="login(); determineTabName(); return false;"></a>
-            <input type="button" class="submitbutton" value="Login" id="signUpButton2" onclick="login()" disabled="false">
+            <a href=""><img src="../Resources/facebook.png" width="35px" height="35px" style="display: block; float: left; margin-top: 5px; margin-left: 10%;" onclick="login(signInUsername.value, '012345'); determineTabName(); return false;"></a>
+            <input type="button" class="submitbutton" value="Login" id="signUpButton2" onclick="login(signInUsername.value, '012345')" disabled="false">
         </div>
 
         <div class="box" style="width: 200px;">
@@ -277,7 +279,7 @@
             <input id="signUpPassword" type="password" placeholder="Password" style="font-size: 15px; margin-bottom: 5px; display: block;" oninput="updateSignUpButton()" onkeydown="submitOnEnter(event, 'signUpButton')">
             <input id="signUpEmail" type="text" placeholder="Email" style="font-size: 15px; margin-bottom: 5px; display: block;" oninput="updateSignUpButton()" onkeydown="submitOnEnter(event, 'signUpButton')">
             <input id="signUpClassCode" type="text" placeholder="Class Code" style="font-size: 15px; margin-bottom: 5px; display: block;" oninput="updateSignUpButton()" onkeydown="submitOnEnter(event, 'signUpButton')">
-            <input type="button" class="submitbutton" value="Sign Up" id="signUpButton"style="display: block; " onclick="login()" disabled="false">
+            <input type="button" class="submitbutton" value="Sign Up" id="signUpButton"style="display: block; " onclick="login(signUpUsername.value, signUpClassCode.value)" disabled="false">
         </div>
     </div>
 </body>

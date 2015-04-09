@@ -393,6 +393,14 @@ div.submitContainer{
     margin-left: 5%;
 
 }
+#commentButton
+{
+    margin-right: -22px;
+}
+#submitInspiration
+{
+    margin-right: -33px;
+}
 /*id for sign up button*/
 #signUpButton
 {
