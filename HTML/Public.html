@@ -158,8 +158,10 @@
                             </tr>
                             <tr>
                                 <td style="text-align:right;">Notifications:</td>
-                                <td><input type="radio" name="notifications" checked onchange="updateSaveChangesButton()">On
-                                    <input type="radio" name="notifications" onchange="updateSaveChangesButton()">Off
+                                <td><input id="notificationsOn" type="radio" name="notifications" checked onchange="updateSaveChangesButton()">
+                                    <label for="notificationsOn">On</label>
+                                    <input id="notificationsOff" type="radio" name="notifications" onchange="updateSaveChangesButton()">
+                                    <label for="notificationsOff">Off</label>
                                 </td>
                             </tr>
                             <tr>
