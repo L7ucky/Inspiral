@@ -3,32 +3,56 @@
  */
 // Tyler's Stuff
 
-var imagelistPrivate = ["../Resources/cactus.jpeg", "../Resources/cactus.jpeg", "../Resources/cactus.jpeg", "../Resources/nike.jpeg", "../Resources/patriot.jpeg","../Resources/rooney.jpeg","../Resources/starwars.jpeg", "../Resources/sword.jpeg","../Resources/cow.jpeg","../Resources/greenChurch.jpeg","../Resources/dragon.jpeg","../Resources/moutain.jpeg","../Resources/roller.jpeg",];
-var imagelistClass = ["../Resources/dog.jpeg", "../Resources/dog.jpeg", "../Resources/dog.jpeg", "../Resources/nike.jpeg", "../Resources/patriot.jpeg","../Resources/rooney.jpeg","../Resources/starwars.jpeg", "../Resources/sword.jpeg","../Resources/cow.jpeg","../Resources/greenChurch.jpeg","../Resources/dragon.jpeg","../Resources/moutain.jpeg","../Resources/roller.jpeg",];
-var imagelistGroup = ["../Resources/husky.jpeg", "../Resources/husky.jpeg", "../Resources/husky.jpeg", "../Resources/nike.jpeg", "../Resources/patriot.jpeg","../Resources/rooney.jpeg","../Resources/starwars.jpeg", "../Resources/sword.jpeg","../Resources/cow.jpeg","../Resources/greenChurch.jpeg","../Resources/dragon.jpeg","../Resources/moutain.jpeg","../Resources/roller.jpeg",];
-var imagelistPublic = ["../Resources/Cat.jpg", "../Resources/rain.jpg", "../Resources/weather.jpg", "../Resources/lights.jpg", "../Resources/park.jpg","../Resources/kitten.jpg","../Resources/message.jpg", "../Resources/sword.jpeg","../Resources/cow.jpeg","../Resources/greenChurch.jpeg","../Resources/dragon.jpeg","../Resources/moutain.jpeg","../Resources/roller.jpeg",];
+var imagelistPrivate = [1,2,3,4,5,6,7,8];
+var imagelistClass = [12,10,8,6,4,2];
+var imagelistGroup = [16,17,10,9,7,3,2,1];
+var imagelistPublic = [20,21,16,17,18,19,9,11,0];
 
-var comments = {};
-comments["../Resources/Cat.jpg"] = ["Josh: This is a cat.", "Dantley: It looks like it has magical powers. It must be a liger."];
-comments["../Resources/cactus.jpeg"] = [];
-comments["../Resources/nike.jpeg"] = ["Andrew: Respect the swoosh!"];
-comments["../Resources/patriot.jpeg"] = ["Josh: Reminds me of Football.","Dantley: Flag.... nice!"];
-comments["../Resources/rooney.jpeg"] = ["Andrew: Does this guy play soccer?","Tyler: I think he just scored a goal!"];
-comments["../Resources/starwars.jpeg"] = ["Josh: Padme's beauty inspires me.", "Dantley: I personally prefer Leia."];
-comments["../Resources/sword.jpeg"] = ["Josh: Do you think we could use a sword in our advertisement?"];
-comments["../Resources/cow.jpeg"] = ["Josh: I look like a cow in this picture."];
-comments["../Resources/greenChurch.jpeg"] = ["Dantley: This is a picture of the painting I made of a dream I had two weeks ago."];
-comments["../Resources/dragon.jpeg"] = ["Andrew: This is a Fire-breathing beast!"];
-comments["../Resources/moutain.jpeg"] = [];
-comments["../Resources/roller.jpeg"] = [];
-comments["../Resources/dog.jpeg"] = ["Josh: This is a dog."];
-comments["../Resources/husky.jpeg"] = [];
-comments["../Resources/lights.jpg"] = [];
-comments["../Resources/message.jpg"] = ["Jesse: I took a picture of this at the beach last week.", "Josh: Wow! I've never seen a message in a bottle like that before!"];
-comments["../Resources/park.jpg"] = ["Josh: I took this one while playing ultimate frisbee at Kiwanis."];
-comments["../Resources/rain.jpg"] = [];
-comments["../Resources/kitten.jpg"] = ["Tyler: This is a precious photo my wife took of little Katniss.","Josh: This looks like my cat."];
-comments["../Resources/weather.jpg"] =[];
+var posts = {};
+posts[0] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/Cat.jpg',link:'www.google.com',comments:["Josh: This is a cat.", "Dantley: It looks like it has magical powers. It must be a liger."]};
+posts[1] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/cactus.jpeg',link:'www.google.com',comments:["Josh: This is a cat.", "Dantley: It looks like it has magical powers. It must be a liger."]};
+posts[2] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/nike.jpeg',link:'www.nike.com',comments:["Andrew: Respect the swoosh!"]};
+posts[3] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/patriot.jpeg',link:'www.nike.com',comments:["Josh: Reminds me of Football.","Dantley: Flag.... nice!"]};
+posts[4] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/rooney.jpeg',link:'www.rooney.com',comments:["Andrew: Does this guy play soccer?","Tyler: I think he just scored a goal!"]};
+posts[5] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/starwars.jpeg',link:'www.starwars.com',comments:["Josh: Padme's beauty inspires me.", "Dantley: I personally prefer Leia."]};
+posts[6] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/sword.jpeg',link:'www.sword.com',comments:["Josh: Do you think we could use a sword in our advertisement?"]};
+posts[7] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/cow.jpeg',link:'www.cow.com',comments:["Josh: I look like a cow in this picture."]};
+posts[8] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/greenChurch.jpeg',link:'www.greenChurch.com',comments:["Dantley: This is a picture of the painting I made of a dream I had two weeks ago."]};
+posts[9] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/dragon.jpeg',link:'www.dragon.com',comments:["Andrew: This is a Fire-breathing beast!"]};
+posts[10] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/moutain.jpeg',link:'www.moutain.com',comments:["Andrew: Mountains!"]};
+posts[11] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/roller.jpeg',link:'www.roller.com',comments:[]};
+posts[12] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/dog.jpeg',link:'www.dog.com',comments:["Andrew: Respect the swoosh!"]};
+posts[13] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/husky.jpeg',link:'www.husky.com',comments:[]};
+posts[14] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/lights.jpg',link:'www.lights.com',comments:[]};
+posts[15] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/message.jpg',link:'www.message.com',comments:["Jesse: I took a picture of this at the beach last week.", "Josh: Wow! I've never seen a message in a bottle like that before!"]};
+posts[16] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/park.jpg',link:'www.park.com',comments:["Josh: I took this one while playing ultimate frisbee at Kiwanis."]};
+posts[17] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/rain.jpg',link:'www.rain.com',comments:[]};
+posts[18] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/kitten.jpg',link:'www.kitten.com',comments:["Tyler: This is a precious photo my wife took of little Katniss.","Josh: This looks like my cat."]};
+posts[19] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/weather.jpg',link:'www.weather.com',comments:["Andrew: Respect the weather channel!"]};
+posts[20] = {op:'Andrew', note:'Click the link below to go to the page',image:'http://blog.jimdo.com/wp-content/uploads/2014/01/tree-247122.jpg',link:'www.beach.com',comments:["Andrew: I want to go there so badly!"]};
+posts[21] = {op:'Andrew', note:'Click the link below to go to the page',image:'http://images.visitcanberra.com.au/images/canberra_hero_image.jpg',link:'www.hotairballons.com',comments:["Andrew: Awesome!!"]};
+
+//var comments = {};
+//comments["../Resources/Cat.jpg"] = ["Josh: This is a cat.", "Dantley: It looks like it has magical powers. It must be a liger."];
+//comments["../Resources/cactus.jpeg"] = [];
+//comments["../Resources/nike.jpeg"] = ["Andrew: Respect the swoosh!"];
+//comments["../Resources/patriot.jpeg"] = ["Josh: Reminds me of Football.","Dantley: Flag.... nice!"];
+//comments["../Resources/rooney.jpeg"] = ["Andrew: Does this guy play soccer?","Tyler: I think he just scored a goal!"];
+//comments["../Resources/starwars.jpeg"] = ["Josh: Padme's beauty inspires me.", "Dantley: I personally prefer Leia."];
+//comments["../Resources/sword.jpeg"] = ["Josh: Do you think we could use a sword in our advertisement?"];
+//comments["../Resources/cow.jpeg"] = ["Josh: I look like a cow in this picture."];
+//comments["../Resources/greenChurch.jpeg"] = ["Dantley: This is a picture of the painting I made of a dream I had two weeks ago."];
+//comments["../Resources/dragon.jpeg"] = ["Andrew: This is a Fire-breathing beast!"];
+//comments["../Resources/moutain.jpeg"] = [];
+//comments["../Resources/roller.jpeg"] = [];
+//comments["../Resources/dog.jpeg"] = ["Josh: This is a dog."];
+//comments["../Resources/husky.jpeg"] = [];
+//comments["../Resources/lights.jpg"] = [];
+//comments["../Resources/message.jpg"] = ["Jesse: I took a picture of this at the beach last week.", "Josh: Wow! I've never seen a message in a bottle like that before!"];
+//comments["../Resources/park.jpg"] = ["Josh: I took this one while playing ultimate frisbee at Kiwanis."];
+//comments["../Resources/rain.jpg"] = [];
+//comments["../Resources/kitten.jpg"] = ["Tyler: This is a precious photo my wife took of little Katniss.","Josh: This looks like my cat."];
+//comments["../Resources/weather.jpg"] =[];
 
 var currentImages = imagelistPublic;
 var currentPage = "public";
@@ -47,14 +71,17 @@ function logOut()
 }
 function insertComment(string_in, checked)
 {
-		if (string_in != "" && loggedIn)
-		{
-      if(checked) comments[currentImages[currentImageIndex]].push(currentUser + ": (Private) " + string_in);
-      else comments[currentImages[currentImageIndex]].push(currentUser + ": " + string_in);
-      updateMainImage(currentImageIndex, false);
-      thecomment.value = "";
-      document.getElementById("commentButton").disabled = true;
-		}
+    if (string_in != "" && loggedIn){
+
+        if(checked)
+            posts[currentImages[currentImageIndex]].comments.push(currentUser + ": (Private) " + string_in);
+        else
+            posts[currentImages[currentImageIndex]].comments.push(currentUser + ": " + string_in);
+        updateMainImage(currentImageIndex, false);
+        thecomment.value = "";
+        document.getElementById("commentButton").disabled = true;
+
+    }
 }
 //this is the function to change image on upload image
 function readURL(input) {
@@ -69,11 +96,11 @@ function readURL(input) {
             reader.readAsDataURL(input.files[0]);
         }
     }
-function searchComments(path,val){
+function searchComments(postID,val){
     val = val.toLowerCase();
-
-    if(comments[path] &&(comments[path].length>0)){
-        var commentsArray =comments[path];
+    var imgComments = posts[postID].comments;
+    if(imgComments &&(imgComments.length>0)){
+        var commentsArray =imgComments;
         for(var k =0; k<commentsArray.length;k++){
             var str = commentsArray[k].toLowerCase();
             var n = str.search(val);
@@ -84,6 +111,14 @@ function searchComments(path,val){
     }
     return false;
 }
+
+function getImageName(url){
+    var index = url.lastIndexOf("/") + 1;
+    var name = url.substr(index);
+    console.log(name);
+    return name;
+}
+
 function search(){
 
     setTimeout(function(){
@@ -100,13 +135,13 @@ function search(){
             searching= true;
             var newArray = [];
             for(var i = 0; i<currentImages.length;i++){
-                var newString = currentImages[i];
-                var newStr = newString.toLowerCase();
-                var strArray = newStr.split("../resources/");
-                var str = strArray[1];
+                var postID = currentImages[i];
+                var post = posts[postID];
+                var newString = getImageName(post.image);
+                var str = newString.toLowerCase();
                 var n = str.search(val);
-                if(n>-1 || searchComments(newString,val)){
-                    newArray.push(newString);
+                if(n>-1 || searchComments(postID,val)){
+                    newArray.push(postID);
                 }
             }
             currentImages = newArray;
@@ -151,7 +186,7 @@ function refreshPictures()
             curImageSlot = document.getElementById("sixth");
 
         if (i < len) {
-            curImageSlot.src = currentImages[i];
+            curImageSlot.src = posts[currentImages[i]].image;
             curImageSlot.style.visibility = 'visible';
         }
         else {
@@ -250,20 +285,6 @@ function determinePage(){
 
 }
 
-function getImages() 
-{
-
-	var imgs = document.getElementsByTagName("img");
-	//alert(imgs.length);
-	var imgSrcs = [];
-
-    for (var i = 0; i < imgs.length; i++) {
-        imgSrcs.push(imgs[i].src);
-    }
-    
-	return imgSrcs;
-   // alert("test");
-}
 
 function leftArrow ()
 {
@@ -365,23 +386,22 @@ window.onload = function(){
 };
 
 function updateMainImage(index,homepage){
-    console.log(currentPage);
     currentImageIndex = index;
 
     if(homepage){
         changePage('public');
     }
 
-    document.getElementById('mainImage').src= currentImages[index];
+    document.getElementById('mainImage').src= posts[currentImages[index]].image;
     document.getElementById('commentshere').innerHTML = "";
-    if (comments[currentImages[index]].length == 0)
+    if (posts[currentImages[index]].comments.length == 0)
     {
     	document.getElementById('commentshere').innerHTML += "<p class='aComment' style='color: gray'>" + "No comments yet." + "</p>";
     }
     else{
-	   	for(var i=0;i<comments[currentImages[index]].length;i++)
+	   	for(var i=0;i<posts[currentImages[index]].comments.length;i++)
 	   	{
-	       	document.getElementById('commentshere').innerHTML += "<p class='aComment'>" + comments[currentImages[index]][i] + "</p>";
+	       	document.getElementById('commentshere').innerHTML += "<p class='aComment'>" + posts[currentImages[index]].comments[i] + "</p>";
 	   	}
 	}
     refreshPictures();
@@ -515,20 +535,16 @@ document.onkeydown = function(event) {
         case 37:
             // Key left.
             moveToLeft();
-            console.log('left key!');
             break;
         case 38:
             // Key up.
-            console.log('up key!');
             break;
         case 39:
             // Key right.
             moveToRight();
-            console.log('right key!');
             break;
         case 40:
             // Key down.
-            console.log('down key!');
             break;
     }
 

@@ -200,6 +200,10 @@ a.divLink {
     height:100%;
     display: inline-block;
 }
+#mainImage{
+    max-width:100%;
+    height: auto;
+ }
 .mainView{
     height:300px;
     width:500px;
