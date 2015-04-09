@@ -65,13 +65,19 @@ function insertComment(string_in, checked)
 }
 
 //this is the function to change image on upload image
-function readURL(input) {
+function readURL(input, type) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
 
             reader.onload = function (e) {
-                document.getElementById("uploadImage").src= e.target.result;
-                document.getElementById("ProfilePic").src= e.target.result;
+                if (type == 1) 
+            	{
+            		document.getElementById("uploadImage").src= e.target.result;
+            	}
+                else if (type == 2)
+            	{
+            		document.getElementById("ProfilePic").src= e.target.result;
+            	}
                    // .attr('src', e.target.result);
             };
 

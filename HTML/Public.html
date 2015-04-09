@@ -106,7 +106,7 @@
 
             <div class="submitContainer" style="float: right; margin-left: 0px; margin-right: 12.8%; width: 29.5%;">
 
-                <input type="file" onchange="readURL(this);" style="visibility: hidden; width: 1px;" id="upload" accept="image/*"/>
+                <input type="file" onchange="readURL(this, 1);" style="visibility: hidden; width: 1px;" id="upload" accept="image/*"/>
                 <input type="button" class="submitbutton" value="Upload Photo" onclick="document.getElementById('upload').click();" style="float: left; margin-bottom: 20px;"/>
                 <input class="textupload" type="text" id="textupload" autocomplete= "off" name="textupload" placeholder="Text inspiration or link...">
 
@@ -190,10 +190,10 @@
                                style="float: left" onclick="changePage('public')" disabled>
                     </td>
                     <td style="text-align:center;">
-                        <input type="file" onchange="readURL(this);" style="visibility: hidden; width: 1px;" id="upload" accept="image/*"/>
+                        <input type="file" onchange="readURL(this, 2);" style="visibility: hidden; width: 1px;" id="profile" accept="image/*"/>
 
                         <input type="button" class="submitbutton" value="Upload Photo"
-                               onclick="document.getElementById('upload').click();"
+                               onclick="document.getElementById('profile').click();"
                                style="margin-right: 5px; margin-bottom: 5px;"/>
                     </td>
                 </tr>
