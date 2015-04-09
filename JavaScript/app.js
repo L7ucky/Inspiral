@@ -39,7 +39,7 @@ var searching = false;
 
 var currentUser = "Andrew";
 var currGroup = "Byters"
-var currClassCode = "012345";
+var currClassCode = "Section 1";
 var loggedIn = false;
 
 
@@ -324,7 +324,7 @@ function login(usernameEntered, classCodeEntered){
 	{
 		document.getElementById("editEmail").value = document.getElementById("signUpEmail").value;
 	}
-	if (classCodeEntered != "012345") document.getElementById("editClassCode").innerHTML = classCodeEntered;
+	if (classCodeEntered != "Section 1") document.getElementById("editClassCode").innerHTML = classCodeEntered;
 	document.getElementById("UsernameSlot").innerHTML = usernameEntered;
 	if (usernameEntered == "") document.getElementById("UsernameSlot").innerHTML = currentUser;
 	document.getElementById("signInUsername").value = "";
@@ -533,7 +533,7 @@ function determineTabName()
 {
 	if (loggedIn == true) 
 		{
-			var x = "Class (Code: ";
+			var x = "Class (";
 				x += currClassCode;
 				x += ")";
 			document.getElementById("classNavButton").innerHTML = x;
@@ -604,9 +604,9 @@ document.onkeydown = function(event) {
 
 function facebookLogin() {
     if(document.getElementById('signInUsername').value != '')
-        login(document.getElementById('signInUsername').value, '012345');
+        login(document.getElementById('signInUsername').value, 'Section 1');
     else
-        login('Andrew', '012345');
+        login('Andrew', 'Section 1');
     determineTabName();
 }
 
