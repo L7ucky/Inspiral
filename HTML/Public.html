@@ -106,29 +106,29 @@
             <div class="uploadPreview" id="uploadPreview">
                 <img id="uploadImage" src="../Resources/defaultimage.jpg" height="100%" width="100%"></div>
 
-            <div class="submitContainer" style="float: right; margin-right: 12.8%; width: 29.5%;">
+            <div class="submitContainer" style="float: right; margin-left: 0px; margin-right: 12.8%; width: 29.5%;">
 
-                <input type="file" onchange="readURL(this);" style="visibility: hidden; width: 1px;" id="upload" accept="image/*"/>
+                <input type="file" onchange="readURL(this, 1); uploadFile();" style="visibility: hidden; width: 1px;" id="upload" accept="image/*"/>
                 <input type="button" class="submitbutton" value="Upload Photo" onclick="document.getElementById('upload').click();" style="float: left; margin-bottom: 20px;"/>
-                <input class="textupload" type="text" id="textupload" autocomplete= "off" name="textupload" placeholder="Text inspiration or link...">
+                <input class="textupload" type="text" id="textupload" autocomplete= "off" name="textupload" placeholder="Text inspiration or link..." oninput="updateSubmitInspiration()">
 
 
 
-                <div class="submitContainer" style="width: 117%; margin-top: 15px">
+                <div class="submitContainer" style="width: 117%; margin-left: 0px; margin-top: 15px">
 
-                    <input id="submitInspiration" class="submitbutton" type="button" value="Submit" style=" margin-top: -5px; " onclick= "checkCheckboxes(); return false;">
+                    <input id="submitInspiration" class="submitbutton" type="button" value="Submit" style=" margin-top: -5px; " onclick= "submitInspiration(); return false;" disabled>
                     Visibility:
 
-                    <input class="visibilityCheckbox" type="checkbox" id="visibilityCheckbox1" style=" margin-top: 0px;" onclick="checkboxesCalculate('visibilityCheckbox1',visibilityCheckbox1.checked);">
+                    <input class="visibilityCheckbox" type="checkbox" id="visibilityCheckbox1" style=" margin-top: 0px;" onclick="checkboxesCalculate('visibilityCheckbox1',visibilityCheckbox1.checked);" onchange="updateSubmitInspiration()">
                     <label for="visibilityCheckbox1" style="vertical-align: top;">Public</label>
 
-                    <input class="visibilityCheckbox" type="checkbox" id="visibilityCheckbox2" style=" margin-top: 0px;" onclick="checkboxesCalculate('visibilityCheckbox2',visibilityCheckbox2.checked);">
+                    <input class="visibilityCheckbox" type="checkbox" id="visibilityCheckbox2" style=" margin-top: 0px;" onclick="checkboxesCalculate('visibilityCheckbox2',visibilityCheckbox2.checked);" onchange="updateSubmitInspiration()">
                     <label for="visibilityCheckbox2" style="vertical-align: top;">Class</label>
 
-                    <input class="visibilityCheckbox" type="checkbox" id="visibilityCheckbox3" style=" margin-top: 0px;" onclick="checkboxesCalculate('visibilityCheckbox3',visibilityCheckbox3.checked);">
+                    <input class="visibilityCheckbox" type="checkbox" id="visibilityCheckbox3" style=" margin-top: 0px;" onclick="checkboxesCalculate('visibilityCheckbox3',visibilityCheckbox3.checked);" onchange="updateSubmitInspiration()">
                     <label for="visibilityCheckbox3" style="vertical-align: top;">Group</label>
 
-                    <input class="visibilityCheckbox" type="checkbox" id="visibilityCheckbox4" style=" margin-top: 0px;" onclick="checkboxesCalculate('visibilityCheckbox4',visibilityCheckbox4.checked);">
+                    <input class="visibilityCheckbox" type="checkbox" id="visibilityCheckbox4" style=" margin-top: 0px;" onclick="checkboxesCalculate('visibilityCheckbox4',visibilityCheckbox4.checked);" onchange="updateSubmitInspiration()">
                     <label for="visibilityCheckbox4" style="vertical-align: top;">My Page</label>
                 </div></div>
         </div>
@@ -183,7 +183,7 @@
                         </table>
                     </td>
                     <td style="text-align:center;">
-                        <img src="../Resources/ProfilePic.png" height="150px">
+                        <img id="ProfilePic" src="../Resources/ProfilePic.png" height="150px" width="150px">
                     </td>
                 </tr>
                 <tr>
@@ -192,12 +192,16 @@
                                style="float: left" onclick="changePage('public')" disabled>
                     </td>
                     <td style="text-align:center;">
-                        <input type="file" style="visibility: hidden; width: 1px;" id="upload" accept="image/*"/>
+                        <input type="file" onchange="readURL(this, 2);" style="visibility: hidden; width: 1px;" id="profile" accept="image/*"/>
+
                         <input type="button" class="submitbutton" value="Upload Photo"
-                               onclick="document.getElementById('upload').click();"
+                               onclick="document.getElementById('profile').click();"
                                style="margin-right: 5px; margin-bottom: 5px;"/>
                     </td>
                 </tr>
+
+
+
 
 
                 <tr>
@@ -271,7 +275,7 @@
             <div class="title" onclick="determineTabName();">Sign In</div>
             <input id="signInUsername" type="text" placeholder="Username" style="font-size: 15px; margin-bottom: 5px; display: block;" oninput="updateSignInButton()" onkeydown="submitOnEnter(event, 'signUpButton2')">
             <input id="signInPassword" type="password" placeholder="Password" style="font-size: 15px; margin-bottom: 5px; display: block;" oninput="updateSignInButton()" onkeydown="submitOnEnter(event, 'signUpButton2')">
-            <a href=""><img src="../Resources/facebook.png" width="35px" height="35px" style="display: block; float: left; margin-top: 5px; margin-left: 10%;" onclick="login(signInUsername.value, '012345'); determineTabName(); return false;"></a>
+            <a href=""><img src="../Resources/facebook.png" width="35px" height="35px" style="display: block; float: left; margin-top: 5px; margin-left: 10%;" onclick="facebookLogin(); return false;"></a>
             <input type="button" class="submitbutton" value="Login" id="signUpButton2" onclick="login(signInUsername.value, '012345')" disabled="false">
         </div>
 

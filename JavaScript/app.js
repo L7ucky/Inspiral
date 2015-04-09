@@ -39,6 +39,7 @@ var searching = false;
 
 var currentUser = "Andrew";
 var currGroup = "Byters"
+var currClassCode = "012345";
 var loggedIn = false;
 
 
@@ -65,12 +66,19 @@ function insertComment(string_in, checked)
 }
 
 //this is the function to change image on upload image
-function readURL(input) {
+function readURL(input, type) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
 
             reader.onload = function (e) {
-                document.getElementById("uploadImage").src= e.target.result;
+                if (type == 1) 
+            	{
+            		document.getElementById("uploadImage").src= e.target.result;
+            	}
+                else if (type == 2)
+            	{
+            		document.getElementById("ProfilePic").src= e.target.result;
+            	}
                    // .attr('src', e.target.result);
             };
 
@@ -226,14 +234,17 @@ function  checkboxesCalculate (name, checked) {
 	}
 	
 }
-function checkCheckboxes()
+function submitInspiration()
 {
-	if (visibilityCheckbox1.checked == false && visibilityCheckbox2.checked == false &&
-		visibilityCheckbox3.checked == false &&	visibilityCheckbox4.checked == false)
-	{
-		window.alert("Please check at least one visibility option.");
-	}
-	else changePage('public'); 
+  fileUploaded = false;
+  document.getElementById("submitInspiration").disabled = true;
+  document.getElementById("visibilityCheckbox1").checked = false;
+  document.getElementById("visibilityCheckbox2").checked = false;
+  document.getElementById("visibilityCheckbox3").checked = false;
+  document.getElementById("visibilityCheckbox4").checked = false; 
+  document.getElementById("uploadImage").src = "../Resources/defaultimage.jpg";
+  document.getElementById("textupload").value = ""; 
+	changePage('public'); 
 }
 
 function setAccountButton()
@@ -307,12 +318,13 @@ function rightArrow()
 
 
 function login(usernameEntered, classCodeEntered){
+	currClassCode = classCodeEntered;
 	if (usernameEntered != "") currentUser = usernameEntered;
 	if (document.getElementById("signUpEmail").value != "")
 	{
 		document.getElementById("editEmail").value = document.getElementById("signUpEmail").value;
 	}
-	document.getElementById("editClassCode").innerHTML = classCodeEntered;
+	if (classCodeEntered != "012345") document.getElementById("editClassCode").innerHTML = classCodeEntered;
 	document.getElementById("UsernameSlot").innerHTML = usernameEntered;
 	if (usernameEntered == "") document.getElementById("UsernameSlot").innerHTML = currentUser;
 	document.getElementById("signInUsername").value = "";
@@ -321,8 +333,8 @@ function login(usernameEntered, classCodeEntered){
 	document.getElementById("signUpPassword").value = "";
 	document.getElementById("signUpEmail").value = "";
 	document.getElementById("signUpClassCode").value = "";
-    loggedIn = true;
-    changePage("public");
+  	loggedIn = true;
+  	changePage("public");
 }
 function accountButtonPressed(){
     if(loggedIn){
@@ -521,10 +533,14 @@ function determineTabName()
 {
 	if (loggedIn == true) 
 		{
-			document.getElementById("classNavButton").innerHTML = "Class (Section 1)";
-			var x = "Group (";
-				x += currGroup;
+			var x = "Class (Code: ";
+				x += currClassCode;
 				x += ")";
+			document.getElementById("classNavButton").innerHTML = x;
+
+			x = "Group (";
+			x += currGroup;
+			x += ")";
 			document.getElementById("groupNavButton").innerHTML = x;
 		}
 		else
@@ -585,3 +601,30 @@ document.onkeydown = function(event) {
     }
 
 };
+
+function facebookLogin() {
+    if(document.getElementById('signInUsername').value != '')
+        login(document.getElementById('signInUsername').value, '012345');
+    else
+        login('Andrew', '012345');
+    determineTabName();
+}
+
+var fileUploaded = false;
+
+function updateSubmitInspiration() {
+    if(!fileUploaded && document.getElementById("textupload").value == "")
+        document.getElementById("submitInspiration").disabled = true;
+    else if(!document.getElementById("visibilityCheckbox1").checked
+            && !document.getElementById("visibilityCheckbox2").checked
+            && !document.getElementById("visibilityCheckbox3").checked
+            && !document.getElementById("visibilityCheckbox4").checked)
+        document.getElementById("submitInspiration").disabled = true;
+    else
+        document.getElementById("submitInspiration").disabled = false;
+}
+
+function uploadFile() {
+    fileUploaded = true;
+    updateSubmitInspiration();
+}
