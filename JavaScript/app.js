@@ -233,14 +233,17 @@ function  checkboxesCalculate (name, checked) {
 	}
 	
 }
-function checkCheckboxes()
+function submitInspiration()
 {
-	if (visibilityCheckbox1.checked == false && visibilityCheckbox2.checked == false &&
-		visibilityCheckbox3.checked == false &&	visibilityCheckbox4.checked == false)
-	{
-		window.alert("Please check at least one visibility option.");
-	}
-	else changePage('public'); 
+  fileUploaded = false;
+  document.getElementById("submitInspiration").disabled = true;
+  document.getElementById("visibilityCheckbox1").checked = false;
+  document.getElementById("visibilityCheckbox2").checked = false;
+  document.getElementById("visibilityCheckbox3").checked = false;
+  document.getElementById("visibilityCheckbox4").checked = false; 
+  document.getElementById("uploadImage").src = "../Resources/defaultimage.jpg";
+  document.getElementById("textupload").value = ""; 
+	changePage('public'); 
 }
 
 function setAccountButton()
