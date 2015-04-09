@@ -2,8 +2,7 @@
  * Created by Andrew on 3/8/2015.
  */
 // Tyler's Stuff
-var currentUser = "Andrew";
-var loggedIn = false;
+
 var imagelistPrivate = ["../Resources/cactus.jpeg", "../Resources/cactus.jpeg", "../Resources/cactus.jpeg", "../Resources/nike.jpeg", "../Resources/patriot.jpeg","../Resources/rooney.jpeg","../Resources/starwars.jpeg", "../Resources/sword.jpeg","../Resources/cow.jpeg","../Resources/greenChurch.jpeg","../Resources/dragon.jpeg","../Resources/moutain.jpeg","../Resources/roller.jpeg",];
 var imagelistClass = ["../Resources/dog.jpeg", "../Resources/dog.jpeg", "../Resources/dog.jpeg", "../Resources/nike.jpeg", "../Resources/patriot.jpeg","../Resources/rooney.jpeg","../Resources/starwars.jpeg", "../Resources/sword.jpeg","../Resources/cow.jpeg","../Resources/greenChurch.jpeg","../Resources/dragon.jpeg","../Resources/moutain.jpeg","../Resources/roller.jpeg",];
 var imagelistGroup = ["../Resources/husky.jpeg", "../Resources/husky.jpeg", "../Resources/husky.jpeg", "../Resources/nike.jpeg", "../Resources/patriot.jpeg","../Resources/rooney.jpeg","../Resources/starwars.jpeg", "../Resources/sword.jpeg","../Resources/cow.jpeg","../Resources/greenChurch.jpeg","../Resources/dragon.jpeg","../Resources/moutain.jpeg","../Resources/roller.jpeg",];
@@ -34,9 +33,11 @@ comments["../Resources/weather.jpg"] =[];
 var currentImages = imagelistPublic;
 var currentPage = "public";
 var currentImageIndex = 0;
-
-var currentIndex = 0;
 var searching = false;
+
+var currentUser = "Andrew";
+var loggedIn = false;
+
 
 function logOut()
 {
@@ -48,9 +49,9 @@ function insertComment(string_in, checked)
 {
 		if (string_in != "" && loggedIn)
 		{
-      if(checked) comments[currentImages[currentIndex]].push(currentUser + ": (Private) " + string_in);
-      else comments[currentImages[currentIndex]].push(currentUser + ": " + string_in);
-      updateMainImage(currentIndex, false);
+      if(checked) comments[currentImages[currentImageIndex]].push(currentUser + ": (Private) " + string_in);
+      else comments[currentImages[currentImageIndex]].push(currentUser + ": " + string_in);
+      updateMainImage(currentImageIndex, false);
       thecomment.value = "";
       document.getElementById("commentButton").disabled = true;
 		}
@@ -157,8 +158,35 @@ function refreshPictures()
             curImageSlot.src = "../Resources/defaultimage.jpg";
             curImageSlot.style.visibility = 'hidden';
         }
+
+        if(currentImageIndex == i){
+            //Update the border to the correct picture
+            updateSelectionStyle(curImageSlot);
+        }
     }
 }
+
+function updateSelectionStyle(curImageSlot){
+    //Reset all other picture styling
+    document.getElementById("first").style.padding = '.4%';
+    document.getElementById("second").style.padding = '.4%';
+    document.getElementById("third").style.padding = '.4%';
+    document.getElementById("fourth").style.padding = '.4%';
+    document.getElementById("fifth").style.padding = '.4%';
+    document.getElementById("sixth").style.padding = '.4%';
+
+    document.getElementById("first").style.border = 'none';
+    document.getElementById("second").style.border = 'none';
+    document.getElementById("third").style.border = 'none';
+    document.getElementById("fourth").style.border = 'none';
+    document.getElementById("fifth").style.border = 'none';
+    document.getElementById("sixth").style.border = 'none';
+
+
+    curImageSlot.style.padding = '0';
+    curImageSlot.style.border = '10px solid #484848';
+}
+
 function  checkboxesCalculate (name, checked) {
 	if (checked && name == "visibilityCheckbox1" && visibilityCheckbox2.checked == false &&
 		visibilityCheckbox3.checked == false &&	visibilityCheckbox4.checked == false)
@@ -355,7 +383,7 @@ function updateMainImage(index,homepage){
 	       	document.getElementById('commentshere').innerHTML += "<p class='aComment'>" + comments[currentImages[index]][i] + "</p>";
 	   	}
 	}
-    currentIndex = index;
+    refreshPictures();
 }
 
 

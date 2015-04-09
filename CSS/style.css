@@ -375,10 +375,13 @@ div.submitContainer{
 {
     width: 13%;
     height:130px;
-    padding: .4%;
+    /*padding: .4%;*/
 }
 .picture:hover{
     cursor: pointer;
+}
+.selectedPicture{
+    border: 10px solid #484848;
 }
 #ImageLine /*this is just for the div in which the picture reside*/
 {
