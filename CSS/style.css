@@ -30,20 +30,28 @@ input[type="password"]{
 }
 .box{
     width: 480px;
-    background-color:#AFEBB6;
-    margin-top: 100px;
+    /*background-color:#AFEBB6;*/
+    background-color: #efefef;
+    border-radius: 5px;
+    margin-top: 50px;
     margin-left: 5%;
     margin-right: 5%;
+    margin-bottom: 30px;
     display: inline;
     float: left;
 }
 .title{
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 5px 5px 0px 0px;
+    border-radius: 5px 5px 0px 0px;
     height:35px;
     background-color:#61d66f;
     margin-bottom: 10px;
     text-align: center;
     padding-top: 15px;
     padding-left:-20px;
+    color:#484848;
+    font-size: 20px;
 }
 .logo{
     display: inline-block;
@@ -443,16 +451,19 @@ div.submitContainer{
 #signUpButton
 {
     margin: auto;
-    float: none;
+    float: left;
     margin-bottom: 2%;
+    margin-top:15px;
+    margin-left: 10%;
     display: block;
 }
 
 #signUpButton2
 {
-    margin: auto;
-    float: none;
+    margin-top: 15px;
+    float: left;
     margin-bottom: 2%;
+    margin-left: 3%;
     display: block;
 }
 
@@ -561,10 +572,18 @@ div.submitContainer{
     float: left;
     height:400px;
 }
-#orDiv{
+.orDiv{
     width: 100%;
     float: left;
     margin: 10px 0% 10px 64px;
+    font-size: 20px;
+    color: #484848;
+}
+.orDiv2{
+    width:100%;
+    text-align: center;
+    margin-bottom: 30px;
+
     font-size: 20px;
     color: #484848;
 }
@@ -609,4 +628,31 @@ input.browse{
     height:500px;
     line-height: 500px;
     text-align: center;
+}
+#signupBox{
+    width:90%;
+    margin-top: 0px;
+    border-radius: 5px;
+}
+#signinBox{
+    width:90%;
+}
+#signInPassword{
+    width:80%;
+    height:30px;
+    border-radius: 5px;
+}
+#signInUsername{
+    width:80%;
+    height:30px;
+    border-radius: 5px;
+}
+.inputSigninPage{
+    padding-left: 10px;
+    width:80%;
+    height:30px;
+    border-radius: 5px;
+}
+#signUpButton{
+
 }

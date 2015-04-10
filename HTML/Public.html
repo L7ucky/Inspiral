@@ -106,7 +106,7 @@
             <div class="uploadPreview" id="uploadPreview">
                 <img id="uploadImage" src="../Resources/defaultimage.jpg">
                 <input type="button" class="submitbutton" id ="uploadButton"  value="Upload Photo" onclick="document.getElementById('upload').click();" >
-                <div id="orDiv">or</div>
+                <div class="orDiv">or</div>
                 <input id="urlImageInput" type="text" placeholder="Specify an image URL..." onblur="previewImage()">
             </div>
             <div  class="submitContainer" >
@@ -278,20 +278,22 @@
 
 
     <div id="loginWrapper">
-        <div class="box" style="width: 200px;">
+        <div class="box" id="signinBox">
             <div class="title" onclick="determineTabName();">Sign In</div>
-            <input id="signInUsername" type="text" placeholder="Username" style="font-size: 15px; margin-bottom: 5px; display: block;" oninput="updateSignInButton()" onkeydown="submitOnEnter(event, 'signUpButton2')">
-            <input id="signInPassword" type="password" placeholder="Password" style="font-size: 15px; margin-bottom: 5px; display: block;" oninput="updateSignInButton()" onkeydown="submitOnEnter(event, 'signUpButton2')">
-            <a href=""><img src="../Resources/facebook.png" width="35px" height="35px" style="display: block; float: left; margin-top: 5px; margin-left: 10%;" onclick="facebookLogin(); return false;"></a>
+            <input class="inputSigninPage" id="signInUsername" type="text" placeholder="Username" style="font-size: 15px; margin-bottom: 5px; display: block;" oninput="updateSignInButton()" onkeydown="submitOnEnter(event, 'signUpButton2')">
+            <input class="inputSigninPage" id="signInPassword" type="password" placeholder="Password" style="font-size: 15px; margin-bottom: 5px; display: block;" oninput="updateSignInButton()" onkeydown="submitOnEnter(event, 'signUpButton2')">
+            <a href=""><img src="../Resources/facebook.png" width="35px" height="35px" style="display: block; float: left; margin-top: 15px; margin-left: 10%;" onclick="facebookLogin(); return false;"></a>
             <input type="button" class="submitbutton" value="Login" id="signUpButton2" onclick="login(signInUsername.value, 'Section 1')" disabled="false">
         </div>
 
-        <div class="box" style="width: 200px;">
+        <div class="orDiv2">OR</div>
+        <div class="box" id="signupBox">
             <div class="title" onclick="determineTabName();">Sign Up</div>
-            <input id="signUpUsername" type="text" placeholder="Username" style="font-size: 15px; margin-bottom: 5px; display:block;" oninput="updateSignUpButton()" onkeydown="submitOnEnter(event, 'signUpButton')">
-            <input id="signUpPassword" type="password" placeholder="Password" style="font-size: 15px; margin-bottom: 5px; display: block;" oninput="updateSignUpButton()" onkeydown="submitOnEnter(event, 'signUpButton')">
-            <input id="signUpEmail" type="text" placeholder="Email" style="font-size: 15px; margin-bottom: 5px; display: block;" oninput="updateSignUpButton()" onkeydown="submitOnEnter(event, 'signUpButton')">
-            <input id="signUpClassCode" type="text" placeholder="Class" style="font-size: 15px; margin-bottom: 5px; display: block;" oninput="updateSignUpButton()" onkeydown="submitOnEnter(event, 'signUpButton')">
+            <input class="inputSigninPage" id="signUpUsername" type="text" placeholder="Username" style="font-size: 15px; margin-bottom: 5px; display:block;" oninput="updateSignUpButton()" onkeydown="submitOnEnter(event, 'signUpButton')">
+            <input class="inputSigninPage" id="signUpPassword" type="password" placeholder="Password" style="font-size: 15px; margin-bottom: 5px; display: block;" oninput="updateSignUpButton()" onkeydown="submitOnEnter(event, 'signUpButton')">
+            <input class="inputSigninPage" id="signUpEmail" type="text" placeholder="Email" style="font-size: 15px; margin-bottom: 5px; display: block;" oninput="updateSignUpButton()" onkeydown="submitOnEnter(event, 'signUpButton')">
+            <input class="inputSigninPage" id="signUpClassCode" type="text" placeholder="Class id" style="font-size: 15px; margin-bottom: 5px; display: block;" oninput="updateSignUpButton()" onkeydown="submitOnEnter(event, 'signUpButton')">
+            <input class="inputSigninPage" id="signUpGroupCode" type="text" placeholder="Group id" style="font-size: 15px; margin-bottom: 5px; display: block;" oninput="updateSignUpButton()" onkeydown="submitOnEnter(event, 'signUpButton')">
             <input type="button" class="submitbutton" value="Sign Up" id="signUpButton"style="display: block; " onclick="login(signUpUsername.value, signUpClassCode.value)" disabled="false">
         </div>
     </div>

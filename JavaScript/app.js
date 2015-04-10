@@ -21,7 +21,7 @@ posts[8] = {op:'Andrew', note:'Click the link below to go to the page',image:'..
 posts[9] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/dragon.jpeg',link:'http://www.dragon.com',comments:["Andrew: This is a Fire-breathing beast!"]};
 posts[10] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/moutain.jpeg',link:'http://www.moutain.com',comments:["Andrew: Mountains!"]};
 posts[11] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/roller.jpeg',link:'',comments:[]};
-posts[12] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/dog.jpeg',link:'http://www.dog.com',comments:["Andrew: Respect the swoosh!"]};
+posts[12] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/dog.jpeg',link:'http://www.dog.com',comments:["Andrew: Respect the batman dog!"]};
 posts[13] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/husky.jpeg',link:'http://www.husky.com',comments:[]};
 posts[14] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/lights.jpg',link:'http://www.lights.com',comments:[]};
 posts[15] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/message.jpg',link:'http://www.message.com',comments:["Jesse: I took a picture of this at the beach last week.", "Josh: Wow! I've never seen a message in a bottle like that before!"]};
@@ -490,7 +490,8 @@ function updateSignUpButton() {
     if(document.getElementById("signUpUsername").value == ""
     || document.getElementById("signUpPassword").value == ""
     || document.getElementById("signUpEmail").value == ""
-    || document.getElementById("signUpClassCode").value == ""){
+    || document.getElementById("signUpClassCode").value == ""
+    || document.getElementById("signUpGroupCode").value == ""){
         document.getElementById("signUpButton").disabled = true;
     }
     else
