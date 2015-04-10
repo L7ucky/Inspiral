@@ -66,15 +66,15 @@
 
                 <div class="comments" id="commentshere"></div>
 
-                <div id="submitContainer1" class="submitContainer">
+                <div id="submitContainer1">
 
                     <input class="addComment" type="text" id="thecomment" autocomplete= "off" name="thecomment" placeholder="Add a comment..." oninput="updateCommentSubmitButton()" onkeydown="submitOnEnter(event, 'commentButton')">
 
 
-                    <div class="submitContainer" style="width: 100%">
+                    <div class="commentBar" >
                         <input id="commentButton" class="submitbutton" type="button" value="Submit" onclick= "insertComment(thecomment.value, privateCheckbox.checked); return false;" disabled="true">
 
-                        <label class="privateCheckbox" for="privateCheckbox">Private comment</label>
+                        <label class="privateCheckboxLabel" for="privateCheckbox">Private comment</label>
                         <input class="privateCheckbox" type="checkbox" id="privateCheckbox" >
                     </div>
                 </div>
@@ -107,7 +107,7 @@
                 <img id="uploadImage" src="../Resources/defaultimage.jpg">
                 <input type="button" class="submitbutton" id ="uploadButton"  value="Upload Photo" onclick="document.getElementById('upload').click();" >
                 <div id="orDiv">or</div>
-                <input id="urlImageInput" type="text" placeholder="Specify an image URL...">
+                <input id="urlImageInput" type="text" placeholder="Specify an image URL..." onblur="previewImage()">
             </div>
             <div  class="submitContainer" >
                 <div id="postInspirationHeader">

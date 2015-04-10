@@ -32,6 +32,9 @@ posts[19] = {op:'Andrew', note:'Click the link below to go to the page',image:'.
 posts[20] = {op:'Andrew', note:'Click the link below to go to the page',image:'http://blog.jimdo.com/wp-content/uploads/2014/01/tree-247122.jpg',link:'http://www.beach.com',comments:["Andrew: I want to go there so badly!"]};
 posts[21] = {op:'Andrew', note:'Click the link below to go to the page',image:'http://images.visitcanberra.com.au/images/canberra_hero_image.jpg',link:'http://www.hotairballons.com',comments:["Andrew: Awesome!!"]};
 
+var numberOfPosts = 22;
+
+
 var currentImages = imagelistPublic;
 var currentPage = "public";
 var currentImageIndex = 0;
@@ -213,15 +216,7 @@ function updateSelectionStyle(curImageSlot){
 }
 
 
-function submitInspiration()
-{
-    if(fileUploaded){
 
-    }
-
-    document.getElementById("textupload").value = "";
-    changePage('public');
-}
 
 function setAccountButton()
 {
@@ -611,6 +606,53 @@ function reset(){
     document.getElementById("submitInspiration").disabled = true;
     document.getElementById("uploadImage").src = "../Resources/defaultimage.jpg";
     document.getElementById("textupload").value = "";
+    document.getElementById("linkURLinput").value = "";
+    document.getElementById("urlImageInput").value = "";
+}
+
+function previewImage(){
+    var input = document.getElementById("urlImageInput").value;
+    if(input.length>0){
+        document.getElementById("uploadImage").src = input;
+    }
+
+}
+
+function submitInspiration()
+{
+    publicChecked = document.getElementById("visibilityCheckbox1").checked;
+    privateChecked = document.getElementById("visibilityCheckbox4").checked;
+    classChecked = document.getElementById("visibilityCheckbox3").checked;
+    groupChecked = document.getElementById("visibilityCheckbox2").checked;
+
+    var link= document.getElementById("linkURLinput").value;
+    var imageURL = document.getElementById("urlImageInput").value;
+    var note = document.getElementById("textupload").value;
+
+
+    if(fileUploaded){
+
+    }
+    else if(imageURL.length>0){
+        if(publicChecked || privateChecked || groupChecked || classChecked){
+            posts[numberOfPosts]={op:currentUser, note:note,image:imageURL,link:link,comments:[]};
+            numberOfPosts++;
+        }
+        if(publicChecked){
+            imagelistPublic.splice(0,0,numberOfPosts-1);
+        }
+        if(classChecked){
+            imagelistClass.splice(0,0,numberOfPosts-1);
+        }
+        if(groupChecked){
+            imagelistGroup.splice(0,0,numberOfPosts-1);
+        }
+        if(privateChecked){
+            imagelistPrivate.splice(0,0,numberOfPosts-1);
+        }
+    }
+
+    changePage('public');
 }
 
 function updateSubmitInspiration() {
