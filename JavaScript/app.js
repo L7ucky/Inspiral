@@ -296,7 +296,13 @@ function login(usernameEntered, classCodeEntered){
 	{
 		document.getElementById("editEmail").value = document.getElementById("signUpEmail").value;
 	}
-	if (classCodeEntered != "Section 1") document.getElementById("editClassCode").innerHTML = classCodeEntered;
+	if(document.getElementById("signUpGroupCode").value != "")
+	{
+    currGroup = document.getElementById("signUpGroupCode").value;
+	}
+	document.getElementById("joinGroup").value = currGroup;
+	document.getElementById("joinClass").value = classCodeEntered;
+	determineTabName();
 	document.getElementById("UsernameSlot").innerHTML = usernameEntered;
 	if (usernameEntered == "") document.getElementById("UsernameSlot").innerHTML = currentUser;
 	document.getElementById("signInUsername").value = "";
@@ -305,6 +311,7 @@ function login(usernameEntered, classCodeEntered){
 	document.getElementById("signUpPassword").value = "";
 	document.getElementById("signUpEmail").value = "";
 	document.getElementById("signUpClassCode").value = "";
+	document.getElementById("signUpGroupCode").value = "";
   	loggedIn = true;
   	changePage("public");
     updateUserLikes();
@@ -442,6 +449,11 @@ function newGroup() {
 
 function joinGroup() {
     currGroup = document.getElementById("joinGroup").value;
+    determineTabName();
+}
+
+function joinClass() {
+    currClassCode = document.getElementById("joinClass").value;
     determineTabName();
 }
 
