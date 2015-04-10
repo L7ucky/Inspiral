@@ -292,8 +292,20 @@
             <input class="inputSigninPage" id="signUpUsername" type="text" placeholder="Username" style="font-size: 15px; margin-bottom: 5px; display:block;" oninput="updateSignUpButton()" onkeydown="submitOnEnter(event, 'signUpButton')">
             <input class="inputSigninPage" id="signUpPassword" type="password" placeholder="Password" style="font-size: 15px; margin-bottom: 5px; display: block;" oninput="updateSignUpButton()" onkeydown="submitOnEnter(event, 'signUpButton')">
             <input class="inputSigninPage" id="signUpEmail" type="text" placeholder="Email" style="font-size: 15px; margin-bottom: 5px; display: block;" oninput="updateSignUpButton()" onkeydown="submitOnEnter(event, 'signUpButton')">
-            <input class="inputSigninPage" id="signUpClassCode" type="text" placeholder="Class id" style="font-size: 15px; margin-bottom: 5px; display: block;" oninput="updateSignUpButton()" onkeydown="submitOnEnter(event, 'signUpButton')">
-            <input class="inputSigninPage" id="signUpGroupCode" type="text" placeholder="Group id" style="font-size: 15px; margin-bottom: 5px; display: block;" oninput="updateSignUpButton()" onkeydown="submitOnEnter(event, 'signUpButton')">
+            <select class="inputSigninPage" id="signUpClassCode" style="font-size: 15px; margin: auto; margin-bottom: 5px; display: block;"  onchange="updateSignUpButton()">
+                <option value="">Class</option>
+                <option value="Section 1">Section 1</option>
+                <option value="Section 2">Section 2</option>
+                <option value="Section 3">Section 3</option>
+            </select>
+            <select class="inputSigninPage" id="signUpGroupCode" style="font-size: 15px; margin: auto; margin-bottom: 5px; display: block;"  onchange="updateSignUpButton()">
+                <option value="">Group</option>
+                <option value="Byters">Byters</option>
+                <option value="Scavajripters">Scavajripters</option>
+                <option value="Silver Geo Supernovas">Silver Geo Supernovas</option>
+                <option value="Waldo">Waldo</option>
+                <option value="Red Team">Red Team</option>
+            </select>
             <input type="button" class="submitbutton" value="Sign Up" id="signUpButton"style="display: block; " onclick="login(signUpUsername.value, signUpClassCode.value)" disabled="false">
         </div>
     </div>
