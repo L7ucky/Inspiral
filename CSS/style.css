@@ -9,6 +9,7 @@ body{
 
 input[type="text"]{
     /*border-color: rgb(96,214,110);*/
+    border-radius: 5px;
     border-width: 0;
     font-family: arial;
     font-size: 20px;
@@ -50,7 +51,7 @@ input[type="password"]{
     text-align: center;
     padding-top: 15px;
     padding-left:-20px;
-    color:#484848;
+    color: white;
     font-size: 20px;
 }
 .logo{
