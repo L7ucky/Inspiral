@@ -104,20 +104,27 @@
 
         <div class="content" style="margin-top: 80px">
             <div class="uploadPreview" id="uploadPreview">
-                <img id="uploadImage" src="../Resources/defaultimage.jpg" height="100%" width="100%"></div>
-
-            <div class="submitContainer" style="float: right; margin-left: 0px; margin-right: 12.8%; width: 29.5%;">
+                <img id="uploadImage" src="../Resources/defaultimage.jpg">
+                <input type="button" class="submitbutton" id ="uploadButton"  value="Upload Photo" onclick="document.getElementById('upload').click();" >
+                <div id="orDiv">or</div>
+                <input id="urlImageInput" type="text" placeholder="Specify an image URL...">
+            </div>
+            <div  class="submitContainer" >
+                <div id="postInspirationHeader">
+                    Post Inspiration:
+                </div>
+                <!--<label for="linkURLinput" style="color:#484848;">Share a link</label>-->
+                <input id="linkURLinput" type="text"  placeholder="Link URL (optional)...">
 
                 <input type="file" onchange="readURL(this, 1); uploadFile();" style="visibility: hidden; width: 1px;" id="upload" accept="image/*"/>
-                <input type="button" class="submitbutton" value="Upload Photo" onclick="document.getElementById('upload').click();" style="float: left; margin-bottom: 20px;"/>
-                <input class="textupload" type="text" id="textupload" autocomplete= "off" name="textupload" placeholder="Text inspiration or link..." oninput="updateSubmitInspiration()">
+                <input class="textupload" type="text" id="textupload" autocomplete= "off" name="textupload" placeholder="Add a description..." oninput="updateSubmitInspiration()">
 
 
 
-                <div class="submitContainer" style="width: 117%; margin-left: 0px; margin-top: 15px">
+                <div id="visibilityContainer" >
 
                     <input id="submitInspiration" class="submitbutton" type="button" value="Submit" style=" margin-top: -5px; " onclick= "submitInspiration(); return false;" disabled>
-                    Visibility:
+                    Post to:
 
                     <input class="visibilityCheckbox" type="checkbox" id="visibilityCheckbox1" style=" margin-top: 0px;" onclick="checkboxesCalculate('visibilityCheckbox1',visibilityCheckbox1.checked);" onchange="updateSubmitInspiration()">
                     <label for="visibilityCheckbox1" style="vertical-align: top;">Public</label>

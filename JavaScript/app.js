@@ -9,26 +9,26 @@ var imagelistGroup = [16,17,10,9,7,3,2,1];
 var imagelistPublic = [20,21,16,17,18,19,9,11,0];
 
 var posts = {};
-posts[0] = {op:'Andrew', note:'Check out this Fire-breathing Cat I found!',image:'http://www.pickycovers.com/uploads/cover/0e68f90451318d6c066def6427777d09.jpg',link:'www.google.com',comments:["Josh: This is a cat.", "Dantley: It looks like it has magical powers. It must be a liger."]};
-posts[1] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/cactus.jpeg',link:'www.google.com',comments:["Josh: This is a cat.", "Dantley: It looks like it has magical powers. It must be a liger."]};
-posts[2] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/nike.jpeg',link:'www.nike.com',comments:["Andrew: Respect the swoosh!"]};
-posts[3] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/patriot.jpeg',link:'www.nike.com',comments:["Josh: Reminds me of Football.","Dantley: Flag.... nice!"]};
-posts[4] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/rooney.jpeg',link:'www.rooney.com',comments:["Andrew: Does this guy play soccer?","Tyler: I think he just scored a goal!"]};
-posts[5] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/starwars.jpeg',link:'www.starwars.com',comments:["Josh: Padme's beauty inspires me.", "Dantley: I personally prefer Leia."]};
-posts[6] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/sword.jpeg',link:'www.sword.com',comments:["Josh: Do you think we could use a sword in our advertisement?"]};
-posts[7] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/cow.jpeg',link:'www.cow.com',comments:["Josh: I look like a cow in this picture."]};
-posts[8] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/greenChurch.jpeg',link:'www.greenChurch.com',comments:["Dantley: This is a picture of the painting I made of a dream I had two weeks ago."]};
-posts[9] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/dragon.jpeg',link:'www.dragon.com',comments:["Andrew: This is a Fire-breathing beast!"]};
-posts[10] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/moutain.jpeg',link:'www.moutain.com',comments:["Andrew: Mountains!"]};
-posts[11] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/roller.jpeg',link:'www.roller.com',comments:[]};
-posts[12] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/dog.jpeg',link:'www.dog.com',comments:["Andrew: Respect the swoosh!"]};
-posts[13] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/husky.jpeg',link:'www.husky.com',comments:[]};
-posts[14] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/lights.jpg',link:'www.lights.com',comments:[]};
-posts[15] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/message.jpg',link:'www.message.com',comments:["Jesse: I took a picture of this at the beach last week.", "Josh: Wow! I've never seen a message in a bottle like that before!"]};
-posts[16] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/park.jpg',link:'www.park.com',comments:["Josh: I took this one while playing ultimate frisbee at Kiwanis."]};
-posts[17] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/rain.jpg',link:'www.rain.com',comments:[]};
-posts[18] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/kitten.jpg',link:'www.kitten.com',comments:["Tyler: This is a precious photo my wife took of little Katniss.","Josh: This looks like my cat."]};
-posts[19] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/weather.jpg',link:'www.weather.com',comments:["Andrew: Respect the weather channel!"]};
+posts[0] = {op:'Andrew', note:'Check out this Fire-breathing Cat I found!',image:'http://www.pickycovers.com/uploads/cover/0e68f90451318d6c066def6427777d09.jpg',link:'http://www.google.com',comments:["Josh: This is a cat.", "Dantley: It looks like it has magical powers. It must be a liger."]};
+posts[1] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/cactus.jpeg',link:'http://www.google.com',comments:["Josh: This is a cat.", "Dantley: It looks like it has magical powers. It must be a liger."]};
+posts[2] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/nike.jpeg',link:'http://www.nike.com',comments:["Andrew: Respect the swoosh!"]};
+posts[3] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/patriot.jpeg',link:'http://www.nike.com',comments:["Josh: Reminds me of Football.","Dantley: Flag.... nice!"]};
+posts[4] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/rooney.jpeg',link:'http://www.rooney.com',comments:["Andrew: Does this guy play soccer?","Tyler: I think he just scored a goal!"]};
+posts[5] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/starwars.jpeg',link:'http://www.starwars.com',comments:["Josh: Padme's beauty inspires me.", "Dantley: I personally prefer Leia."]};
+posts[6] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/sword.jpeg',link:'http://www.sword.com',comments:["Josh: Do you think we could use a sword in our advertisement?"]};
+posts[7] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/cow.jpeg',link:'http://www.cow.com',comments:["Josh: I look like a cow in this picture."]};
+posts[8] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/greenChurch.jpeg',link:'http://www.greenChurch.com',comments:["Dantley: This is a picture of the painting I made of a dream I had two weeks ago."]};
+posts[9] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/dragon.jpeg',link:'http://www.dragon.com',comments:["Andrew: This is a Fire-breathing beast!"]};
+posts[10] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/moutain.jpeg',link:'http://www.moutain.com',comments:["Andrew: Mountains!"]};
+posts[11] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/roller.jpeg',link:'',comments:[]};
+posts[12] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/dog.jpeg',link:'http://www.dog.com',comments:["Andrew: Respect the swoosh!"]};
+posts[13] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/husky.jpeg',link:'http://www.husky.com',comments:[]};
+posts[14] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/lights.jpg',link:'http://www.lights.com',comments:[]};
+posts[15] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/message.jpg',link:'http://www.message.com',comments:["Jesse: I took a picture of this at the beach last week.", "Josh: Wow! I've never seen a message in a bottle like that before!"]};
+posts[16] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/park.jpg',link:'http://www.park.com',comments:["Josh: I took this one while playing ultimate frisbee at Kiwanis."]};
+posts[17] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/rain.jpg',link:'http://www.rain.com',comments:[]};
+posts[18] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/kitten.jpg',link:'http://www.kitten.com',comments:["Tyler: This is a precious photo my wife took of little Katniss.","Josh: This looks like my cat."]};
+posts[19] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/weather.jpg',link:'http://www.weather.com',comments:["Andrew: Respect the weather channel!"]};
 posts[20] = {op:'Andrew', note:'Click the link below to go to the page',image:'http://blog.jimdo.com/wp-content/uploads/2014/01/tree-247122.jpg',link:'http://www.beach.com',comments:["Andrew: I want to go there so badly!"]};
 posts[21] = {op:'Andrew', note:'Click the link below to go to the page',image:'http://images.visitcanberra.com.au/images/canberra_hero_image.jpg',link:'http://www.hotairballons.com',comments:["Andrew: Awesome!!"]};
 
@@ -212,38 +212,15 @@ function updateSelectionStyle(curImageSlot){
     curImageSlot.style.border = '10px solid #484848';
 }
 
-function  checkboxesCalculate (name, checked) {
-	if (checked && name == "visibilityCheckbox1" && visibilityCheckbox2.checked == false &&
-		visibilityCheckbox3.checked == false &&	visibilityCheckbox4.checked == false)
-	{
-		visibilityCheckbox2.checked = true;
-		visibilityCheckbox3.checked = true;
-		visibilityCheckbox4.checked = true;
-	}
-	else if(checked && name == "visibilityCheckbox2" && visibilityCheckbox1.checked == false &&
-		visibilityCheckbox3.checked == false &&	visibilityCheckbox4.checked == false)
-	{
-		visibilityCheckbox3.checked = true;
-		visibilityCheckbox4.checked = true;
-	}
-	else if(checked && name == "visibilityCheckbox3" && visibilityCheckbox2.checked == false &&
-		visibilityCheckbox1.checked == false &&	visibilityCheckbox4.checked == false)
-	{
-		visibilityCheckbox4.checked = true;
-	}
-	
-}
+
 function submitInspiration()
 {
-  fileUploaded = false;
-  document.getElementById("submitInspiration").disabled = true;
-  document.getElementById("visibilityCheckbox1").checked = false;
-  document.getElementById("visibilityCheckbox2").checked = false;
-  document.getElementById("visibilityCheckbox3").checked = false;
-  document.getElementById("visibilityCheckbox4").checked = false; 
-  document.getElementById("uploadImage").src = "../Resources/defaultimage.jpg";
-  document.getElementById("textupload").value = ""; 
-	changePage('public'); 
+    if(fileUploaded){
+
+    }
+
+    document.getElementById("textupload").value = "";
+    changePage('public');
 }
 
 function setAccountButton()
@@ -395,6 +372,7 @@ function onLoad() {
     refreshPictures();
     updateMainImage(0);
     determineTabName();
+    reset();
 }
 
 window.onload = function(){
@@ -407,19 +385,21 @@ function updatePostInfo(index){
     document.getElementById('op').innerHTML = 'Posted By: '+post.op;
     if(post.note.length>0){
         document.getElementById('note').innerHTML = post.note;
-        document.getElementById('note').display = 'inline-block';
+        document.getElementById('note').style.display = 'inline-block';
     }
     else{
-        document.getElementById('note').display = 'none';
+        document.getElementById('note').style.display = 'none';
     }
     if(post.link.length>0){
-        document.getElementById('opLink').display = 'inline-block';
+        document.getElementById('opLink').style.display = 'block';
+        document.getElementById('actualLink').style.display = 'inline-block';
         document.getElementById('actualLink').innerHTML = post.link;
         document.getElementById('actualLink').href = post.link;
         document.getElementById('opLink').style.margin='10px 0px 10px 5%';
     }
     else{
-        document.getElementById('opLink').display = 'none';
+        document.getElementById('opLink').style.display = 'none';
+        document.getElementById('actualLink').style.display = 'none';
     }
 
 }
@@ -435,7 +415,7 @@ function updateMainImage(index,homepage){
     document.getElementById('commentshere').innerHTML = "";
     if (posts[currentImages[index]].comments.length == 0)
     {
-    	document.getElementById('commentshere').innerHTML += "<div class='commentLine'><div class='aComment' style='color: gray'>" + "No comments yet." + "</div></div>";
+    	document.getElementById('commentshere').innerHTML += "<div class='commentLine'><div style='color: gray'>" + "No comments yet" + "</div></div>";
     }
     else{
 	   	for(var i=0;i<posts[currentImages[index]].comments.length;i++)
@@ -611,7 +591,35 @@ function facebookLogin() {
 
 var fileUploaded = false;
 
+var publicChecked = false;
+var privateChecked = false;
+var classChecked = false;
+var groupChecked = false;
+
+function reset(){
+    document.getElementById("visibilityCheckbox1").checked=false;
+    document.getElementById("visibilityCheckbox4").checked=false;
+    document.getElementById("visibilityCheckbox3").checked=false;
+    document.getElementById("visibilityCheckbox2").checked=false;
+
+    publicChecked = false;
+    privateChecked = false;
+    classChecked = false;
+    groupChecked = false;
+
+    fileUploaded = false;
+    document.getElementById("submitInspiration").disabled = true;
+    document.getElementById("uploadImage").src = "../Resources/defaultimage.jpg";
+    document.getElementById("textupload").value = "";
+}
+
 function updateSubmitInspiration() {
+
+    publicChecked = document.getElementById("visibilityCheckbox1").checked;
+    privateChecked = document.getElementById("visibilityCheckbox4").checked;
+    classChecked = document.getElementById("visibilityCheckbox3").checked;
+    groupChecked = document.getElementById("visibilityCheckbox2").checked;
+
     if(!fileUploaded && document.getElementById("textupload").value == "")
         document.getElementById("submitInspiration").disabled = true;
     else if(!document.getElementById("visibilityCheckbox1").checked
@@ -622,7 +630,27 @@ function updateSubmitInspiration() {
     else
         document.getElementById("submitInspiration").disabled = false;
 }
+function  checkboxesCalculate (name, checked) {
+    if (checked && name == "visibilityCheckbox1" && visibilityCheckbox2.checked == false &&
+        visibilityCheckbox3.checked == false &&	visibilityCheckbox4.checked == false)
+    {
+        visibilityCheckbox2.checked = true;
+        visibilityCheckbox3.checked = true;
+        visibilityCheckbox4.checked = true;
+    }
+    else if(checked && name == "visibilityCheckbox2" && visibilityCheckbox1.checked == false &&
+        visibilityCheckbox3.checked == false &&	visibilityCheckbox4.checked == false)
+    {
+        visibilityCheckbox3.checked = true;
+        visibilityCheckbox4.checked = true;
+    }
+    else if(checked && name == "visibilityCheckbox3" && visibilityCheckbox2.checked == false &&
+        visibilityCheckbox1.checked == false &&	visibilityCheckbox4.checked == false)
+    {
+        visibilityCheckbox4.checked = true;
+    }
 
+}
 function uploadFile() {
     fileUploaded = true;
     updateSubmitInspiration();

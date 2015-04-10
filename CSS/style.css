@@ -8,11 +8,12 @@ body{
 }
 
 input[type="text"]{
-    border-color: rgb(96,214,110);
-    border-width: thin;
+    /*border-color: rgb(96,214,110);*/
+    border-width: 0;
     font-family: arial;
     font-size: 20px;
     margin: auto;
+    color:#484848;
 }
 input[type="password"]{
     border-color: rgb(96,214,110);
@@ -291,13 +292,11 @@ a.divLink {
  }
 #note{
     margin-top: 10px;
-    margin-bottom: 0px;
     width:90%;
     margin-left: 5%;
 }
 #opLink{
     margin-top: 10px;
-    margin-bottom: 10px;
     width:90%;
     margin-left: 5%;
     text-decoration: none;
@@ -316,6 +315,7 @@ a.divLink {
     width:90%;
     /*height:315px;
     width:750px;*/
+    margin-top: 10px;
     margin-left: 5%;
     border-radius: 5px;
     padding: 10px;
@@ -333,6 +333,7 @@ a.divLink {
     margin-bottom: 5px;
     position: relative;
     float: left;
+    border-radius: 5px;
 }
 input.submitbutton {
     float:right;
@@ -383,11 +384,33 @@ input.privateCheckbox{
     background-color: white;
 }
 div.submitContainer{
-    width: 90%;
-    padding-top: 5px;
-    float: left;
-    margin-left: 5%;
+    float: right;
+    margin-left: 0px;
+    margin-right: 12.8%;
+    width: 29.5%;
 
+}
+#visibilityContainer{
+    width: 117%;
+    margin-left: 0px;
+    margin-top: 15px;
+    padding-top: 5px;
+    display: block;
+    float:left;
+}
+#linkURLinput{
+    width:100%;
+    height:30px;
+    /*font-size: 20px;*/
+    color:#484848;
+    border-radius: 5px;
+    padding-right:100px;
+}
+#postInspirationHeader{
+    font-size: 2em;
+    color: #484848;
+    margin-bottom: 20px;
+    float: left;
 }
 #commentButton
 {
@@ -395,7 +418,7 @@ div.submitContainer{
 }
 #submitInspiration
 {
-    margin-right: -33px;
+    margin-right: -6%;
 }
 /*id for sign up button*/
 #signUpButton
@@ -502,12 +525,29 @@ div.submitContainer{
     cursor: pointer;
 }
 
+#uploadImage{
+    width:100%;
+    height:auto;
+}
+
+#uploadButton{
+    float:left!important;
+    margin-top:15px;
+}
 
 .uploadPreview{
     width:36%;
     padding: 10px;
     margin: -10px 10% 0px 10%;
     float: left;
+    height:400px;
+}
+#orDiv{
+    width: 100%;
+    float: left;
+    margin: 10px 0% 10px 64px;
+    font-size: 20px;
+    color: #484848;
 }
 .textupload{
     height:0px;
@@ -518,6 +558,16 @@ div.submitContainer{
     padding: 50px;
     float: left;
     background-color: white;
+}
+#urlImageInput{
+    width:100%;
+    height: 30px;
+    display: block;
+    border-radius: 5px;
+    /*font-size: 20px;*/
+    float:left;
+    margin:0px 0px 0px 0px;
+    color: #484848;
 }
 input.visibilityCheckbox{
     width: 20px; 
