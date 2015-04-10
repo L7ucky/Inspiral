@@ -17,7 +17,7 @@ input[type="text"]{
 }
 input[type="password"]{
     border-color: rgb(96,214,110);
-    border-width: thin;
+    border-width: 0;
     font-family: arial;
     font-size: 20px;
     margin: auto;
