@@ -27,11 +27,12 @@ posts[14] = {op:'Andrew', note:'Click the link below to go to the page',image:'.
 posts[15] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/message.jpg',link:'http://www.message.com',comments:["Jesse: I took a picture of this at the beach last week.", "Josh: Wow! I've never seen a message in a bottle like that before!"]};
 posts[16] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/park.jpg',link:'http://www.park.com',comments:["Josh: I took this one while playing ultimate frisbee at Kiwanis."]};
 posts[17] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/rain.jpg',link:'http://www.rain.com',comments:[]};
-posts[18] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/kitten.jpg',link:'http://www.kitten.com',comments:["Tyler: This is a precious photo my wife took of little Katniss.","Josh: This looks like my cat."]};
+posts[18] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/kitten.jpg',link:'http://www.kitten.com',comments:["Tyler: This is a precious photo my wife took of little Katniss.","Josh: This looks like my cat."],liked:true};
 posts[19] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/weather.jpg',link:'http://www.weather.com',comments:["Andrew: Respect the weather channel!"]};
 posts[20] = {op:'Andrew', note:'Click the link below to go to the page',image:'http://blog.jimdo.com/wp-content/uploads/2014/01/tree-247122.jpg',link:'http://www.beach.com',comments:["Andrew: I want to go there so badly!"]};
 posts[21] = {op:'Andrew', note:'Click the link below to go to the page',image:'http://images.visitcanberra.com.au/images/canberra_hero_image.jpg',link:'http://www.hotairballons.com',comments:["Andrew: Awesome!!"]};
 
+var userLikes=[3,7,20,21];
 var numberOfPosts = 22;
 
 
@@ -306,6 +307,7 @@ function login(usernameEntered, classCodeEntered){
 	document.getElementById("signUpClassCode").value = "";
   	loggedIn = true;
   	changePage("public");
+    updateUserLikes();
 }
 function accountButtonPressed(){
     if(loggedIn){
@@ -695,4 +697,31 @@ function  checkboxesCalculate (name, checked) {
 function uploadFile() {
     fileUploaded = true;
     updateSubmitInspiration();
+}
+function favoriteImage(){
+    if(posts[currentImages[currentImageIndex]].liked == true){
+        posts[currentImages[currentImageIndex]].liked = false;
+
+        var indexLikes = userLikes.indexOf(currentImages[currentImageIndex]);
+        var indexImages = imagelistPrivate.indexOf(currentImages[currentImageIndex]);
+        if(indexLikes>-1)
+            userLikes.splice(indexLikes,1);
+        if(indexImages>-1)
+            imagelistPrivate.splice(indexImages,1);
+    }
+    else{
+        posts[currentImages[currentImageIndex]].liked = true;
+        userLikes.push(currentImages[currentImageIndex]);
+        imagelistPrivate.splice(0,0,currentImages[currentImageIndex]);
+    }
+    refreshPictures();
+}
+function updateUserLikes(){
+    for(var i =0;i<userLikes.length;i++){
+        var index = userLikes[i]
+        posts[index].liked = true;
+        if(imagelistPrivate.indexOf(index)==-1){
+            imagelistPrivate.push(index);
+        }
+    }
 }
