@@ -426,27 +426,21 @@ function updateMainImage(index,homepage){
 
 // Account page stuff
 
-function leave() {
-    document.getElementById("currentGroup").value = "";
-    document.getElementById("leaveGroupButton").disabled = true;
-}
-
 function newGroup() {
-	currGroup = document.getElementById("newGroup").value;
-	determineTabName();
-    document.getElementById("currentGroup").value = document.getElementById("newGroup").value;
+    currGroup = document.getElementById("newGroup").value;
+    determineTabName();
+    var newValue = document.createElement("option");
+    newValue.text = currGroup;
+    newValue.value = currGroup;
+    document.getElementById("joinGroup").add(newValue);
+    document.getElementById("joinGroup").value = currGroup;
     document.getElementById("newGroup").value = "";
     document.getElementById("createGroupButton").disabled = true;
-    document.getElementById("leaveGroupButton").disabled = false;
 }
 
 function joinGroup() {
-	currGroup = document.getElementById("joinGroup").value;
-	determineTabName();
-    document.getElementById("currentGroup").value = document.getElementById("joinGroup").value;
-    document.getElementById("joinGroup").value = "";
-    document.getElementById("joinGroupButton").disabled = true;
-    document.getElementById("leaveGroupButton").disabled = false;
+    currGroup = document.getElementById("joinGroup").value;
+    determineTabName();
 }
 
 function updateCommentSubmitButton() {

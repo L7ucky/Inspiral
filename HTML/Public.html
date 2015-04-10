@@ -227,17 +227,6 @@
             <div class="title">Groups</div>
             <table style="Width:100%">
                 <tr>
-                    <td style="text-align:right;">Group:</td>
-                    <td style="text-align:center;"><input id="currentGroup" type="text"
-                                                          style="font-size: 15px; background-color: #C0EFC7;" value="Byters"
-                                                          readonly></td>
-                    <td>
-                        <input id="leaveGroupButton" type="button" class="submitbutton" value="Leave"
-                               style="font-size:15px; margin-right: 5px; padding-left: 22px; padding-right: 22px;"
-                               onclick="leave()">
-                    </td>
-                </tr>
-                <tr>
                     <td style="text-align:right;">Create new group:</td>
                     <td style="text-align:center;"><input id="newGroup" type="text" style="font-size: 15px;"
                                                           oninput="updateCreateButton()"
@@ -249,15 +238,17 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="text-align:right;">Join group:</td>
-                    <td style="text-align:center;"><input id="joinGroup" type="text" style="font-size: 15px;"
-                                                          oninput="updateJoinButton()"
-                                                          onkeydown="submitOnEnter(event, 'joinGroupButton')"></td>
-                    <td>
-                        <input id="joinGroupButton" type="button" class="submitbutton" value="Join"
-                               style="font-size:15px; margin-right: 5px; margin-bottom: 5px; padding-left: 29px; padding-right: 28px;"
-                               onclick="joinGroup()" disabled="true">
+                    <td style="text-align:right;">Group:</td>
+                    <td style="text-align:center;">
+                        <select id="joinGroup" style="font-size: 15px;" onchange="joinGroup()">
+                            <option value="Byters">Byters</option>
+                            <option value="Scavajripters">Scavajripters</option>
+                            <option value="Silver Geo Supernovas">Silver Geo Supernovas</option>
+                            <option value="Waldo">Waldo</option>
+                            <option value="Red Team">Red Team</option>
+                        </select>
                     </td>
+                    <td></td>
                 </tr>
             </table>
         </div>
