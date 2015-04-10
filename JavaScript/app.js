@@ -623,13 +623,14 @@ function submitInspiration()
 {
     publicChecked = document.getElementById("visibilityCheckbox1").checked;
     privateChecked = document.getElementById("visibilityCheckbox4").checked;
-    classChecked = document.getElementById("visibilityCheckbox3").checked;
-    groupChecked = document.getElementById("visibilityCheckbox2").checked;
+    classChecked = document.getElementById("visibilityCheckbox2").checked;
+    groupChecked = document.getElementById("visibilityCheckbox3").checked;
 
     var link= document.getElementById("linkURLinput").value;
     var imageURL = document.getElementById("urlImageInput").value;
     var note = document.getElementById("textupload").value;
 
+    var redirect='public';
 
     if(fileUploaded){
 
@@ -644,24 +645,27 @@ function submitInspiration()
         }
         if(classChecked){
             imagelistClass.splice(0,0,numberOfPosts-1);
+            redirect="class";
         }
         if(groupChecked){
             imagelistGroup.splice(0,0,numberOfPosts-1);
+            redirect= 'group';
         }
         if(privateChecked){
             imagelistPrivate.splice(0,0,numberOfPosts-1);
+            redirect='private';
         }
     }
 
-    changePage('public');
+    changePage(redirect);
 }
 
 function updateSubmitInspiration() {
 
     publicChecked = document.getElementById("visibilityCheckbox1").checked;
     privateChecked = document.getElementById("visibilityCheckbox4").checked;
-    classChecked = document.getElementById("visibilityCheckbox3").checked;
-    groupChecked = document.getElementById("visibilityCheckbox2").checked;
+    classChecked = document.getElementById("visibilityCheckbox2").checked;
+    groupChecked = document.getElementById("visibilityCheckbox3").checked;
 
     if(!fileUploaded && document.getElementById("textupload").value == "")
         document.getElementById("submitInspiration").disabled = true;
