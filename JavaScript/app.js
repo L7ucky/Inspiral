@@ -3,13 +3,13 @@
  */
 // Tyler's Stuff
 
-var imagelistPrivate = [1,2,3,4,5,6,7,8];
+var imagelistPrivate = [];
 var imagelistClass = [12,10,8,6,4,2];
 var imagelistGroup = [16,17,10,9,7,3,2,1];
-var imagelistPublic = [20,21,16,17,18,19,9,11,0];
+var imagelistPublic = [20,21,16,17,18,19,9,11];
 
 var posts = {};
-posts[0] = {op:'Andrew', note:'Check out this Fire-breathing Cat I found!',image:'http://www.pickycovers.com/uploads/cover/0e68f90451318d6c066def6427777d09.jpg',link:'http://www.google.com',comments:["Josh: This is a cat.", "Dantley: It looks like it has magical powers. It must be a liger."]};
+posts[0] = {op:'System', note:'There are no images in this queue',image:'../Resources/whiteBox.jpeg',link:'',comments:[]};
 posts[1] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/cactus.jpeg',link:'http://www.google.com',comments:["Josh: This is a cat.", "Dantley: It looks like it has magical powers. It must be a liger."]};
 posts[2] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/nike.jpeg',link:'http://www.nike.com',comments:["Andrew: Respect the swoosh!"]};
 posts[3] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/patriot.jpeg',link:'http://www.nike.com',comments:["Josh: Reminds me of Football.","Dantley: Flag.... nice!"]};
@@ -31,9 +31,10 @@ posts[18] = {op:'Andrew', note:'Click the link below to go to the page',image:'.
 posts[19] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/weather.jpg',link:'http://www.weather.com',comments:["Andrew: Respect the weather channel!"]};
 posts[20] = {op:'Andrew', note:'Click the link below to go to the page',image:'http://blog.jimdo.com/wp-content/uploads/2014/01/tree-247122.jpg',link:'http://www.beach.com',comments:["Andrew: I want to go there so badly!"]};
 posts[21] = {op:'Andrew', note:'Click the link below to go to the page',image:'http://images.visitcanberra.com.au/images/canberra_hero_image.jpg',link:'http://www.hotairballons.com',comments:["Andrew: Awesome!!"]};
+posts[22] = {op:'Andrew', note:'Check out this Fire-breathing Cat I found!',image:'http://www.pickycovers.com/uploads/cover/0e68f90451318d6c066def6427777d09.jpg',link:'http://www.google.com',comments:["Josh: This is a cat.", "Dantley: It looks like it has magical powers. It must be a liger."]};
 
-var userLikes=[3,7,20,21];
-var numberOfPosts = 22;
+var userLikes=[3,7,20,21,1,2,4,5,6,7,8];
+var numberOfPosts = 23;
 
 
 var currentImages = imagelistPublic;
@@ -385,8 +386,19 @@ window.onload = function(){
 };
 
 function updatePostInfo(index){
-    var post = posts[currentImages[index]];
+    var post;
+    if(currentImages.length>0)
+        post= posts[currentImages[index]];
+    else
+        post= posts[0];
+
     document.getElementById('op').innerHTML = 'Posted By: '+post.op;
+    if(post.liked){
+        document.getElementById('starIcon').src = '../Resources/starInspiralGreen.png';
+    }
+    else{
+        document.getElementById('starIcon').src = '../Resources/starGrey.png';
+    }
     if(post.note.length>0){
         document.getElementById('note').innerHTML = post.note;
         document.getElementById('note').style.display = 'inline-block';
@@ -411,24 +423,43 @@ function updatePostInfo(index){
 function updateMainImage(index,homepage){
     currentImageIndex = index;
 
-    if(homepage){
-        changePage('public');
-    }
+    if(currentImages.length>0){
+        if(homepage){
+            changePage('public');
+        }
 
-    document.getElementById('mainImage').src= posts[currentImages[index]].image;
-    document.getElementById('commentshere').innerHTML = "";
-    if (posts[currentImages[index]].comments.length == 0)
-    {
-    	document.getElementById('commentshere').innerHTML += "<div class='commentLine'><div style='color: gray'>" + "No comments yet" + "</div></div>";
+        document.getElementById('mainImage').src= posts[currentImages[index]].image;
+        document.getElementById('commentshere').innerHTML = "";
+        if (posts[currentImages[index]].comments.length == 0)
+        {
+            document.getElementById('commentshere').innerHTML += "<div class='commentLine'><div style='color: gray'>" + "No comments yet" + "</div></div>";
+        }
+        else{
+            for(var i=0;i<posts[currentImages[index]].comments.length;i++)
+            {
+                document.getElementById('commentshere').innerHTML += "<div class='commentLine'><div class='aComment'>" + posts[currentImages[index]].comments[i] + "</div></div>";
+            }
+        }
+        updatePostInfo(index);
+        refreshPictures();
     }
     else{
-	   	for(var i=0;i<posts[currentImages[index]].comments.length;i++)
-	   	{
-	       	document.getElementById('commentshere').innerHTML += "<div class='commentLine'><div class='aComment'>" + posts[currentImages[index]].comments[i] + "</div></div>";
-	   	}
-	}
-    updatePostInfo(index);
-    refreshPictures();
+        document.getElementById('mainImage').src= posts[0].image;
+        document.getElementById('commentshere').innerHTML = "";
+        if (posts[0].comments.length == 0)
+        {
+            document.getElementById('commentshere').innerHTML += "<div class='commentLine'><div style='color: gray'>" + "No comments yet" + "</div></div>";
+        }
+        else{
+            for(var i=0;i<posts[0].comments.length;i++)
+            {
+                document.getElementById('commentshere').innerHTML += "<div class='commentLine'><div class='aComment'>" + posts[0].comments[i] + "</div></div>";
+            }
+        }
+        updatePostInfo(0);
+        refreshPictures();
+    }
+
 }
 
 
@@ -662,6 +693,8 @@ function submitInspiration()
         if(privateChecked){
             imagelistPrivate.splice(0,0,numberOfPosts-1);
             redirect='private';
+            posts[numberOfPosts-1].liked = true;
+            userLikes.push(numberOfPosts-1);
         }
     }
 
@@ -711,22 +744,31 @@ function uploadFile() {
     updateSubmitInspiration();
 }
 function favoriteImage(){
-    if(posts[currentImages[currentImageIndex]].liked == true){
-        posts[currentImages[currentImageIndex]].liked = false;
+    if(loggedIn){
+        if(posts[currentImages[currentImageIndex]].liked == true){
+            posts[currentImages[currentImageIndex]].liked = false;
 
-        var indexLikes = userLikes.indexOf(currentImages[currentImageIndex]);
-        var indexImages = imagelistPrivate.indexOf(currentImages[currentImageIndex]);
-        if(indexLikes>-1)
-            userLikes.splice(indexLikes,1);
-        if(indexImages>-1)
-            imagelistPrivate.splice(indexImages,1);
+            var indexLikes = userLikes.indexOf(currentImages[currentImageIndex]);
+            var indexImages = imagelistPrivate.indexOf(currentImages[currentImageIndex]);
+            if(indexLikes>-1)
+                userLikes.splice(indexLikes,1);
+            if(indexImages>-1)
+                imagelistPrivate.splice(indexImages,1);
+            refreshPictures();
+            updateMainImage(0);
+        }
+        else{
+            posts[currentImages[currentImageIndex]].liked = true;
+            userLikes.push(currentImages[currentImageIndex]);
+            imagelistPrivate.splice(0,0,currentImages[currentImageIndex]);
+            refreshPictures();
+            updateMainImage(currentImageIndex);
+        }
     }
     else{
-        posts[currentImages[currentImageIndex]].liked = true;
-        userLikes.push(currentImages[currentImageIndex]);
-        imagelistPrivate.splice(0,0,currentImages[currentImageIndex]);
+        changePage('login');
     }
-    refreshPictures();
+
 }
 function updateUserLikes(){
     for(var i =0;i<userLikes.length;i++){

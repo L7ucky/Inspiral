@@ -295,9 +295,17 @@ a.divLink {
 
 }
 #op{
-    width:90%;
+    width:70%;
     margin-left: 5%;
+    display:inline-block;
  }
+#starIcon{
+    width:30px;
+    height:30px;
+    float:right;
+    margin-right: 10px;
+    content: icon;
+}
 #note{
     margin-top: 10px;
     width:90%;
