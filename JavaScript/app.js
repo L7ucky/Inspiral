@@ -380,11 +380,6 @@ function onLoad() {
     reset();
 }
 
-window.onload = function(){
-    changePage('public');
-    onLoad();
-};
-
 function updatePostInfo(index){
     var post;
     if(currentImages.length>0)
