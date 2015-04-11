@@ -227,11 +227,11 @@ function setAccountButton()
     if(loggedIn) {
         document.getElementById("signInButton").value = currentUser;
         document.getElementById("signInButton").onclick = function() {changePage('account')};
-        document.getElementById("submitContainer1").hidden = false;
+        document.getElementById("submitContainer1").style.visibility = "visible";
     }
     else {
         document.getElementById("signInButton").value = 'Sign In';
-        document.getElementById("submitContainer1").hidden = true;
+        document.getElementById("submitContainer1").style.visibility = "hidden";
     }
 }
 
