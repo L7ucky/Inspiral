@@ -313,6 +313,8 @@ function login(usernameEntered, classCodeEntered){
 	document.getElementById("signUpEmail").value = "";
 	document.getElementById("signUpClassCode").value = "";
 	document.getElementById("signUpGroupCode").value = "";
+	document.getElementById("signUpButton").disabled = true;
+	document.getElementById("signUpButton2").disabled = true;
   	loggedIn = true;
   	changePage("public");
     updateUserLikes();
