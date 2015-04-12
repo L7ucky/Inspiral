@@ -108,7 +108,7 @@
                 <img id="uploadImage" src="../Resources/defaultimage.jpg">
                 <input type="button" class="submitbutton" id ="uploadButton"  value="Upload Photo" onclick="document.getElementById('upload').click();" >
                 <div class="orDiv">or</div>
-                <input id="urlImageInput" type="text" placeholder="Specify an image URL..." onblur="previewImage()">
+                <input id="urlImageInput" type="text" placeholder="Specify an image URL..." oninput="previewImage()" onkeyup="previewImage()">
             </div>
             <div  class="submitContainer" >
                 <div id="postInspirationHeader">

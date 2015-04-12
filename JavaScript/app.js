@@ -10,14 +10,14 @@ var imagelistPublic = [20,21,16,17,18,19,9,11];
 
 var posts = {};
 posts[0] = {op:'System', note:'There are no images in this queue',image:'../Resources/whiteBox.jpeg',link:'',comments:[]};
-posts[1] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/cactus.jpeg',link:'http://www.google.com',comments:["Josh: This is a cat.", "Dantley: It looks like it has magical powers. It must be a liger."]};
-posts[2] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/nike.jpeg',link:'http://www.nike.com',comments:["Andrew: Respect the swoosh!"]};
-posts[3] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/patriot.jpeg',link:'http://www.nike.com',comments:["Josh: Reminds me of Football.","Dantley: Flag.... nice!"]};
-posts[4] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/rooney.jpeg',link:'http://www.rooney.com',comments:["Andrew: Does this guy play soccer?","Tyler: I think he just scored a goal!"]};
+posts[1] = {op:'Andrew', note:'Click the link below to go to the page',image:'http://stylonica.com/wp-content/uploads/2014/04/Cat-Wallpaper.jpg',link:'http://www.google.com',comments:["Josh: This is a cat.", "Dantley: It looks like it has magical powers. It must be a liger."]};
+posts[2] = {op:'Andrew', note:'Click the link below to go to the page',image:'http://5.kicksonfire.net/wp-content/uploads/2014/08/Brand-Strategy-Nike.jpg?642e0d',link:'http://www.nike.com',comments:["Andrew: Respect the swoosh!"]};
+posts[3] = {op:'Andrew', note:'Click the link below to go to the page',image:'http://www.nationofchange.org/sites/default/files/PatriotActisBack061913.jpeg',link:'http://www.nike.com',comments:["Josh: Reminds me of Football.","Dantley: Flag.... nice!"]};
+posts[4] = {op:'Andrew', note:'Click the link below to go to the page',image:'http://talkvietnam.com/uploads/2012/10/rooney-gave-himself-an-early-27th-birthday-present-as-his-double-in-manchester-uniteds-win-against-stoke-took-him-to-200-club-goals-607596-522790-10151125867997746-1799978128-n.jpg',link:'http://www.rooney.com',comments:["Andrew: Does this guy play soccer?","Tyler: I think he just scored a goal!"]};
 posts[5] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/starwars.jpeg',link:'http://www.starwars.com',comments:["Josh: Padme's beauty inspires me.", "Dantley: I personally prefer Leia."]};
-posts[6] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/sword.jpeg',link:'http://www.sword.com',comments:["Josh: Do you think we could use a sword in our advertisement?"]};
+posts[6] = {op:'Andrew', note:'Click the link below to go to the page',image:'https://thunderclam.files.wordpress.com/2011/05/swordfight.jpg',link:'http://www.sword.com',comments:["Josh: Do you think we could use a sword in our advertisement?"]};
 posts[7] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/cow.jpeg',link:'http://www.cow.com',comments:["Josh: I look like a cow in this picture."]};
-posts[8] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/greenChurch.jpeg',link:'http://www.greenChurch.com',comments:["Dantley: This is a picture of the painting I made of a dream I had two weeks ago."]};
+posts[8] = {op:'Andrew', note:'Click the link below to go to the page',image:'http://successfortress.com/wp-content/uploads/2013/02/Forest-Pathway-Green-Ivy-HD-Wallpaper-1920-x-1200.jpeg',link:'http://www.greenChurch.com',comments:["Dantley: This is a picture of the painting I made of a dream I had two weeks ago."]};
 posts[9] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/dragon.jpeg',link:'http://www.dragon.com',comments:["Andrew: This is a Fire-breathing beast!"]};
 posts[10] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/moutain.jpeg',link:'http://www.moutain.com',comments:["Andrew: Mountains!"]};
 posts[11] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/roller.jpeg',link:'',comments:[]};
@@ -376,8 +376,8 @@ function changePage(page){
 function onLoad() {
     setAccountButton();
     determinePage();
-    updateMainImage(0);
     refreshPictures();
+    updateMainImage(0);
     determineTabName();
     reset();
 }
@@ -647,11 +647,30 @@ function reset(){
     document.getElementById("urlImageInput").value = "";
 }
 
+// The "callback" argument is called with either true or false
+// depending on whether the image at "url" exists or not.
+function imageExists(url, callback) {
+    var img = new Image();
+    img.onload = function() { callback(true); };
+    img.onerror = function() { callback(false); };
+    img.src = url;
+}
+
+
+
 function previewImage(){
     var input = document.getElementById("urlImageInput").value;
+
     if(input.length>0){
-        document.getElementById("uploadImage").src = input;
+        imageExists(input,function(exists){
+            if(exists)
+                document.getElementById("uploadImage").src = input;
+            else
+                document.getElementById("uploadImage").src = '../Resources/defaultimage.jpg';
+        });
     }
+
+
 
 }
 
@@ -752,7 +771,10 @@ function favoriteImage(){
             if(indexImages>-1)
                 imagelistPrivate.splice(indexImages,1);
             refreshPictures();
-            updateMainImage(0);
+            if(currentPage == 'private')
+                updateMainImage(0);
+            else
+                updateMainImage(currentImageIndex);
         }
         else{
             posts[currentImages[currentImageIndex]].liked = true;
