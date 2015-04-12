@@ -647,6 +647,9 @@ input.browse{
 #signinBox{
     width:90%;
 }
+#accountBox{
+    width: 90%;
+}
 #signInPassword{
     width:80%;
     height:30px;

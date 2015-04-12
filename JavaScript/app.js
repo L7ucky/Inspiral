@@ -227,11 +227,11 @@ function setAccountButton()
     if(loggedIn) {
         document.getElementById("signInButton").value = currentUser;
         document.getElementById("signInButton").onclick = function() {changePage('account')};
-        document.getElementById("submitContainer1").hidden = false;
+        document.getElementById("submitContainer1").style.visibility = "visible";
     }
     else {
         document.getElementById("signInButton").value = 'Sign In';
-        document.getElementById("submitContainer1").hidden = true;
+        document.getElementById("submitContainer1").style.visibility = "hidden";
     }
 }
 
@@ -313,6 +313,8 @@ function login(usernameEntered, classCodeEntered){
 	document.getElementById("signUpEmail").value = "";
 	document.getElementById("signUpClassCode").value = "";
 	document.getElementById("signUpGroupCode").value = "";
+	document.getElementById("signUpButton").disabled = true;
+	document.getElementById("signUpButton2").disabled = true;
   	loggedIn = true;
   	changePage("public");
     updateUserLikes();
@@ -379,11 +381,6 @@ function onLoad() {
     determineTabName();
     reset();
 }
-
-window.onload = function(){
-    changePage('public');
-    onLoad();
-};
 
 function updatePostInfo(index){
     var post;

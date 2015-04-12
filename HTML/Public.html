@@ -8,7 +8,7 @@
 
 </head>
 
-<body onload="onLoad()">
+<body onload="changePage('public'); onLoad();">
     <div class="header">
         <div class="logo" onclick="changePage('public')">Inspiral</div>
         <input id="addInspirationButton" class="submitbutton" type="button" value="Add Inspiration" onclick="changePage('addInspiration')">
@@ -161,107 +161,73 @@
 
 
     <div id="accountWrapper">
-        <div class="box">
-            <div class="title">Personal Info</div>
-            <table style="width:100%;">
-                <tr>
-                    <td>
-                        <table>
-                            <tr>
-                                <td style="text-align:right;">Username:</td>
-                                <td id="UsernameSlot">Username</td>
-                            </tr>
-                            <tr>
-                                <td style="text-align:right;">Email:</td>
-                                <td><input id="editEmail" type="text" style="font-size: 15px;" value="bob@builder"
-                                           oninput="updateSaveChangesButton()"></td>
-                            </tr>
-                            <tr>
-                                <td style="text-align:right;">Notifications:</td>
-                                <td>
-                                    <input class="visibilityCheckbox" id="emailCheckbox1" type="checkbox" style="margin-top: 0px;">
-                                    <label for="emailCheckbox1" style="vertical-align: top;">Public</label>
+        <div id="accountBox" class="box">
+            <div class="title">Account</div>
+                <img id="ProfilePic" src="../Resources/ProfilePic.png" height="150px" width="150px" style="margin: auto; display: block;">
+                <input type="file" onchange="readURL(this, 2);" style="visibility: hidden; width: 1px;" id="profile" accept="image/*"/>
+                <input type="button" class="submitbutton" value="Upload Photo" onclick="document.getElementById('profile').click();" style="margin: auto; display: block; float: none;">
+                
+                <table width="100%">
+                    <tr>
+                        <td style="text-align:right;">Username:</td>
+                        <td id="UsernameSlot" class="inputSigninPage">Username</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:right;">Email:</td>
+                        <td><input id="editEmail" class="inputSigninPage" type="text" style="font-size: 15px; margin-bottom: 5px;" value="bob@builder"
+                        oninput="updateSaveChangesButton()"></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:right;">Notifications:</td>
+                        <td>
+                            <input class="visibilityCheckbox" id="emailCheckbox1" type="checkbox" style="margin-top: 0px;">
+                            <label for="emailCheckbox1" style="vertical-align: top;">Public</label>
 
-                                    <input class="visibilityCheckbox" id="emailCheckbox2" type="checkbox" style="margin-top: 0px;">
-                                    <label for="emailCheckbox2" style="vertical-align: top;">Class</label>
+                            <input class="visibilityCheckbox" id="emailCheckbox2" type="checkbox" style="margin-top: 0px;">
+                            <label for="emailCheckbox2" style="vertical-align: top;">Class</label>
 
-                                    <input class="visibilityCheckbox" id="emailCheckbox3" type="checkbox" style="margin-top: 0px;">
-                                    <label for="emailCheckbox3" style="vertical-align: top;">Group</label>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                    <td style="text-align:center;">
-                        <img id="ProfilePic" src="../Resources/ProfilePic.png" height="150px" width="150px">
-                    </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td style="text-align:center;">
-                        <input type="file" onchange="readURL(this, 2);" style="visibility: hidden; width: 1px;" id="profile" accept="image/*"/>
+                            <input class="visibilityCheckbox" id="emailCheckbox3" type="checkbox" style="margin-top: 0px;">
+                            <label for="emailCheckbox3" style="vertical-align: top;">Group</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:right;">Class:</td>
+                        <td style="text-align:left;">
+                            <select id="joinClass" class="inputSigninPage" style="font-size: 15px;" onchange="joinClass()">
+                                <option value="Section 1">Section 1</option>
+                                <option value="Section 2">Section 2</option>
+                                <option value="Section 3">Section 3</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:right;">Create new group:</td>
+                        <td style="text-align:left;">
+                            <input id="newGroup" class="inputSigninPage" type="text" style="font-size: 15px;" oninput="updateCreateButton()" onkeydown="submitOnEnter(event, 'createGroupButton')">
+                            <input id="createGroupButton" type="button" class="submitbutton" value="Create" style="font-size:15px; float: none; margin-left: 2%;" onclick="newGroup()" disabled="true">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:right;">Group:</td>
+                        <td style="text-align:left;">
+                            <select id="joinGroup" class="inputSigninPage" style="font-size: 15px;" onchange="joinGroup()">
+                                <option value="Byters">Byters</option>
+                                <option value="Scavajripters">Scavajripters</option>
+                                <option value="Silver Geo Supernovas">Silver Geo Supernovas</option>
+                                <option value="Waldo">Waldo</option>
+                                <option value="Red Team">Red Team</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+                
+                <!-- Sign out button that can be removed! -->
+                <td style="text-align:center;">
+                <input type="button" class="submitbutton" value="Sign Out" onclick="logOut();" style="margin: auto; display: block; float: none; margin-top: 15px; margin-bottom: 2%;">
+                </td>
+                <!-- Sign out button that can be removed! -->
 
-                        <input type="button" class="submitbutton" value="Upload Photo"
-                               onclick="document.getElementById('profile').click();"
-                               style="margin-right: 5px; margin-bottom: 5px;"/>
-                    </td>
-                </tr>
-
-
-
-
-
-                <tr>
-                    <!-- Sign out button that can be removed! -->
-                    <td style="text-align:center;">
-                        <input type="button" class="submitbutton" value="Sign Out" onclick="logOut();"
-                               style="margin-right: 5px; margin-bottom: 5px; float:left;">
-                    </td>
-                    <!-- Sign out button that can be removed! -->
-
-                </tr>
-            </table>
-        </div>
-
-        <div class="box">
-            <div class="title">Groups</div>
-            <table style="Width:100%">
-                <tr>
-                    <td style="text-align:right;">Class:</td>
-                    <td style="text-align:center;">
-                        <select id="joinClass" style="font-size: 15px;" onchange="joinClass()">
-                            <option value="Section 1">Section 1</option>
-                            <option value="Section 2">Section 2</option>
-                            <option value="Section 3">Section 3</option>
-                        </select>
-                    </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td style="text-align:right;">Create new group:</td>
-                    <td style="text-align:center;"><input id="newGroup" type="text" style="font-size: 15px;"
-                                                          oninput="updateCreateButton()"
-                                                          onkeydown="submitOnEnter(event, 'createGroupButton')"></td>
-                    <td>
-                        <input id="createGroupButton" type="button" class="submitbutton" value="Create"
-                               style="font-size:15px; margin-right: 5px;" onclick="newGroup()" disabled="true">
-
-                    </td>
-                </tr>
-                <tr>
-                    <td style="text-align:right;">Group:</td>
-                    <td style="text-align:center;">
-                        <select id="joinGroup" style="font-size: 15px;" onchange="joinGroup()">
-                            <option value="Byters">Byters</option>
-                            <option value="Scavajripters">Scavajripters</option>
-                            <option value="Silver Geo Supernovas">Silver Geo Supernovas</option>
-                            <option value="Waldo">Waldo</option>
-                            <option value="Red Team">Red Team</option>
-                        </select>
-                    </td>
-                    <td></td>
-                </tr>
-            </table>
-        </div>
+        </div>                
     </div>
 
 
