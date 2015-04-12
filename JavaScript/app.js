@@ -374,8 +374,8 @@ function changePage(page){
 function onLoad() {
     setAccountButton();
     determinePage();
-    refreshPictures();
     updateMainImage(0);
+    refreshPictures();
     determineTabName();
     reset();
 }
