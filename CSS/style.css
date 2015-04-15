@@ -58,6 +58,15 @@ input[type="password"]{
     font-size: x-large;
     cursor: pointer;
 }
+#logoImg{
+    width:auto;
+    height:50px;
+    display:inline-block;
+    float:left;
+}
+#logoImg:hover{
+    cursor: pointer;
+}
 #addInspirationButton{
     display: inline-block;
     width:12%;
@@ -66,7 +75,7 @@ input[type="password"]{
     text-align: center;
     margin-top: 10px;
     margin-bottom: 20px;
-    margin-left: 12%;
+    margin-left: 8.5%;
     float: left;
 }
 .sortByWrapper{
