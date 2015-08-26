@@ -30,7 +30,7 @@ posts[17] = {op:'Andrew', note:'Click the link below to go to the page',image:'.
 posts[18] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/kitten.jpg',link:'http://www.kitten.com',comments:["Tyler: This is a precious photo my wife took of little Katniss.","Josh: This looks like my cat."],liked:true};
 posts[19] = {op:'Andrew', note:'Click the link below to go to the page',image:'../Resources/weather.jpg',link:'http://www.weather.com',comments:["Andrew: Respect the weather channel!"]};
 posts[20] = {op:'Andrew', note:'Click the link below to go to the page',image:'http://blog.jimdo.com/wp-content/uploads/2014/01/tree-247122.jpg',link:'http://www.beach.com',comments:["Andrew: I want to go there so badly!"]};
-posts[21] = {op:'Andrew', note:'Click the link below to go to the page',image:'http://images.visitcanberra.com.au/images/canberra_hero_image.jpg',link:'http://www.hotairballons.com',comments:["Andrew: Awesome!!"]};
+posts[21] = {op:'Andrew', note:'Click the link below to go to the page',image:'http://cdn01.wallconvert.com/_media/wallpapers_1920x1200/1/1/color-splashed-hot-air-balloons-751.jpg',link:'http://www.hotairballons.com',comments:["Andrew: Awesome!!"]};
 posts[22] = {op:'Andrew', note:'Check out this Fire-breathing Cat I found!',image:'http://www.pickycovers.com/uploads/cover/0e68f90451318d6c066def6427777d09.jpg',link:'http://www.google.com',comments:["Josh: This is a cat.", "Dantley: It looks like it has magical powers. It must be a liger."]};
 
 var userLikes=[3,7,20,21,1,2,4,5,6,7,8];
